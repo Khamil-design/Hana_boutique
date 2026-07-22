@@ -1,0 +1,16 @@
+{
+  "produits": [
+    {
+      "id": "pantalon",
+      "nom": "Pantalon Homme",
+      "categorie": "Vêtements",
+      "fichier": "pantalon.json"
+    },
+    {
+      "id": "chemise",
+      "nom": "Chemise Homme",
+      "categorie": "Vêtements",
+      "fichier": "chemise.json"
+    }
+  ]
+}
