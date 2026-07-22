@@ -1,0 +1,189 @@
+{
+  "produits": [
+    {
+      "id": "pantalon-001",
+
+      "nom": "Pantalon Homme",
+
+      "categorie": "Vêtements",
+
+      "description": "Pantalon personnalisable selon vos besoins.",
+
+      "prixBase": 40,
+
+      "devise": "€",
+
+      "images": {
+        "principale": "images/pantalon/principal.jpg",
+        "galerie": [
+          "images/pantalon/1.jpg",
+          "images/pantalon/2.jpg",
+          "images/pantalon/3.jpg"
+        ]
+      },
+
+      "options": [
+
+        {
+          "id": "taille",
+
+          "nom": "Taille",
+
+          "type": "select",
+
+          "obligatoire": true,
+
+          "valeurDefaut": "M",
+
+          "choix": [
+
+            {
+              "id": "S",
+              "libelle": "S",
+              "prix": 0
+            },
+
+            {
+              "id": "M",
+              "libelle": "M",
+              "prix": 5
+            },
+
+            {
+              "id": "L",
+              "libelle": "L",
+              "prix": 10
+            },
+
+            {
+              "id": "XL",
+              "libelle": "XL",
+              "prix": 15
+            }
+
+          ]
+
+        },
+
+        {
+          "id": "couleur",
+
+          "nom": "Couleur",
+
+          "type": "radio",
+
+          "obligatoire": true,
+
+          "choix": [
+
+            {
+              "id": "noir",
+
+              "libelle": "Noir",
+
+              "prix": 0,
+
+              "couleur": "#000000"
+            },
+
+            {
+              "id": "bleu",
+
+              "libelle": "Bleu",
+
+              "prix": 3,
+
+              "couleur": "#0d6efd"
+            },
+
+            {
+              "id": "rouge",
+
+              "libelle": "Rouge",
+
+              "prix": 5,
+
+              "couleur": "#dc3545"
+            }
+
+          ]
+
+        },
+
+        {
+          "id": "matiere",
+
+          "nom": "Matière",
+
+          "type": "select",
+
+          "obligatoire": true,
+
+          "choix": [
+
+            {
+              "id": "coton",
+
+              "libelle": "Coton",
+
+              "prix": 0
+            },
+
+            {
+              "id": "jean",
+
+              "libelle": "Jean",
+
+              "prix": 12
+            },
+
+            {
+              "id": "lin",
+
+              "libelle": "Lin",
+
+              "prix": 20
+            }
+
+          ]
+
+        },
+
+        {
+          "id": "broderie",
+
+          "nom": "Broderie personnalisée",
+
+          "type": "checkbox",
+
+          "prix": 15,
+
+          "valeurDefaut": false
+
+        },
+
+        {
+          "id": "quantite",
+
+          "nom": "Quantité",
+
+          "type": "number",
+
+          "minimum": 1,
+
+          "maximum": 100,
+
+          "valeurDefaut": 1
+
+        }
+
+      ],
+
+      "regles": [
+
+      ]
+
+    }
+
+  ]
+}
