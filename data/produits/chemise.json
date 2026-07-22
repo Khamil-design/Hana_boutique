@@ -1,0 +1,215 @@
+{
+  "id": "chemise",
+
+  "nom": "Chemise Homme",
+
+  "categorie": "Vêtements",
+
+  "description": "Chemise personnalisable selon la taille, la couleur, le col, les manches et le tissu.",
+
+  "reference": "CHE-001",
+
+  "prixBase": 35,
+
+  "devise": "€",
+
+  "images": {
+    "principale": "images/chemise/principal.jpg",
+
+    "galerie": [
+      "images/chemise/1.jpg",
+      "images/chemise/2.jpg",
+      "images/chemise/3.jpg"
+    ]
+  },
+
+  "options": [
+
+    {
+      "id": "taille",
+
+      "nom": "Taille",
+
+      "type": "select",
+
+      "obligatoire": true,
+
+      "valeurDefaut": "M",
+
+      "choix": [
+        { "id": "S",  "libelle": "S",  "prix": 0 },
+        { "id": "M",  "libelle": "M",  "prix": 3 },
+        { "id": "L",  "libelle": "L",  "prix": 6 },
+        { "id": "XL", "libelle": "XL", "prix": 9 }
+      ]
+    },
+
+    {
+      "id": "couleur",
+
+      "nom": "Couleur",
+
+      "type": "radio",
+
+      "obligatoire": true,
+
+      "choix": [
+        {
+          "id": "blanc",
+          "libelle": "Blanc",
+          "prix": 0,
+          "codeCouleur": "#FFFFFF"
+        },
+        {
+          "id": "bleu",
+          "libelle": "Bleu",
+          "prix": 2,
+          "codeCouleur": "#0d6efd"
+        },
+        {
+          "id": "noir",
+          "libelle": "Noir",
+          "prix": 2,
+          "codeCouleur": "#000000"
+        },
+        {
+          "id": "vert",
+          "libelle": "Vert",
+          "prix": 3,
+          "codeCouleur": "#198754"
+        }
+      ]
+    },
+
+    {
+      "id": "col",
+
+      "nom": "Type de col",
+
+      "type": "select",
+
+      "obligatoire": true,
+
+      "valeurDefaut": "classique",
+
+      "choix": [
+        {
+          "id": "classique",
+          "libelle": "Classique",
+          "prix": 0
+        },
+        {
+          "id": "italien",
+          "libelle": "Italien",
+          "prix": 5
+        },
+        {
+          "id": "mao",
+          "libelle": "Mao",
+          "prix": 7
+        }
+      ]
+    },
+
+    {
+      "id": "manches",
+
+      "nom": "Manches",
+
+      "type": "radio",
+
+      "obligatoire": true,
+
+      "choix": [
+        {
+          "id": "courtes",
+          "libelle": "Courtes",
+          "prix": 0
+        },
+        {
+          "id": "longues",
+          "libelle": "Longues",
+          "prix": 4
+        }
+      ]
+    },
+
+    {
+      "id": "tissu",
+
+      "nom": "Tissu",
+
+      "type": "select",
+
+      "obligatoire": true,
+
+      "valeurDefaut": "coton",
+
+      "choix": [
+        {
+          "id": "coton",
+          "libelle": "Coton",
+          "prix": 0
+        },
+        {
+          "id": "lin",
+          "libelle": "Lin",
+          "prix": 10
+        },
+        {
+          "id": "soie",
+          "libelle": "Soie",
+          "prix": 25
+        }
+      ]
+    },
+
+    {
+      "id": "broderie",
+
+      "nom": "Broder les initiales",
+
+      "type": "checkbox",
+
+      "prix": 12,
+
+      "valeurDefaut": false
+    },
+
+    {
+      "id": "quantite",
+
+      "nom": "Quantité",
+
+      "type": "number",
+
+      "minimum": 1,
+
+      "maximum": 20,
+
+      "valeurDefaut": 1
+    }
+
+  ],
+
+  "regles": [],
+
+  "stock": {
+
+    "gestion": false,
+
+    "quantite": 0
+
+  },
+
+  "promotion": {
+
+    "active": false,
+
+    "type": "pourcentage",
+
+    "valeur": 0
+
+  }
+
+}
