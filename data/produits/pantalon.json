@@ -13,15 +13,15 @@
 
   "devise": "€",
 
-  "images": {
+"images": {
     "principale": "images/pantalon/principal.jpg",
-
-    "galerie": [
-      "images/pantalon/1.jpg",
-      "images/pantalon/2.jpg",
-      "images/pantalon/3.jpg"
+    "miniatures": [
+        "images/pantalon/principal.jpg",
+        "images/pantalon/profil.jpg",
+        "images/pantalon/arriere.jpg",
+        "images/pantalon/detail.jpg"
     ]
-  },
+},
 
   "options": [
 
