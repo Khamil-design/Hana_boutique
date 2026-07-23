@@ -10,7 +10,7 @@ export default class UI {
         this.form = document.getElementById("configForm");
         this.summary = document.getElementById("summary");
         this.total = document.getElementById("totalPrice");
-
+        this.galerie = new Galerie();
     }
 
     /**************************************************************
