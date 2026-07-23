@@ -2,7 +2,7 @@
  * ui.js
  * Gestion de toute l'interface utilisateur
  ********************************************************************/
-
+import Galerie from "./galerie.js";
 export default class UI {
 
     constructor() {
