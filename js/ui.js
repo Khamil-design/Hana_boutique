@@ -24,8 +24,7 @@ export default class UI {
         document.getElementById("productDescription").textContent =
             produit.description;
 
-        document.getElementById("productImage").src =
-            produit.images.principale;
+        this.galerie.initialiser(produit.images.galerie);
 
     }
 
