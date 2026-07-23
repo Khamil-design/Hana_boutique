@@ -13,19 +13,24 @@
 
   "devise": "€",
 
-"images": {
-    "principale": "images/pantalon/principal.jpg",
+"images":  {
+    "dependDe": "couleur",
 
-    "galerie": [
+    "parCouleur": {
 
-        "images/pantalon/principal.jpg",
-        "images/pantalon/face.jpg",
-        "images/pantalon/profil.jpg",
-        "images/pantalon/dos.jpg",
-        "images/pantalon/detail1.jpg",
-        "images/pantalon/detail2.jpg"
+        "noir": [
+            "images/pantalon/noir/principal.jpg",
+            "images/pantalon/noir/profil.jpg",
+            "images/pantalon/noir/dos.jpg"
+        ],
 
-    ]
+        "bleu": [
+            "images/pantalon/bleu/principal.jpg",
+            "images/pantalon/bleu/profil.jpg",
+            "images/pantalon/bleu/dos.jpg"
+        ]
+
+    }
 },
 
   "options": [
