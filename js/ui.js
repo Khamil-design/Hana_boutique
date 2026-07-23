@@ -24,7 +24,23 @@ export default class UI {
         document.getElementById("productDescription").textContent =
             produit.description;
 
-        this.galerie.initialiser(produit.images.galerie);
+        // Compatibilité avec la nouvelle structure des images
+
+if (produit.images.parCouleur) {
+
+    const premiereCouleur =
+        Object.keys(produit.images.parCouleur)[0];
+
+    document.getElementById("productImage").src =
+        produit.images.parCouleur[premiereCouleur][0];
+
+}
+else {
+
+    document.getElementById("productImage").src =
+        produit.images.principale;
+
+};
 
     }
 
