@@ -24,26 +24,26 @@ export default class UI {
         document.getElementById("productDescription").textContent =
             produit.description;
 
-        // Compatibilité avec la nouvelle structure des images
+// Initialisation de la galerie
 
 if (produit.images.parCouleur) {
 
     const premiereCouleur =
         Object.keys(produit.images.parCouleur)[0];
 
-    document.getElementById("productImage").src =
-        produit.images.parCouleur[premiereCouleur][0];
+    this.galerie.initialiser(
+        produit.images.parCouleur[premiereCouleur]
+    );
 
 }
 else {
 
-    document.getElementById("productImage").src =
-        produit.images.principale;
+    this.galerie.initialiser([
+        produit.images.principale
+    ]);
 
-};
-
-    }
-
+}
+}
     /**************************************************************
      * Génération automatique des options
      **************************************************************/
