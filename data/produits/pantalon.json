@@ -15,11 +15,16 @@
 
 "images": {
     "principale": "images/pantalon/principal.jpg",
-    "miniatures": [
+
+    "galerie": [
+
         "images/pantalon/principal.jpg",
+        "images/pantalon/face.jpg",
         "images/pantalon/profil.jpg",
-        "images/pantalon/arriere.jpg",
-        "images/pantalon/detail.jpg"
+        "images/pantalon/dos.jpg",
+        "images/pantalon/detail1.jpg",
+        "images/pantalon/detail2.jpg"
+
     ]
 },
 
