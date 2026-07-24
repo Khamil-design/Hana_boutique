@@ -123,5 +123,102 @@ export default class Panier {
         );
 
     }
+/**************************************************************
+ * Affichage du panier
+ **************************************************************/
+afficher() {
 
+    const zone =
+        document.getElementById("cartItems");
+
+    const total =
+        document.getElementById("cartTotal");
+
+    if (!zone || !total) {
+
+        return;
+
+    }
+
+    zone.innerHTML = "";
+
+    if (this.articles.length === 0) {
+
+        zone.innerHTML = `
+
+            <p class="text-muted">
+
+                Votre panier est vide.
+
+            </p>
+
+        `;
+
+        total.textContent = "0 €";
+
+        return;
+
+    }
+
+    this.articles.forEach((article, index) => {
+
+        const carte =
+            document.createElement("div");
+
+        carte.className =
+            "card mb-3";
+
+        carte.innerHTML = `
+
+            <div class="card-body">
+
+                <h6 class="mb-2">
+
+                    ${article.produit}
+
+                </h6>
+
+                <small class="text-muted">
+
+                    ${Object.entries(article.configuration)
+
+                        .map(([cle, valeur]) =>
+                            `${cle} : ${valeur}`)
+                        .join("<br>")
+                    }
+
+                </small>
+
+                <hr>
+
+                <div class="d-flex justify-content-between">
+
+                    <strong>
+
+                        ${article.total.toFixed(2)} €
+
+                    </strong>
+
+                    <button
+                        class="btn btn-sm btn-outline-danger"
+                        data-index="${index}">
+
+                        <i class="bi bi-trash"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+        zone.appendChild(carte);
+
+    });
+
+    total.textContent =
+        this.total().toFixed(2) + " €";
+
+}
 }
