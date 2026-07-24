@@ -180,12 +180,29 @@ afficher() {
 
                 <small class="text-muted">
 
-                    ${Object.entries(article.configuration)
+                   ${Object.entries(article.configuration)
 
-                        .map(([cle, valeur]) =>
-                            `${cle} : ${valeur}`)
-                        .join("<br>")
-                    }
+        .map(([cle, valeur]) => {
+
+        const labels = {
+
+            couleur: "Couleur",
+            taille: "Taille",
+            longueur: "Longueur",
+            matiere: "Matière",
+            quantite: "Quantité"
+
+        };
+
+        return `
+            <strong>${labels[cle] || cle}</strong> :
+            ${String(valeur).charAt(0).toUpperCase() + String(valeur).slice(1)}
+        `;
+
+    })
+
+    .join("<br>")
+}
 
                 </small>
 
