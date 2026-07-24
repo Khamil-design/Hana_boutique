@@ -135,7 +135,7 @@ ajouter(article) {
 
             (total, article) =>
 
-                total + (article.total * (article.quantitePanier || 1))
+                total + (article.total * (article.quantitePanier || 1)),
 
             0
 
