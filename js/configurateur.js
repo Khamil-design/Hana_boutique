@@ -5,7 +5,7 @@
 
 import UI from "./ui.js";
 import Calculateur from "./calculateur.js";
-
+import Panier from "./panier.js";
 export default class Configurateur {
 
     constructor(produit) {
