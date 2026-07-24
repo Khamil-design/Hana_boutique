@@ -269,7 +269,71 @@
 
     </main>
 
+<!-- ================= PANIER ================= -->
 
+<div
+    class="offcanvas offcanvas-end"
+    tabindex="-1"
+    id="panierCanvas">
+
+    <div class="offcanvas-header">
+
+        <h4>
+
+            <i class="bi bi-cart3"></i>
+
+            Mon panier
+
+        </h4>
+
+        <button
+            class="btn-close"
+            data-bs-dismiss="offcanvas">
+        </button>
+
+    </div>
+
+    <div class="offcanvas-body">
+
+        <div id="cartItems">
+
+            <p class="text-muted">
+
+                Votre panier est vide.
+
+            </p>
+
+        </div>
+
+        <hr>
+
+        <div class="d-flex justify-content-between">
+
+            <strong>Total :</strong>
+
+            <strong id="cartTotal">
+
+                0 €
+
+            </strong>
+
+        </div>
+
+        <div class="d-grid mt-4">
+
+            <button
+                class="btn btn-success"
+                id="btnCheckout">
+
+                Commander
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
 
     <!-- ================= FOOTER ================= -->
 
