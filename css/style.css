@@ -341,3 +341,8 @@ footer{
     }
 
 }
+#productImage{
+
+    transition: opacity .25s ease-in-out;
+
+}
