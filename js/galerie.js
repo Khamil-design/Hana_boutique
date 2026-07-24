@@ -2,7 +2,7 @@
  * galerie.js
  * Galerie professionnelle
  *****************************************************************/
-
+import Zoom from "./zoom.js";
 export default class Galerie {
 
     constructor() {
@@ -13,6 +13,7 @@ export default class Galerie {
         this.image = document.getElementById("productImage");
 
         this.container = this.image.parentElement;
+        this.zoom = new Zoom(this.image);
 
         this.creerInterface();
 
