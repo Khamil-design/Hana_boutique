@@ -59,13 +59,32 @@ export default class Panier {
     /**************************************************************
      * Ajouter un article
      **************************************************************/
-    ajouter(article) {
+ajouter(article) {
+
+    article.quantitePanier = 1;
+
+    const index = this.articles.findIndex(item =>
+
+        item.produit === article.produit &&
+
+        JSON.stringify(item.configuration) ===
+        JSON.stringify(article.configuration)
+
+    );
+
+    if (index !== -1) {
+
+        this.articles[index].quantitePanier++;
+
+    } else {
 
         this.articles.push(article);
 
-        this.sauvegarder();
-
     }
+
+    this.sauvegarder();
+
+}
 
     /**************************************************************
      * Supprimer un article
@@ -116,7 +135,7 @@ export default class Panier {
 
             (total, article) =>
 
-                total + article.total,
+                total + (article.total * (article.quantitePanier || 1))
 
             0
 
@@ -220,12 +239,21 @@ afficher() {
                 }
 
             </small>
+            <div class="mt-2">
+
+            <span class="badge bg-secondary">
+
+            x${article.quantitePanier || 1}
+
+            </span>
+
+            </div>
 
             <div class="d-flex justify-content-between align-items-center mt-3">
 
                 <strong>
 
-                    ${article.total.toFixed(2)} €
+                    ${(article.total * (article.quantitePanier || 1)).toFixed(2)} €
 
                 </strong>
 
