@@ -64,8 +64,7 @@ afficher() {
 
 }
 
-    }
-
+   
     genererMiniatures() {
 
         this.thumbnails.innerHTML = "";
@@ -104,4 +103,4 @@ afficher() {
 
     }
 
-
+}
