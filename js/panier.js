@@ -170,63 +170,82 @@ afficher() {
 
         carte.innerHTML = `
 
-            <div class="card-body">
+<div class="card-body">
 
-                <h6 class="mb-2">
+    <div class="d-flex">
 
-                    ${article.produit}
+        <img
+            src="${article.image}"
+            alt="${article.produit}"
+            style="
+                width:90px;
+                height:90px;
+                object-fit:cover;
+                border-radius:8px;
+                margin-right:15px;
+            ">
 
-                </h6>
+        <div class="flex-grow-1">
 
-                <small class="text-muted">
+            <h6 class="mb-2">
 
-                   ${Object.entries(article.configuration)
+                ${article.produit}
 
-        .map(([cle, valeur]) => {
+            </h6>
 
-        const labels = {
+            <small class="text-muted">
 
-            couleur: "Couleur",
-            taille: "Taille",
-            longueur: "Longueur",
-            matiere: "Matière",
-            quantite: "Quantité"
+                ${Object.entries(article.configuration)
 
-        };
+                    .map(([cle, valeur]) => {
 
-        return `
-            <strong>${labels[cle] || cle}</strong> :
-            ${String(valeur).charAt(0).toUpperCase() + String(valeur).slice(1)}
-        `;
+                        const labels = {
 
-    })
+                            couleur: "Couleur",
+                            taille: "Taille",
+                            longueur: "Longueur",
+                            matiere: "Matière",
+                            quantite: "Quantité"
 
-    .join("<br>")
-}
+                        };
 
-                </small>
+                        return `
+                            <strong>${labels[cle] || cle}</strong> :
+                            ${String(valeur).charAt(0).toUpperCase() + String(valeur).slice(1)}
+                        `;
 
-                <hr>
+                    })
 
-                <div class="d-flex justify-content-between">
+                    .join("<br>")
+                }
 
-                    <strong>
+            </small>
 
-                        ${article.total.toFixed(2)} €
+            <div class="d-flex justify-content-between align-items-center mt-3">
 
-                    </strong>
+                <strong>
 
-                    <button
-                        class="btn btn-sm btn-outline-danger"
-                        data-index="${index}">
+                    ${article.total.toFixed(2)} €
 
-                        <i class="bi bi-trash"></i>
+                </strong>
 
-                    </button>
+                <button
+                    class="btn btn-sm btn-outline-danger"
+                    data-index="${index}">
 
-                </div>
+                    <i class="bi bi-trash"></i>
+
+                </button>
 
             </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+`;
 
         `;
 
