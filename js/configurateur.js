@@ -106,7 +106,29 @@ export default class Configurateur {
                 this.produit,
                 this.configuration
             );
+// Changement automatique de la galerie selon la couleur
 
+if (this.produit.images.parCouleur) {
+
+    const couleurChoisie =
+        this.configuration.couleur;
+
+    if (
+        couleurChoisie &&
+        this.produit.images.parCouleur[couleurChoisie]
+    ) {
+
+        this.ui.galerie.initialiser(
+
+            this.produit.images.parCouleur[
+                couleurChoisie
+            ]
+
+        );
+
+    }
+
+}
         this.ui.mettreAJourRecapitulatif(
             resultat
         );
