@@ -247,7 +247,6 @@ afficher() {
 
 `;
 
-
         zone.appendChild(carte);
 
     });
