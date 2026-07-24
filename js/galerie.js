@@ -43,9 +43,26 @@ export default class Galerie {
 
     }
 
-    afficher() {
+afficher() {
+
+    // Disparition
+    this.image.style.opacity = 0;
+
+    // Changement de l'image
+    setTimeout(() => {
 
         this.image.src = this.images[this.index];
+
+    }, 180);
+
+    // Réapparition
+    this.image.onload = () => {
+
+        this.image.style.opacity = 1;
+
+    };
+
+}
 
     }
 
