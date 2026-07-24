@@ -15,6 +15,7 @@ export default class Configurateur {
         this.ui = new UI();
 
         this.calculateur = new Calculateur();
+        this.panier = new Panier();
 
         /*
          * Contiendra toutes les valeurs
@@ -75,7 +76,13 @@ export default class Configurateur {
                 this.reinitialiser();
 
             });
+        document
+            .getElementById("btnOrder")
+            .addEventListener("click", () => {
 
+            this.ajouterAuPanier();
+
+    });
     }
 
     /**
@@ -154,5 +161,44 @@ if (this.produit.images.parCouleur) {
         this.mettreAJour();
 
     }
+/**************************************************************
+ * Ajouter au panier
+ **************************************************************/
+ajouterAuPanier() {
 
+    const resultat = this.calculateur.calculer(
+
+        this.produit,
+
+        this.configuration
+
+    );
+
+    const article = {
+
+        produit: this.produit.nom,
+
+        configuration: {
+
+            ...this.configuration
+
+        },
+
+        total: resultat.total
+
+    };
+
+    this.panier.ajouter(article);
+
+    alert(
+
+        "Produit ajouté au panier.\n\n" +
+
+        "Articles : " +
+
+        this.panier.nombreArticles()
+
+    );
+
+}
 }
