@@ -16,6 +16,7 @@ export default class Configurateur {
 
         this.calculateur = new Calculateur();
         this.panier = new Panier();
+        this.panier.afficher();
 
         /*
          * Contiendra toutes les valeurs
@@ -188,17 +189,18 @@ ajouterAuPanier() {
 
     };
 
-    this.panier.ajouter(article);
+this.panier.ajouter(article);
 
-    alert(
+this.panier.afficher();
 
-        "Produit ajouté au panier.\n\n" +
+document.getElementById("cartBadge").textContent =
+    this.panier.nombreArticles();
 
-        "Articles : " +
+const panneau = bootstrap.Offcanvas.getOrCreateInstance(
+    document.getElementById("panierCanvas")
+);
 
-        this.panier.nombreArticles()
-
-    );
+panneau.show();
 
 }
 }
