@@ -178,6 +178,7 @@ ajouterAuPanier() {
     const article = {
 
         produit: this.produit.nom,
+        image: document.getElementById("productImage").src,
 
         configuration: {
 
