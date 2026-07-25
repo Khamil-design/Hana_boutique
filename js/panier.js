@@ -55,7 +55,9 @@ export default class Panier {
         );
 
     }
+this.sauvegarder();
 
+this.mettreAJourBadge();
     /**************************************************************
      * Ajouter un article
      **************************************************************/
@@ -85,7 +87,9 @@ ajouter(article) {
     this.sauvegarder();
 
 }
+    this.sauvegarder();
 
+    this.mettreAJourBadge();
     /**************************************************************
      * Supprimer un article
      **************************************************************/
@@ -96,6 +100,9 @@ ajouter(article) {
         this.sauvegarder();
 
     }
+    this.sauvegarder();
+
+    this.mettreAJourBadge();
 /*****************************************************************
  * Augmenter la quantité
  *****************************************************************/
@@ -112,7 +119,9 @@ augmenterQuantite(index) {
     this.sauvegarder();
 
 }
+this.sauvegarder();
 
+this.mettreAJourBadge();
 /*****************************************************************
  * Diminuer la quantité
  *****************************************************************/
@@ -137,6 +146,9 @@ diminuerQuantite(index) {
     this.sauvegarder();
 
 }
+    this.sauvegarder();
+
+this.mettreAJourBadge();
     /**************************************************************
      * Vider le panier
      **************************************************************/
@@ -147,7 +159,9 @@ diminuerQuantite(index) {
         this.sauvegarder();
 
     }
+this.sauvegarder();
 
+this.mettreAJourBadge();
     /**************************************************************
      * Retourner les articles
      **************************************************************/
@@ -173,7 +187,22 @@ diminuerQuantite(index) {
         );
 
     }
+/*****************************************************************
+ * Mise à jour du badge
+ *****************************************************************/
+mettreAJourBadge() {
 
+    const badge = document.getElementById("cartBadge");
+
+    if (!badge) {
+
+        return;
+
+    }
+
+    badge.textContent = this.nombreArticles();
+
+}
     /**************************************************************
      * Total du panier
      **************************************************************/
