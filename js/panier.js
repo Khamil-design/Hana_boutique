@@ -83,8 +83,6 @@ ajouter(article) {
     }
 
     this.sauvegarder();
-    this.sauvegarder();
-
     this.mettreAJourBadge();
 }
 
@@ -96,10 +94,9 @@ ajouter(article) {
         this.articles.splice(index, 1);
 
         this.sauvegarder();
-
+        this.mettreAJourBadge();
     }
-    this.sauvegarder();
-    this.mettreAJourBadge();
+        
 /*****************************************************************
  * Augmenter la quantité
  *****************************************************************/
@@ -114,10 +111,9 @@ augmenterQuantite(index) {
     this.articles[index].quantitePanier++;
 
     this.sauvegarder();
-
+    this.mettreAJourBadge();
 }
-this.sauvegarder();
-this.mettreAJourBadge();
+
 /*****************************************************************
  * Diminuer la quantité
  *****************************************************************/
@@ -140,10 +136,10 @@ diminuerQuantite(index) {
     }
 
     this.sauvegarder();
-
-}
-    this.sauvegarder();
     this.mettreAJourBadge();
+}
+   
+    
     /**************************************************************
      * Vider le panier
      **************************************************************/
@@ -152,10 +148,9 @@ diminuerQuantite(index) {
         this.articles = [];
 
         this.sauvegarder();
-
+        this.mettreAJourBadge();
     }
-this.sauvegarder();
-this.mettreAJourBadge();
+
     /**************************************************************
      * Retourner les articles
      **************************************************************/
