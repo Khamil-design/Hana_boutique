@@ -252,20 +252,40 @@
                     Réinitialiser
 
                 </button>
+<div class="row align-items-end mb-3">
 
-                <button
-                    id="btnOrder"
-                    class="btn btn-success">
+    <div class="col-4">
 
-                    <i class="bi bi-cart-check"></i>
+        <label for="productQuantity" class="form-label">
 
-                    Commander
+            Quantité
 
-                </button>
+        </label>
 
-            </div>
+        <input
+            type="number"
+            id="productQuantity"
+            class="form-control"
+            min="1"
+            value="1">
 
-        </div>
+    </div>
+
+    <div class="col-8">
+
+        <button
+            id="btnOrder"
+            class="btn btn-success w-100">
+
+            <i class="bi bi-cart-check"></i>
+
+            Commander
+
+        </button>
+
+    </div>
+
+</div>
 
     </main>
 
