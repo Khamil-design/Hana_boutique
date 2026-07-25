@@ -83,11 +83,11 @@ ajouter(article) {
     }
 
     this.sauvegarder();
-
-}
     this.sauvegarder();
 
     this.mettreAJourBadge();
+}
+
     /**************************************************************
      * Supprimer un article
      **************************************************************/
