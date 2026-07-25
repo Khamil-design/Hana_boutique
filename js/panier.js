@@ -55,9 +55,7 @@ export default class Panier {
         );
 
     }
-this.sauvegarder();
 
-this.mettreAJourBadge();
     /**************************************************************
      * Ajouter un article
      **************************************************************/
@@ -101,7 +99,6 @@ ajouter(article) {
 
     }
     this.sauvegarder();
-
     this.mettreAJourBadge();
 /*****************************************************************
  * Augmenter la quantité
@@ -120,7 +117,6 @@ augmenterQuantite(index) {
 
 }
 this.sauvegarder();
-
 this.mettreAJourBadge();
 /*****************************************************************
  * Diminuer la quantité
@@ -147,8 +143,7 @@ diminuerQuantite(index) {
 
 }
     this.sauvegarder();
-
-this.mettreAJourBadge();
+    this.mettreAJourBadge();
     /**************************************************************
      * Vider le panier
      **************************************************************/
@@ -160,7 +155,6 @@ this.mettreAJourBadge();
 
     }
 this.sauvegarder();
-
 this.mettreAJourBadge();
     /**************************************************************
      * Retourner les articles
