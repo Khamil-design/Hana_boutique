@@ -162,7 +162,15 @@ diminuerQuantite(index) {
      **************************************************************/
     nombreArticles() {
 
-        return this.articles.length;
+    return this.articles.reduce(
+
+        (total, article) =>
+
+            total + (article.quantitePanier || 1),
+
+            0
+
+        );
 
     }
 
