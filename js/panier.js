@@ -96,7 +96,47 @@ ajouter(article) {
         this.sauvegarder();
 
     }
+/*****************************************************************
+ * Augmenter la quantité
+ *****************************************************************/
+augmenterQuantite(index) {
 
+    if (!this.articles[index]) {
+
+        return;
+
+    }
+
+    this.articles[index].quantitePanier++;
+
+    this.sauvegarder();
+
+}
+
+/*****************************************************************
+ * Diminuer la quantité
+ *****************************************************************/
+diminuerQuantite(index) {
+
+    if (!this.articles[index]) {
+
+        return;
+
+    }
+
+    this.articles[index].quantitePanier--;
+
+    if (this.articles[index].quantitePanier <= 0) {
+
+        this.supprimer(index);
+
+        return;
+
+    }
+
+    this.sauvegarder();
+
+}
     /**************************************************************
      * Vider le panier
      **************************************************************/
@@ -239,15 +279,31 @@ afficher() {
                 }
 
             </small>
-            <div class="mt-2">
+<div class="d-flex align-items-center mt-2">
 
-            <span class="badge bg-secondary">
+    <button
+        class="btn btn-sm btn-outline-secondary btn-moins"
+        data-index="${index}">
 
-            x${article.quantitePanier || 1}
+        <i class="bi bi-dash"></i>
 
-            </span>
+    </button>
 
-            </div>
+    <span class="mx-3 fw-bold">
+
+        ${article.quantitePanier || 1}
+
+    </span>
+
+    <button
+        class="btn btn-sm btn-outline-secondary btn-plus"
+        data-index="${index}">
+
+        <i class="bi bi-plus"></i>
+
+    </button>
+
+</div>
 
             <div class="d-flex justify-content-between align-items-center mt-3">
 
@@ -278,7 +334,29 @@ afficher() {
         zone.appendChild(carte);
 
     });
+zone.querySelectorAll(".btn-plus").forEach(btn => {
 
+    btn.addEventListener("click", () => {
+
+        this.augmenterQuantite(btn.dataset.index);
+
+        this.afficher();
+
+    });
+
+});
+
+zone.querySelectorAll(".btn-moins").forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        this.diminuerQuantite(btn.dataset.index);
+
+        this.afficher();
+
+    });
+
+});
     total.textContent =
         this.total().toFixed(2) + " €";
 
