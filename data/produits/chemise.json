@@ -14,12 +14,12 @@
   "devise": "€",
 
   "images": {
-    "principale": "images/chemise/principal.jpg",
+    "principale": "images/chemise/principale.jpg",
 
     "galerie": [
-      "images/chemise/1.jpg",
-      "images/chemise/2.jpg",
-      "images/chemise/3.jpg"
+      "images/chemise/dos.jpg",
+      "images/chemise/profil.jpg",
+      "images/chemise/detail.jpg"
     ]
   },
 
