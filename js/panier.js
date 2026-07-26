@@ -11,6 +11,90 @@ export default class Panier {
 
         this.articles = this.charger();
 
+        this.ecouterCheckout();
+
+    }
+
+    /**************************************************************
+     * Bouton "Commander" du panneau panier
+     **************************************************************/
+    ecouterCheckout() {
+
+        const bouton = document.getElementById("btnCheckout");
+
+        if (!bouton) {
+
+            return;
+
+        }
+
+        bouton.addEventListener("click", () => {
+
+            this.commander();
+
+        });
+
+    }
+
+    /**************************************************************
+     * Validation de la commande
+     **************************************************************/
+    commander() {
+
+        const zone = document.getElementById("cartItems");
+
+        if (!zone) {
+
+            return;
+
+        }
+
+        if (this.articles.length === 0) {
+
+            zone.innerHTML = `
+
+                <p class="text-muted mb-0">
+
+                    Votre panier est vide.
+
+                </p>
+
+            `;
+
+            return;
+
+        }
+
+        // Message de confirmation
+
+        zone.innerHTML = `
+
+            <div class="alert alert-success text-center mb-0">
+
+                <i class="bi bi-check-circle-fill fs-3 d-block mb-2"></i>
+
+                Merci ! Votre commande a bien été enregistrée.
+
+            </div>
+
+        `;
+
+        this.vider();
+
+        // Fermeture du panneau après un court instant
+
+        setTimeout(() => {
+
+            const offcanvasEl =
+                document.getElementById("panierCanvas");
+
+            const panneau =
+                bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
+
+            panneau.hide();
+
+        }, 1800);
+
     }
 
     /**************************************************************
@@ -59,9 +143,12 @@ export default class Panier {
     /**************************************************************
      * Ajouter un article
      **************************************************************/
-ajouter(article) {
+ajouter(article, quantiteInitiale = 1) {
 
-    article.quantitePanier = 1;
+    const quantite =
+        quantiteInitiale > 0 ? quantiteInitiale : 1;
+
+    article.quantitePanier = quantite;
 
     const index = this.articles.findIndex(item =>
 
@@ -74,7 +161,7 @@ ajouter(article) {
 
     if (index !== -1) {
 
-        this.articles[index].quantitePanier++;
+        this.articles[index].quantitePanier += quantite;
 
     } else {
 
@@ -201,7 +288,7 @@ mettreAJourBadge() {
 
             (total, article) =>
 
-                total + (article.total * (article.quantitePanier || 1)),
+                total + (article.prixUnitaire * (article.quantitePanier || 1)),
 
             0
 
@@ -335,12 +422,12 @@ afficher() {
 
                 <strong>
 
-                    ${(article.total * (article.quantitePanier || 1)).toFixed(2)} €
+                    ${(article.prixUnitaire * (article.quantitePanier || 1)).toFixed(2)} €
 
                 </strong>
 
                 <button
-                    class="btn btn-sm btn-outline-danger"
+                    class="btn btn-sm btn-outline-danger btn-supprimer"
                     data-index="${index}">
 
                     <i class="bi bi-trash"></i>
@@ -377,6 +464,18 @@ zone.querySelectorAll(".btn-moins").forEach(btn => {
     btn.addEventListener("click", () => {
 
         this.diminuerQuantite(btn.dataset.index);
+
+        this.afficher();
+
+    });
+
+});
+
+zone.querySelectorAll(".btn-supprimer").forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        this.supprimer(btn.dataset.index);
 
         this.afficher();
 
