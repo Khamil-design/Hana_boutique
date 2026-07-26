@@ -95,22 +95,25 @@ export default class Calculateur {
         // Total
         //--------------------------------------------------
 
+        const prixUnitaire =
+
+            resultat.sousTotal
+
+            - resultat.remise
+
+            + resultat.tva
+
+            + resultat.livraison;
+
+        // Prix d'une seule unité, réutilisé par le panier
+
+        resultat.prixUnitaire = prixUnitaire;
+
+        // Prix affiché en temps réel dans le configurateur
+        // (déjà multiplié par la quantité choisie)
+
         resultat.total =
-
-            (
-                resultat.sousTotal
-
-                - resultat.remise
-
-                + resultat.tva
-
-                + resultat.livraison
-
-            )
-
-            *
-
-            resultat.quantite;
+            prixUnitaire * resultat.quantite;
 
 
 
