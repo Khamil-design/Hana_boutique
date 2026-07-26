@@ -186,11 +186,11 @@ ajouterAuPanier() {
 
         },
 
-        total: resultat.total
+        prixUnitaire: resultat.prixUnitaire
 
     };
 
-this.panier.ajouter(article);
+this.panier.ajouter(article, resultat.quantite);
 
 this.panier.afficher();
 
