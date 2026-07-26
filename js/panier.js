@@ -11,6 +11,11 @@ export default class Panier {
 
         this.articles = this.charger();
 
+        // Numéro WhatsApp de la boutique (avec indicatif pays,
+        // sans le "+" ni espaces). À remplacer par le numéro
+        // professionnel définitif le moment venu.
+        this.numeroWhatsApp = "212676725257";
+
         this.ecouterCheckout();
 
     }
@@ -33,6 +38,37 @@ export default class Panier {
             this.commander();
 
         });
+
+    }
+
+    /**************************************************************
+     * Construit le texte de la commande, prêt à envoyer sur WhatsApp
+     **************************************************************/
+    construireMessageWhatsApp() {
+
+        let message = "Bonjour, je souhaite commander :\n\n";
+
+        this.articles.forEach((article, index) => {
+
+            message += `${index + 1}) ${article.produit}\n`;
+
+            (article.details || []).forEach(detail => {
+
+                message += `   - ${detail.label} : ${detail.valeur}\n`;
+
+            });
+
+            message += `   - Quantité : ${article.quantitePanier}\n`;
+
+            message += `   - Prix : ${(
+                article.prixUnitaire * article.quantitePanier
+            ).toFixed(2)} €\n\n`;
+
+        });
+
+        message += `Total : ${this.total().toFixed(2)} €`;
+
+        return message;
 
     }
 
@@ -65,15 +101,31 @@ export default class Panier {
 
         }
 
-        // Message de confirmation
+        // Ouverture de WhatsApp IMMEDIATE (même tour d'exécution
+        // que le clic), sinon le navigateur bloque l'ouverture
+        // comme s'il s'agissait d'un pop-up indésirable.
+
+        const message = this.construireMessageWhatsApp();
+
+        const lienWhatsApp =
+            "https://wa.me/" +
+            this.numeroWhatsApp +
+            "?text=" +
+            encodeURIComponent(message);
+
+        window.open(lienWhatsApp, "_blank");
+
+        // Message de confirmation affiché dans le panneau
 
         zone.innerHTML = `
 
             <div class="alert alert-success text-center mb-0">
 
-                <i class="bi bi-check-circle-fill fs-3 d-block mb-2"></i>
+                <i class="bi bi-whatsapp fs-3 d-block mb-2"></i>
 
-                Merci ! Votre commande a bien été enregistrée.
+                Vous allez être redirigé vers WhatsApp pour envoyer
+                votre commande. Il ne vous reste qu'à appuyer sur
+                "Envoyer" là-bas !
 
             </div>
 
@@ -93,7 +145,7 @@ export default class Panier {
 
             panneau.hide();
 
-        }, 1800);
+        }, 2000);
 
     }
 
