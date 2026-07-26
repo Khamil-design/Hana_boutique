@@ -16,6 +16,70 @@ export default class Galerie {
         this.zoom = new Zoom(this.image);
 
         this.creerInterface();
+        this.ecouterNavigation();
+
+    }
+
+    /**************************************************************
+     * Boutons ❮ / ❯
+     **************************************************************/
+    ecouterNavigation() {
+
+        const boutonPrecedent =
+            document.getElementById("galleryPrev");
+
+        const boutonSuivant =
+            document.getElementById("galleryNext");
+
+        if (boutonPrecedent) {
+
+            boutonPrecedent.addEventListener("click", () => {
+
+                this.precedent();
+
+            });
+
+        }
+
+        if (boutonSuivant) {
+
+            boutonSuivant.addEventListener("click", () => {
+
+                this.suivant();
+
+            });
+
+        }
+
+    }
+
+    /**
+     * Image précédente (revient à la dernière si on est sur la première)
+     */
+    precedent() {
+
+        if (!this.images.length) return;
+
+        this.index =
+            (this.index - 1 + this.images.length) % this.images.length;
+
+        this.afficher();
+        this.genererMiniatures();
+
+    }
+
+    /**
+     * Image suivante (revient à la première si on est sur la dernière)
+     */
+    suivant() {
+
+        if (!this.images.length) return;
+
+        this.index =
+            (this.index + 1) % this.images.length;
+
+        this.afficher();
+        this.genererMiniatures();
 
     }
 
