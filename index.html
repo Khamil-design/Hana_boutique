@@ -6,7 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Configurateur de produits</title>
+    <title>Hana Boutique — Configurateur</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+    <!-- Polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,18 +31,32 @@
 
     <!-- ================= HEADER ================= -->
 
-<header class="shadow-sm bg-dark text-white">
+<header class="site-header">
 
     <div class="container py-3 d-flex justify-content-between align-items-center">
 
-        <h2 id="productTitle" class="mb-0">
+        <div class="brand">
 
-            Chargement...
+            <svg class="brand-emblem" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M50 52 C41 41 39 22 50 12 C61 22 59 41 50 52 Z" transform="rotate(0 50 50)"/>
+                    <path d="M50 52 C41 41 39 22 50 12 C61 22 59 41 50 52 Z" transform="rotate(72 50 50)"/>
+                    <path d="M50 52 C41 41 39 22 50 12 C61 22 59 41 50 52 Z" transform="rotate(144 50 50)"/>
+                    <path d="M50 52 C41 41 39 22 50 12 C61 22 59 41 50 52 Z" transform="rotate(216 50 50)"/>
+                    <path d="M50 52 C41 41 39 22 50 12 C61 22 59 41 50 52 Z" transform="rotate(288 50 50)"/>
+                </g>
+                <circle cx="50" cy="50" r="3.2" fill="currentColor" stroke="none"/>
+            </svg>
 
-        </h2>
+            <div class="brand-text">
+                <span class="brand-name">Hana</span>
+                <span class="brand-subtitle">Boutique</span>
+            </div>
+
+        </div>
 
         <button
-            class="btn btn-outline-light position-relative"
+            class="btn btn-outline-gold position-relative"
             id="btnPanier"
             data-bs-toggle="offcanvas"
             data-bs-target="#panierCanvas">
@@ -135,6 +157,12 @@
                         alt="Produit">-->
 
                     <div class="card-body">
+
+                        <h2 id="productTitle" class="product-title mb-2">
+
+                            Chargement...
+
+                        </h2>
 
                         <p id="productDescription" class="text-muted mb-0">
 
