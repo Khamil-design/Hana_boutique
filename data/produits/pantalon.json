@@ -21,13 +21,23 @@
         "noir": [
             "images/pantalon/noir/principal.jpg",
             "images/pantalon/noir/profil.jpg",
-            "images/pantalon/noir/dos.jpg"
+            "images/pantalon/noir/dos.jpg",
+            "images/pantalon/noir/detail.jpg"
         ],
 
         "bleu": [
             "images/pantalon/bleu/principal.jpg",
             "images/pantalon/bleu/profil.jpg",
-            "images/pantalon/bleu/dos.jpg"
+            "images/pantalon/bleu/dos.jpg",
+            "images/pantalon/bleu/detail.jpg"
+        ],
+
+        "gris": [
+            "images/pantalon/gris/gris.jpg"
+        ],
+
+        "vertPistache": [
+            "images/pantalon/vertPistache/principal.jpg"
         ]
 
     }
@@ -109,10 +119,10 @@
         },
 
         {
-          "id": "rouge",
-          "libelle": "Rouge",
+          "id": "vertPistache",
+          "libelle": "Vert pistache",
           "prix": 5,
-          "codeCouleur": "#dc3545"
+          "codeCouleur": "#A9C299"
         }
 
       ]
