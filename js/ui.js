@@ -28,6 +28,8 @@ export default class UI {
 
 if (produit.images.parCouleur) {
 
+    // Produits avec une image différente par couleur (ex: pantalon)
+
     const premiereCouleur =
         Object.keys(produit.images.parCouleur)[0];
 
@@ -38,9 +40,20 @@ if (produit.images.parCouleur) {
 }
 else {
 
-    this.galerie.initialiser([
-        produit.images.principale
-    ]);
+    // Produits avec une galerie fixe (ex: chemise) :
+    // image principale + photos complémentaires
+
+    const images = [
+
+        ...(produit.images.principale
+            ? [produit.images.principale]
+            : []),
+
+        ...(produit.images.galerie || [])
+
+    ];
+
+    this.galerie.initialiser(images);
 
 }
 }
@@ -341,33 +354,65 @@ else {
 
             switch(option.type){
 
-                case "select":
+                case "select": {
 
-                    document.getElementById(option.id).selectedIndex=0;
+                    const select =
+                        document.getElementById(option.id);
+
+                    const valeurParDefaut =
+                        option.valeurDefaut !== undefined
+                            ? option.valeurDefaut
+                            : (option.choix && option.choix[0]
+                                ? option.choix[0].id
+                                : null);
+
+                    if (valeurParDefaut !== null) {
+
+                        select.value = valeurParDefaut;
+
+                    }
 
                     break;
 
+                }
+
                 case "checkbox":
 
-                    document.getElementById(option.id).checked=false;
+                    document.getElementById(option.id).checked=
+                        option.valeurDefaut || false;
 
                     break;
 
                 case "number":
 
                     document.getElementById(option.id).value=
-                        option.valeurDefaut || 1;
+                        option.valeurDefaut || option.minimum || 1;
 
                     break;
 
-                case "radio":
+                case "radio": {
 
                     const radios=document.getElementsByName(option.id);
 
-                    if(radios.length)
-                        radios[0].checked=true;
+                    if(radios.length){
+
+                        let radioParDefaut = null;
+
+                        if (option.valeurDefaut !== undefined) {
+
+                            radioParDefaut = Array.from(radios).find(
+                                radio => radio.value === option.valeurDefaut
+                            );
+
+                        }
+
+                        (radioParDefaut || radios[0]).checked = true;
+
+                    }
 
                     break;
+
+                }
 
             }
 
