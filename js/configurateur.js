@@ -213,6 +213,8 @@ ajouterAuPanier() {
 
         },
 
+        details: this.construireDetailsLisibles(),
+
         prixUnitaire: resultat.prixUnitaire
 
     };
@@ -229,6 +231,61 @@ const panneau = bootstrap.Offcanvas.getOrCreateInstance(
 );
 
 panneau.show();
+
+}
+
+/**************************************************************
+ * Détail lisible de la configuration choisie
+ * (libellés réels, pas les identifiants techniques)
+ * ex: [{ label: "Couleur", valeur: "Bleu marine" }, ...]
+ **************************************************************/
+construireDetailsLisibles() {
+
+    const details = [];
+
+    this.produit.options.forEach(option => {
+
+        // La quantité est déjà affichée séparément dans le panier
+        if (option.id === "quantite") {
+
+            return;
+
+        }
+
+        const valeur = this.configuration[option.id];
+
+        if (option.type === "checkbox") {
+
+            if (valeur) {
+
+                details.push({ label: option.nom, valeur: "Oui" });
+
+            }
+
+            return;
+
+        }
+
+        if (valeur === undefined || valeur === null || valeur === "") {
+
+            return;
+
+        }
+
+        const choix = (option.choix || []).find(
+            c => c.id === valeur
+        );
+
+        details.push({
+
+            label: option.nom,
+            valeur: choix ? choix.libelle : valeur
+
+        });
+
+    });
+
+    return details;
 
 }
 }
