@@ -33,11 +33,17 @@
         ],
 
         "gris": [
-            "images/pantalon/gris/gris.jpg"
+            "images/pantalon/gris/parincipale.jpg",
+            "images/pantalon/gris/profil.jpg",
+            "images/pantalon/gris/dos.jpg",
+            "images/pantalon/gris/detail.jpg"
         ],
 
         "vertPistache": [
-            "images/pantalon/vertPistache/principal.jpg"
+            "images/pantalon/vert/principale.jpg",
+            "images/pantalon/vert/profil.jpg",
+            "images/pantalon/vert/dos.jpg",
+            "images/pantalon/vert/detail.jpg"
         ]
 
     }
