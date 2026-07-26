@@ -1,23 +1,44 @@
 /* =====================================================
-   CONFIGURATEUR DE PRODUITS
-   style.css
+   HANA BOUTIQUE
+   style.css — identité chic & élégante (noir / or)
 ===================================================== */
 
 /* ---------- Variables ---------- */
 
 :root {
 
-    --primary: #0d6efd;
-    --success: #198754;
-    --light: #f8f9fa;
-    --dark: #212529;
+    /* Fond & surfaces */
+    --bg:            #0B0A0C;
+    --surface:       #17151A;
+    --surface-alt:   #1D1A20;
+    --border:        #2E2A32;
+    --border-soft:   #262229;
 
-    --radius: 12px;
+    /* Or (couleur signature) */
+    --gold:          #C6A15B;
+    --gold-soft:     #E4C989;
+    --gold-deep:     #8C6D2F;
+
+    /* Texte */
+    --text:          #F2ECE2;
+    --text-muted:    #A79E93;
+
+    /* Accents fonctionnels (tons "bijou", pas les couleurs vives par défaut) */
+    --success:       #3E7A67;
+    --danger:        #B0524C;
+    --whatsapp:      #25D366;
+
+    /* Typo */
+    --font-display:  'Cormorant Garamond', Georgia, serif;
+    --font-body:     'Jost', 'Segoe UI', Arial, sans-serif;
+
+    --radius: 4px;
+    --radius-lg: 6px;
 
     --transition: .30s;
 
     --shadow:
-        0 6px 18px rgba(0,0,0,.08);
+        0 10px 30px rgba(0,0,0,.35);
 
 }
 
@@ -25,32 +46,130 @@
 
 body{
 
-    background:#f4f6f9;
+    background:var(--bg);
 
-    color:#333;
+    color:var(--text);
 
-    font-family:
-        "Segoe UI",
-        Arial,
-        sans-serif;
+    font-family:var(--font-body);
 
-}
-
-/* ---------- Header ---------- */
-
-header{
-
-    background:#212529;
-
-    color:white;
+    font-size:15px;
 
 }
 
-header h2{
+h1,h2,h3,h4,h5,h6{
+
+    font-family:var(--font-display);
+
+    color:var(--text);
+
+}
+
+a{
+
+    color:var(--gold);
+
+}
+
+/* Libellés en petites capitales, esprit "atelier" */
+
+.form-label,
+.option-title,
+.card-header h4,
+.summary-label{
+
+    font-family:var(--font-body);
+
+    text-transform:uppercase;
+
+    letter-spacing:.09em;
+
+    font-size:12.5px;
+
+    color:var(--text-muted);
+
+}
+
+/* ---------- Header / Marque ---------- */
+
+.site-header{
+
+    background:var(--bg);
+
+    border-bottom:1px solid var(--gold-deep);
+
+}
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.brand-emblem{
+
+    width:34px;
+
+    height:34px;
+
+    color:var(--gold);
+
+    flex-shrink:0;
+
+}
+
+.brand-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+    line-height:1;
+
+}
+
+.brand-name{
+
+    font-family:var(--font-display);
 
     font-weight:600;
 
-    letter-spacing:.5px;
+    font-size:28px;
+
+    letter-spacing:.06em;
+
+    color:var(--text);
+
+}
+
+.brand-subtitle{
+
+    font-family:var(--font-body);
+
+    font-size:10.5px;
+
+    letter-spacing:.35em;
+
+    text-transform:uppercase;
+
+    color:var(--gold);
+
+    margin-top:2px;
+
+}
+
+/* ---------- Titre produit ---------- */
+
+.product-title{
+
+    font-weight:600;
+
+    font-size:32px;
+
+    color:var(--text);
 
 }
 
@@ -58,9 +177,11 @@ header h2{
 
 .card{
 
-    border:none;
+    background:var(--surface);
 
-    border-radius:var(--radius);
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-lg);
 
     box-shadow:var(--shadow);
 
@@ -68,21 +189,23 @@ header h2{
 
     transition:var(--transition);
 
-}
-
-.card:hover{
-
-    transform:translateY(-2px);
+    color:var(--text);
 
 }
 
 .card-header{
 
-    background:white;
+    background:var(--surface-alt);
 
-    border-bottom:1px solid #ececec;
+    border-bottom:1px solid var(--border);
 
     font-weight:600;
+
+}
+
+.card-body{
+
+    color:var(--text);
 
 }
 
@@ -96,7 +219,18 @@ header h2{
 
     object-fit:cover;
 
-    background:#eee;
+    background:var(--surface-alt);
+
+    border-bottom:1px solid var(--gold-deep);
+
+}
+
+/* Miniatures de galerie : bordure dorée sur l'image active
+   (remplace la bordure verte Bootstrap générée en JS) */
+
+.border-success{
+
+    border-color:var(--gold) !important;
 
 }
 
@@ -106,7 +240,9 @@ header h2{
 
     font-size:15px;
 
-    line-height:1.6;
+    line-height:1.7;
+
+    color:var(--text-muted);
 
 }
 
@@ -128,7 +264,7 @@ header h2{
 
     padding-bottom:15px;
 
-    border-bottom:1px solid #ececec;
+    border-bottom:1px solid var(--border-soft);
 
 }
 
@@ -141,8 +277,6 @@ header h2{
 /* Titre */
 
 .option-title{
-
-    font-size:18px;
 
     font-weight:600;
 
@@ -162,13 +296,67 @@ header h2{
 
     cursor:pointer;
 
+    color:var(--text);
+
+}
+
+.form-check-input{
+
+    background-color:var(--surface-alt);
+
+    border-color:var(--border);
+
+}
+
+.form-check-input:checked{
+
+    background-color:var(--gold);
+
+    border-color:var(--gold);
+
+}
+
+.form-check-input:focus{
+
+    border-color:var(--gold);
+
+    box-shadow:0 0 0 .2rem rgba(198,161,91,.25);
+
 }
 
 /* ---------- Select ---------- */
 
-.form-select{
+.form-select,
+.form-control{
 
-    border-radius:10px;
+    background-color:var(--surface-alt);
+
+    border:1px solid var(--border);
+
+    color:var(--text);
+
+    border-radius:var(--radius);
+
+}
+
+.form-select:focus,
+.form-control:focus{
+
+    background-color:var(--surface-alt);
+
+    color:var(--text);
+
+    border-color:var(--gold);
+
+    box-shadow:0 0 0 .2rem rgba(198,161,91,.25);
+
+}
+
+.form-select option{
+
+    background-color:var(--surface-alt);
+
+    color:var(--text);
 
 }
 
@@ -180,23 +368,17 @@ input[type=number]{
 
 }
 
-/* ---------- Checkbox ---------- */
-
-.form-check-input:checked{
-
-    background:var(--success);
-
-    border-color:var(--success);
-
-}
-
 /* ---------- Prix ---------- */
 
 #totalPrice{
 
-    color:var(--success);
+    font-family:var(--font-display);
 
-    font-weight:bold;
+    color:var(--gold);
+
+    font-weight:700;
+
+    font-size:34px;
 
 }
 
@@ -222,7 +404,7 @@ input[type=number]{
 
     padding:8px 0;
 
-    border-bottom:1px dashed #ddd;
+    border-bottom:1px dashed var(--border);
 
 }
 
@@ -232,15 +414,9 @@ input[type=number]{
 
 }
 
-.summary-label{
-
-    font-weight:500;
-
-}
-
 .summary-price{
 
-    color:var(--success);
+    color:var(--gold);
 
     font-weight:600;
 
@@ -250,15 +426,134 @@ input[type=number]{
 
 .btn{
 
-    border-radius:10px;
+    border-radius:var(--radius);
 
     padding:10px 18px;
 
+    font-family:var(--font-body);
+
+    text-transform:uppercase;
+
+    letter-spacing:.08em;
+
+    font-size:13px;
+
+    font-weight:500;
+
+    transition:var(--transition);
+
 }
+
+/* Bouton principal : or plein */
 
 .btn-success{
 
     min-width:180px;
+
+    background-color:var(--gold);
+
+    border-color:var(--gold);
+
+    color:#1A1611;
+
+}
+
+.btn-success:hover,
+.btn-success:focus{
+
+    background-color:var(--gold-soft);
+
+    border-color:var(--gold-soft);
+
+    color:#1A1611;
+
+}
+
+/* Bouton secondaire : contour or */
+
+.btn-outline-secondary{
+
+    border-color:var(--border);
+
+    color:var(--text-muted);
+
+    background:transparent;
+
+}
+
+.btn-outline-secondary:hover{
+
+    border-color:var(--gold);
+
+    color:var(--gold);
+
+    background:transparent;
+
+}
+
+/* Bouton du panier (header) */
+
+.btn-outline-gold{
+
+    border:1px solid var(--gold-deep);
+
+    color:var(--gold);
+
+    background:transparent;
+
+}
+
+.btn-outline-gold:hover,
+.btn-outline-gold:focus{
+
+    border-color:var(--gold);
+
+    color:var(--gold-soft);
+
+    background:rgba(198,161,91,.08);
+
+}
+
+/* ---------- Panier (offcanvas) ---------- */
+
+.offcanvas{
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    border-left:1px solid var(--gold-deep);
+
+}
+
+.offcanvas-header{
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.offcanvas .card{
+
+    background:var(--surface-alt);
+
+}
+
+.btn-close{
+
+    filter:invert(1) grayscale(1) brightness(1.4);
+
+}
+
+/* Confirmation WhatsApp : on garde le vert WhatsApp,
+   reconnaissable, mais assombri pour rester dans l'ambiance */
+
+.alert-success{
+
+    background-color:rgba(37,211,102,.12);
+
+    border:1px solid rgba(37,211,102,.35);
+
+    color:#8FE3B2;
 
 }
 
@@ -266,9 +561,11 @@ input[type=number]{
 
 footer{
 
-    background:white;
+    background:var(--bg);
 
-    border-top:1px solid #ddd;
+    border-top:1px solid var(--border);
+
+    color:var(--text-muted);
 
 }
 
@@ -300,6 +597,25 @@ footer{
 
 }
 
+#productImage{
+
+    transition: opacity .25s ease-in-out;
+
+}
+
+/* ---------- Accessibilité : focus clavier visible ---------- */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible{
+
+    outline:2px solid var(--gold);
+
+    outline-offset:2px;
+
+}
+
 /* ---------- Responsive ---------- */
 
 @media(max-width:992px){
@@ -314,7 +630,11 @@ footer{
 
 @media(max-width:768px){
 
-    header{
+    .site-header .container{
+
+        flex-direction:column;
+
+        gap:12px;
 
         text-align:center;
 
@@ -339,10 +659,5 @@ footer{
         text-align:center !important;
 
     }
-
-}
-#productImage{
-
-    transition: opacity .25s ease-in-out;
 
 }
