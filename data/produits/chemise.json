@@ -14,13 +14,32 @@
   "devise": "€",
 
   "images": {
-    "principale": "images/chemise/principale.jpg",
+    "dependDe": "couleur",
 
-    "galerie": [
-      "images/chemise/dos.jpg",
-      "images/chemise/profil.jpg",
-      "images/chemise/detail.jpg"
-    ]
+    "parCouleur": {
+
+        "blanche": [
+            "images/chemise/blanche/principale.jpg",
+            "images/chemise/blanche/profil.jpg",
+            "images/chemise/blanche/dos.jpg",
+            "images/chemise/blanche/detail.jpg"
+        ],
+
+        "beige": [
+            "images/chemise/beige/principale.jpg",
+            "images/chemise/beige/profil.jpg",
+            "images/chemise/beige/dos.jpg",
+            "images/chemise/beige/detail.jpg"
+        ],
+
+        "bleu": [
+            "images/chemise/bleu/principale.jpg",
+            "images/chemise/bleu/profil.jpg",
+            "images/chemise/bleu/dos.jpg",
+            "images/chemise/bleu/detail.jpg"
+        ]
+
+    }
   },
 
   "options": [
@@ -55,28 +74,22 @@
 
       "choix": [
         {
-          "id": "blanc",
-          "libelle": "Blanc",
+          "id": "blanche",
+          "libelle": "Blanche",
           "prix": 0,
           "codeCouleur": "#FFFFFF"
         },
         {
+          "id": "beige",
+          "libelle": "Beige",
+          "prix": 0,
+          "codeCouleur": "#E8DCC6"
+        },
+        {
           "id": "bleu",
-          "libelle": "Bleu",
+          "libelle": "Bleu marine",
           "prix": 2,
-          "codeCouleur": "#0d6efd"
-        },
-        {
-          "id": "noir",
-          "libelle": "Noir",
-          "prix": 2,
-          "codeCouleur": "#000000"
-        },
-        {
-          "id": "vert",
-          "libelle": "Vert",
-          "prix": 3,
-          "codeCouleur": "#198754"
+          "codeCouleur": "#1B263B"
         }
       ]
     },
