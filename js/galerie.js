@@ -1,291 +1,171 @@
-/****************************************************************
- * configurateur.js
- * Moteur principal du configurateur
- ****************************************************************/
+/*****************************************************************
+ * galerie.js
+ * Galerie professionnelle
+ *****************************************************************/
+import Zoom from "./zoom.js";
+export default class Galerie {
 
-import UI from "./ui.js";
-import Calculateur from "./calculateur.js";
-import Panier from "./panier.js";
-export default class Configurateur {
+    constructor() {
 
-    constructor(produit) {
+        this.images = [];
+        this.index = 0;
 
-        this.produit = produit;
+        this.image = document.getElementById("productImage");
 
-        this.ui = new UI();
+        this.container = this.image.parentElement;
+        this.zoom = new Zoom(this.image);
 
-        this.calculateur = new Calculateur();
-        this.panier = new Panier();
-        this.panier.afficher();
-
-        /*
-         * Contiendra toutes les valeurs
-         * choisies par l'utilisateur
-         */
-
-        this.configuration = {};
+        this.creerInterface();
+        this.ecouterNavigation();
 
     }
 
-    /**
-     * Démarrage
-     */
-    initialiser() {
+    /**************************************************************
+     * Boutons ❮ / ❯
+     **************************************************************/
+    ecouterNavigation() {
 
-        this.ui.afficherProduit(this.produit);
+        const boutonPrecedent =
+            document.getElementById("galleryPrev");
 
-        this.ui.genererOptions(
-            this.produit.options,
-            this.configuration
-        );
+        const boutonSuivant =
+            document.getElementById("galleryNext");
 
-        this.ecouterEvenements();
+        if (boutonPrecedent) {
 
-        this.mettreAJour();
+            boutonPrecedent.addEventListener("click", () => {
 
-    }
-
-    /**
-     * Changement de produit (sélecteur) : on réutilise la même
-     * interface (galerie, panier) plutôt que de tout recréer,
-     * pour éviter les écouteurs d'événements en double.
-     */
-    changerProduit(produit) {
-
-        this.produit = produit;
-
-        this.configuration = {};
-
-        this.ui.afficherProduit(this.produit);
-
-        this.ui.genererOptions(
-            this.produit.options,
-            this.configuration
-        );
-
-        this.lireConfiguration();
-
-        this.mettreAJour();
-
-    }
-
-    /**
-     * Ecoute tous les changements
-     */
-    ecouterEvenements() {
-
-        const formulaire =
-            document.getElementById("configForm");
-
-        formulaire.addEventListener("change", () => {
-
-            this.lireConfiguration();
-
-            this.mettreAJour();
-
-        });
-
-        formulaire.addEventListener("input", () => {
-
-            this.lireConfiguration();
-
-            this.mettreAJour();
-
-        });
-
-
-        document
-            .getElementById("btnReset")
-            .addEventListener("click", () => {
-
-                this.reinitialiser();
+                this.precedent();
 
             });
-        document
-            .getElementById("btnOrder")
-            .addEventListener("click", () => {
 
-            this.ajouterAuPanier();
+        }
 
-    });
-    }
+        if (boutonSuivant) {
 
-    /**
-     * Lecture des valeurs du formulaire
-     */
-    lireConfiguration() {
+            boutonSuivant.addEventListener("click", () => {
 
-        this.configuration = {};
+                this.suivant();
 
-        this.produit.options.forEach(option => {
+            });
 
-            const valeur =
-                this.ui.lireValeur(option);
-
-            this.configuration[option.id] = valeur;
-
-        });
+        }
 
     }
 
     /**
-     * Mise à jour complète
+     * Image précédente (revient à la dernière si on est sur la première)
      */
-    mettreAJour() {
+    precedent() {
 
-        const resultat =
-            this.calculateur.calculer(
-                this.produit,
-                this.configuration
-            );
-// Changement automatique de la galerie selon la couleur
+        if (!this.images.length) return;
 
-if (this.produit.images.parCouleur) {
+        this.index =
+            (this.index - 1 + this.images.length) % this.images.length;
 
-    const couleurChoisie =
-        this.configuration.couleur;
-
-    if (
-        couleurChoisie &&
-        this.produit.images.parCouleur[couleurChoisie]
-    ) {
-
-        this.ui.galerie.initialiser(
-
-            this.produit.images.parCouleur[
-                couleurChoisie
-            ]
-
-        );
-
-    }
-
-}
-        this.ui.mettreAJourRecapitulatif(
-            resultat
-        );
-
-        this.ui.mettreAJourPrix(
-            resultat.total,
-            this.produit.devise
-        );
+        this.afficher();
+        this.genererMiniatures();
 
     }
 
     /**
-     * Réinitialisation
+     * Image suivante (revient à la première si on est sur la dernière)
      */
-    reinitialiser() {
+    suivant() {
 
-        this.ui.reinitialiser(
-            this.produit.options
-        );
+        if (!this.images.length) return;
 
-        // On relit les valeurs par défaut réellement affichées
-        // (taille, couleur, matière...) pour que le prix et la
-        // galerie soient bien synchronisés après le reset.
-        this.lireConfiguration();
+        this.index =
+            (this.index + 1) % this.images.length;
 
-        this.mettreAJour();
+        this.afficher();
+        this.genererMiniatures();
 
     }
-/**************************************************************
- * Ajouter au panier
- **************************************************************/
-ajouterAuPanier() {
 
-    const resultat = this.calculateur.calculer(
+    creerInterface() {
 
-        this.produit,
+        // Barre des miniatures
 
-        this.configuration
+        this.thumbnails = document.createElement("div");
 
-    );
+        this.thumbnails.className =
+            "d-flex justify-content-center gap-2 mt-3 flex-wrap";
 
-    const article = {
+        this.container.appendChild(this.thumbnails);
 
-        produit: this.produit.nom,
-        image: document.getElementById("productImage").src,
+    }
 
-        configuration: {
+    initialiser(images) {
 
-            ...this.configuration
+        this.images = images;
 
-        },
+        this.index = 0;
 
-        details: this.construireDetailsLisibles(),
+        this.afficher();
 
-        prixUnitaire: resultat.prixUnitaire
+        this.genererMiniatures();
+
+    }
+
+afficher() {
+
+    // Disparition
+    this.image.style.opacity = 0;
+
+    // Changement de l'image
+    setTimeout(() => {
+
+        this.image.src = this.images[this.index];
+
+    }, 180);
+
+    // Réapparition
+    this.image.onload = () => {
+
+        this.image.style.opacity = 1;
 
     };
 
-this.panier.ajouter(article, resultat.quantite);
-
-this.panier.afficher();
-
-document.getElementById("cartBadge").textContent =
-    this.panier.nombreArticles();
-
-const panneau = bootstrap.Offcanvas.getOrCreateInstance(
-    document.getElementById("panierCanvas")
-);
-
-panneau.show();
-
 }
 
-/**************************************************************
- * Détail lisible de la configuration choisie
- * (libellés réels, pas les identifiants techniques)
- * ex: [{ label: "Couleur", valeur: "Bleu marine" }, ...]
- **************************************************************/
-construireDetailsLisibles() {
 
-    const details = [];
+    genererMiniatures() {
 
-    this.produit.options.forEach(option => {
+        this.thumbnails.innerHTML = "";
 
-        // La quantité est déjà affichée séparément dans le panier
-        if (option.id === "quantite") {
+        this.images.forEach((img, index) => {
 
-            return;
+            const miniature =
+                document.createElement("img");
 
-        }
+            miniature.src = img;
 
-        const valeur = this.configuration[option.id];
+            miniature.style.width = "70px";
+            miniature.style.height = "70px";
+            miniature.style.objectFit = "cover";
+            miniature.style.cursor = "pointer";
+            miniature.style.borderRadius = "6px";
 
-        if (option.type === "checkbox") {
+            miniature.className =
+                index === this.index
+                ? "border border-success border-3"
+                : "border";
 
-            if (valeur) {
+            miniature.addEventListener("click", () => {
 
-                details.push({ label: option.nom, valeur: "Oui" });
+                this.index = index;
 
-            }
+                this.afficher();
 
-            return;
+                this.genererMiniatures();
 
-        }
+            });
 
-        if (valeur === undefined || valeur === null || valeur === "") {
-
-            return;
-
-        }
-
-        const choix = (option.choix || []).find(
-            c => c.id === valeur
-        );
-
-        details.push({
-
-            label: option.nom,
-            valeur: choix ? choix.libelle : valeur
+            this.thumbnails.appendChild(miniature);
 
         });
 
-    });
+    }
 
-    return details;
-
-}
 }
