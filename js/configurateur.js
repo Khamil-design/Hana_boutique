@@ -46,6 +46,30 @@ export default class Configurateur {
     }
 
     /**
+     * Changement de produit (sélecteur) : on réutilise la même
+     * interface (galerie, panier) plutôt que de tout recréer,
+     * pour éviter les écouteurs d'événements en double.
+     */
+    changerProduit(produit) {
+
+        this.produit = produit;
+
+        this.configuration = {};
+
+        this.ui.afficherProduit(this.produit);
+
+        this.ui.genererOptions(
+            this.produit.options,
+            this.configuration
+        );
+
+        this.lireConfiguration();
+
+        this.mettreAJour();
+
+    }
+
+    /**
      * Ecoute tous les changements
      */
     ecouterEvenements() {
@@ -153,11 +177,14 @@ if (this.produit.images.parCouleur) {
      */
     reinitialiser() {
 
-        this.configuration = {};
-
         this.ui.reinitialiser(
             this.produit.options
         );
+
+        // On relit les valeurs par défaut réellement affichées
+        // (taille, couleur, matière...) pour que le prix et la
+        // galerie soient bien synchronisés après le reset.
+        this.lireConfiguration();
 
         this.mettreAJour();
 
