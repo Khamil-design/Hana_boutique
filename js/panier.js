@@ -154,22 +154,27 @@ export default class Panier {
      **************************************************************/
     charger() {
 
-        const donnees =
-            localStorage.getItem(this.cleStockage);
-
-        if (!donnees) {
-
-            return [];
-
-        }
-
         try {
+
+            const donnees =
+                localStorage.getItem(this.cleStockage);
+
+            if (!donnees) {
+
+                return [];
+
+            }
 
             return JSON.parse(donnees);
 
         }
 
-        catch {
+        catch (erreur) {
+
+            console.warn(
+                "Panier : impossible de lire le panier enregistré (stockage indisponible).",
+                erreur
+            );
 
             return [];
 
@@ -182,13 +187,30 @@ export default class Panier {
      **************************************************************/
     sauvegarder() {
 
-        localStorage.setItem(
+        try {
 
-            this.cleStockage,
+            localStorage.setItem(
 
-            JSON.stringify(this.articles)
+                this.cleStockage,
 
-        );
+                JSON.stringify(this.articles)
+
+            );
+
+        }
+
+        catch (erreur) {
+
+            // Le panier continue de fonctionner pour la session en
+            // cours même si la sauvegarde échoue (navigation privée,
+            // stockage désactivé ou plein).
+
+            console.warn(
+                "Panier : impossible d'enregistrer le panier (stockage indisponible ou plein).",
+                erreur
+            );
+
+        }
 
     }
 
@@ -448,7 +470,8 @@ afficher() {
 
     <button
         class="btn btn-sm btn-outline-secondary btn-moins"
-        data-index="${index}">
+        data-index="${index}"
+        aria-label="Diminuer la quantité">
 
         <i class="bi bi-dash"></i>
 
@@ -462,7 +485,8 @@ afficher() {
 
     <button
         class="btn btn-sm btn-outline-secondary btn-plus"
-        data-index="${index}">
+        data-index="${index}"
+        aria-label="Augmenter la quantité">
 
         <i class="bi bi-plus"></i>
 
@@ -480,7 +504,8 @@ afficher() {
 
                 <button
                     class="btn btn-sm btn-outline-danger btn-supprimer"
-                    data-index="${index}">
+                    data-index="${index}"
+                    aria-label="Retirer cet article du panier">
 
                     <i class="bi bi-trash"></i>
 
