@@ -34,7 +34,8 @@ if (produit.images.parCouleur) {
         Object.keys(produit.images.parCouleur)[0];
 
     this.galerie.initialiser(
-        produit.images.parCouleur[premiereCouleur]
+        produit.images.parCouleur[premiereCouleur],
+        produit.nom
     );
 
 }
@@ -53,7 +54,7 @@ else {
 
     ];
 
-    this.galerie.initialiser(images);
+    this.galerie.initialiser(images, produit.nom);
 
 }
 }
@@ -70,9 +71,23 @@ else {
 
             bloc.className = "option-group";
 
-            const titre = document.createElement("h5");
+            // Pour select/number : un vrai <label> relié au champ.
+            // Pour radio/checkbox : chaque choix a déjà son propre
+            // <label>, celui-ci ne sert que de titre de groupe.
+            const estChampUnique =
+                option.type === "select" || option.type === "number";
+
+            const titre = document.createElement(
+                estChampUnique ? "label" : "h5"
+            );
 
             titre.className = "option-title";
+
+            if (estChampUnique) {
+
+                titre.htmlFor = option.id;
+
+            }
 
             titre.textContent = option.nom;
 
