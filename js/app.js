@@ -99,9 +99,23 @@ export default class Application {
 
         }
 
-        select.addEventListener("change", () => {
+        select.addEventListener("change", async () => {
 
-            this.afficherProduitParFichier(select.value);
+            try {
+
+                await this.afficherProduitParFichier(select.value);
+
+            }
+
+            catch (erreur) {
+
+                console.error(erreur);
+
+                alert(
+                    "Ce produit n'a pas pu être chargé pour le moment. Merci de réessayer dans un instant."
+                );
+
+            }
 
         });
 
