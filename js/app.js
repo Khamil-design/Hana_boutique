@@ -6,6 +6,7 @@
 
 import Configurateur from "./configurateur.js";
 import { getLangue, setLangue, t, champ } from "./i18n.js";
+import { initialiserTheme } from "./theme.js";
 
 export default class Application {
 
@@ -22,6 +23,9 @@ export default class Application {
     async demarrer() {
 
         try {
+
+            // === NOUVEAU : Initialise le thème (clair/sombre) ===
+            initialiserTheme();
 
             // Applique la langue mémorisée (ou le français par défaut)
             this.appliquerLangue(getLangue());
@@ -221,8 +225,6 @@ export default class Application {
         });
 
         // On garde le produit actuellement affiché sélectionné
-        // (utile quand cette fonction est rappelée après un
-        // changement de langue, pour ne pas revenir au 1er produit)
         if (valeurActuelle) {
 
             select.value = valeurActuelle;
@@ -331,23 +333,12 @@ export default class Application {
     afficherErreur(message) {
 
         document.body.innerHTML = `
-
         <div class="container mt-5">
-
             <div class="alert alert-danger">
-
-                <h3>
-
-                    Erreur
-
-                </h3>
-
+                <h3>Erreur</h3>
                 <p>${message}</p>
-
             </div>
-
         </div>
-
         `;
 
     }
