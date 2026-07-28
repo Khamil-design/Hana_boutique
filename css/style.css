@@ -23,7 +23,7 @@
     --text:          #F2ECE2;
     --text-muted:    #A79E93;
 
-    /* Accents fonctionnels (tons "bijou", pas les couleurs vives par défaut) */
+    /* Accents fonctionnels */
     --success:       #3E7A67;
     --danger:        #B0524C;
     --whatsapp:      #25D366;
@@ -46,977 +46,673 @@
 /* ---------- Général ---------- */
 
 body{
-
     background:var(--bg);
-
     color:var(--text);
-
     font-family:var(--font-body);
-
     font-size:15px;
-
 }
 
 h1,h2,h3,h4,h5,h6{
-
     font-family:var(--font-display);
-
     color:var(--text);
-
 }
 
 a{
-
     color:var(--gold);
-
 }
 
-/* Libellés en petites capitales, esprit "atelier" */
+/* Libellés en petites capitales */
 
 .form-label,
 .option-title,
 .card-header h4,
 .summary-label{
-
     font-family:var(--font-body);
-
     text-transform:uppercase;
-
     letter-spacing:.09em;
-
     font-size:12.5px;
-
     color:var(--text-muted);
-
 }
 
 /* ---------- Header / Marque ---------- */
 
 .site-header{
-
     background:var(--bg);
-
     border-bottom:1px solid var(--gold-deep);
-
 }
 
 .brand{
-
     display:flex;
-
     align-items:center;
-
     gap:14px;
-
 }
 
 .brand-emblem{
-
     width:34px;
-
     height:34px;
-
     color:var(--gold);
-
     flex-shrink:0;
-
 }
 
 .brand-text{
-
     display:flex;
-
     flex-direction:column;
-
     line-height:1;
-
 }
 
 .brand-name{
-
     font-family:var(--font-display);
-
     font-weight:600;
-
     font-size:28px;
-
     letter-spacing:.06em;
-
     color:var(--text);
-
 }
 
 .brand-subtitle{
-
     font-family:var(--font-body);
-
     font-size:10.5px;
-
     letter-spacing:.35em;
-
     text-transform:uppercase;
-
     color:var(--gold);
-
     margin-top:2px;
-
 }
 
 /* ---------- Titre produit ---------- */
 
 .product-title{
-
     font-weight:600;
-
     font-size:32px;
-
     color:var(--text);
-
 }
 
 /* ---------- Cartes ---------- */
 
 .card{
-
     background:var(--surface);
-
     border:1px solid var(--border);
-
     border-radius:var(--radius-lg);
-
     box-shadow:var(--shadow);
-
     overflow:hidden;
-
     transition:var(--transition);
-
     color:var(--text);
-
 }
 
 .card-header{
-
     background:var(--surface-alt);
-
     border-bottom:1px solid var(--border);
-
     font-weight:600;
-
 }
 
 .card-body{
-
     color:var(--text);
-
 }
 
 /* ---------- Galerie photo ---------- */
 
 .gallery{
-
     display:flex;
-
     flex-direction:column;
-
 }
 
 .gallery-viewer{
-
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
-
     padding:16px 16px 4px;
-
 }
 
-/* Navigation ❮ ❯ : sous l'image et les miniatures, centrée */
-
 .gallery-nav{
-
     display:flex;
-
     justify-content:center;
-
     gap:14px;
-
     padding:12px 16px 18px;
-
 }
 
 .gallery-btn{
-
     width:38px;
-
     height:38px;
-
     border-radius:50%;
-
     border:1px solid var(--gold-deep);
-
     background:transparent;
-
     color:var(--gold);
-
     font-size:15px;
-
     line-height:1;
-
     cursor:pointer;
-
     transition:var(--transition);
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
 }
 
 .gallery-btn:hover,
 .gallery-btn:focus-visible{
-
     border-color:var(--gold);
-
     background:rgba(198,161,91,.12);
-
     color:var(--gold-soft);
-
 }
 
 /* ---------- Image ---------- */
 
 #productImage{
-
     width:100%;
-
     height:500px;
-
     object-fit:cover;
-
     background:var(--surface-alt);
-
     border:1px solid var(--border);
-
     border-radius:var(--radius);
-
 }
 
-/* Miniatures de galerie : bordure dorée sur l'image active
-   (remplace la bordure verte Bootstrap générée en JS) */
+/* Miniatures */
 
 .border-success{
-
     border-color:var(--gold) !important;
-
 }
 
 /* ---------- Description ---------- */
 
 #productDescription{
-
     font-size:15px;
-
     line-height:1.7;
-
     color:var(--text-muted);
-
 }
 
 /* ---------- Formulaire ---------- */
 
 #configForm{
-
     display:flex;
-
     flex-direction:column;
-
     gap:22px;
-
 }
 
-/* Groupe */
-
 .option-group{
-
     padding-bottom:15px;
-
     border-bottom:1px solid var(--border-soft);
-
 }
 
 .option-group:last-child{
-
     border:none;
-
 }
 
-/* Titre */
-
 .option-title{
-
     display:block;
-
     font-weight:600;
-
     margin-bottom:10px;
-
 }
 
 /* ---------- Radios ---------- */
 
 .form-check{
-
     margin-bottom:8px;
-
 }
 
 .form-check-label{
-
     cursor:pointer;
-
     color:var(--text);
-
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
 .form-check-input{
-
     background-color:var(--surface-alt);
-
     border-color:var(--border);
-
 }
 
 .form-check-input:checked{
-
     background-color:var(--gold);
-
     border-color:var(--gold);
-
 }
 
 .form-check-input:focus{
-
     border-color:var(--gold);
-
     box-shadow:0 0 0 .2rem rgba(198,161,91,.25);
+}
 
+/* ---------- Pastilles de couleur ---------- */
+
+.color-swatch{
+    display:inline-block;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    border:2px solid var(--border);
+    flex-shrink:0;
+    transition:var(--transition);
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.2);
+}
+
+.form-check-input:checked ~ .form-check-label .color-swatch,
+.form-check-label:has(+ .form-check-input:checked) .color-swatch{
+    border-color:var(--gold);
+    box-shadow:0 0 0 2px var(--gold-deep), inset 0 0 0 1px rgba(0,0,0,.2);
+    transform:scale(1.15);
+}
+
+/* Support navigateurs sans :has() */
+.form-check-input:checked + .form-check-label .color-swatch{
+    border-color:var(--gold);
+    box-shadow:0 0 0 2px var(--gold-deep), inset 0 0 0 1px rgba(0,0,0,.2);
+    transform:scale(1.15);
 }
 
 /* ---------- Select ---------- */
 
 .form-select,
 .form-control{
-
     background-color:var(--surface-alt);
-
     border:1px solid var(--border);
-
     color:var(--text);
-
     border-radius:var(--radius);
-
 }
 
 .form-select:focus,
 .form-control:focus{
-
     background-color:var(--surface-alt);
-
     color:var(--text);
-
     border-color:var(--gold);
-
     box-shadow:0 0 0 .2rem rgba(198,161,91,.25);
-
 }
 
 .form-select option{
-
     background-color:var(--surface-alt);
-
     color:var(--text);
-
 }
 
 /* ---------- Nombre ---------- */
 
 input[type=number]{
-
     max-width:130px;
-
 }
 
 /* ---------- Prix ---------- */
 
 #totalPrice{
-
     font-family:var(--font-display);
-
     color:var(--gold);
-
     font-weight:700;
-
     font-size:34px;
-
 }
 
 /* ---------- Récapitulatif ---------- */
 
 #summary{
-
     display:flex;
-
     flex-direction:column;
-
     gap:10px;
-
 }
 
 .summary-row{
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     padding:8px 0;
-
     border-bottom:1px dashed var(--border);
-
 }
 
 .summary-row:last-child{
-
     border:none;
-
 }
 
 .summary-price{
-
     color:var(--gold);
-
     font-weight:600;
-
 }
 
 /* ---------- Boutons ---------- */
 
 .btn{
-
     border-radius:var(--radius);
-
     padding:10px 18px;
-
     font-family:var(--font-body);
-
     text-transform:uppercase;
-
     letter-spacing:.08em;
-
     font-size:13px;
-
     font-weight:500;
-
     transition:var(--transition);
-
 }
 
-/* Bouton principal : or plein */
-
 .btn-success{
-
     min-width:180px;
-
     background-color:var(--gold);
-
     border-color:var(--gold);
-
     color:#1A1611;
-
 }
 
 .btn-success:hover,
 .btn-success:focus{
-
     background-color:var(--gold-soft);
-
     border-color:var(--gold-soft);
-
     color:#1A1611;
-
 }
 
-/* Bouton secondaire : contour or */
-
 .btn-outline-secondary{
-
     border-color:var(--border);
-
     color:var(--text-muted);
-
     background:transparent;
-
 }
 
 .btn-outline-secondary:hover{
-
     border-color:var(--gold);
-
     color:var(--gold);
-
     background:transparent;
-
 }
 
-/* Bouton du panier (header) */
-
 .btn-outline-gold{
-
     border:1px solid var(--gold-deep);
-
     color:var(--gold);
-
     background:transparent;
-
 }
 
 .btn-outline-gold:hover,
 .btn-outline-gold:focus{
-
     border-color:var(--gold);
-
     color:var(--gold-soft);
-
     background:rgba(198,161,91,.08);
-
 }
 
 /* ---------- Panier (offcanvas) ---------- */
 
 .offcanvas{
-
     background:var(--surface);
-
     color:var(--text);
-
     border-left:1px solid var(--gold-deep);
-
 }
 
 .offcanvas-header{
-
     border-bottom:1px solid var(--border);
-
 }
 
 .offcanvas .card{
-
     background:var(--surface-alt);
-
 }
 
 .btn-close{
-
     filter:invert(1) grayscale(1) brightness(1.4);
-
 }
 
-/* Confirmation WhatsApp : on garde le vert WhatsApp,
-   reconnaissable, mais assombri pour rester dans l'ambiance */
-
 .alert-success{
-
     background-color:rgba(37,211,102,.12);
-
     border:1px solid rgba(37,211,102,.35);
-
     color:#8FE3B2;
-
 }
 
 /* ---------- Footer ---------- */
 
 footer{
-
     background:var(--bg);
-
     border-top:1px solid var(--border);
-
     color:var(--text-muted);
-
 }
 
 /* ---------- Animation ---------- */
 
 .fade-in{
-
     animation:fade .4s ease;
-
 }
 
 @keyframes fade{
-
     from{
-
         opacity:0;
-
         transform:translateY(10px);
-
     }
-
     to{
-
         opacity:1;
-
         transform:translateY(0);
-
     }
-
 }
 
 #productImage{
-
     transition: opacity .28s ease-in-out;
-
 }
 
-/* Miniatures : transition douce sur le changement de contour actif */
-
 .gallery-viewer img{
-
     transition: border-color .2s ease, transform .15s ease;
-
 }
 
 .gallery-viewer img:not(#productImage):hover{
-
     transform: scale(1.05);
-
 }
 
-/* ---------- Accessibilité : focus clavier visible ---------- */
+/* ---------- Accessibilité ---------- */
 
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 select:focus-visible{
-
     outline:2px solid var(--gold);
-
     outline-offset:2px;
-
 }
 
 /* ---------- Livraison & Paiement ---------- */
 
 .info-bloc{
-
     display:flex;
-
     gap:16px;
-
     align-items:flex-start;
-
 }
 
 .info-icone{
-
     flex-shrink:0;
-
     width:44px;
-
     height:44px;
-
     border-radius:50%;
-
     border:1px solid var(--gold-deep);
-
     color:var(--gold);
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     font-size:18px;
-
 }
 
 .info-bloc h6{
-
     font-family:var(--font-body);
-
     text-transform:uppercase;
-
     letter-spacing:.08em;
-
     font-size:12.5px;
-
     color:var(--gold);
-
     margin-bottom:8px;
-
 }
 
 .info-bloc p{
-
     font-size:14px;
-
     line-height:1.6;
-
 }
 
 [lang="ar"] .info-bloc h6{
-
     letter-spacing:normal;
-
     text-transform:none;
-
 }
 
 /* ---------- Langue arabe / RTL ---------- */
 
 [lang="ar"]{
-
     font-family:var(--font-arabe);
-
 }
-
-/* L'arabe est une écriture cursive : les lettres capitales et
-   l'espacement des lettres n'existent pas, on désactive donc ces
-   effets typographiques latins sur les libellés en arabe */
 
 [lang="ar"] .form-label,
 [lang="ar"] .option-title,
 [lang="ar"] .card-header h4,
 [lang="ar"] .summary-label,
 [lang="ar"] .btn{
-
     letter-spacing:normal;
-
     text-transform:none;
-
 }
-
-/* Le nom de la marque reste toujours en écriture latine,
-   quelle que soit la langue choisie */
 
 .brand-name,
 .brand-subtitle{
-
     font-family:var(--font-display);
-
 }
 
 .brand-subtitle{
-
     font-family:var(--font-body);
-
 }
 
-/* Bouton de changement de langue */
-
 .btn-langue{
-
     font-family:var(--font-body);
-
     font-size:12.5px;
-
     padding:8px 14px;
-
 }
 
 [lang="ar"] .btn-langue{
-
     font-family:var(--font-body);
+}
 
+/* ---------- Toast ---------- */
+
+.toast-container{
+    position:fixed;
+    top:20px;
+    right:20px;
+    z-index:9999;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    pointer-events:none;
+}
+
+[dir="rtl"] .toast-container{
+    right:auto;
+    left:20px;
+}
+
+.toast-item{
+    pointer-events:auto;
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    min-width:300px;
+    max-width:420px;
+    padding:16px 18px;
+    background:var(--surface);
+    border:1px solid var(--gold-deep);
+    border-inline-start:3px solid var(--gold);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow);
+    color:var(--text);
+    font-family:var(--font-body);
+    font-size:14px;
+    line-height:1.5;
+    opacity:0;
+    transform:translateX(40px);
+    transition:opacity .35s ease, transform .35s ease;
+}
+
+[dir="rtl"] .toast-item{
+    transform:translateX(-40px);
+}
+
+.toast-item.toast-show{
+    opacity:1;
+    transform:translateX(0);
+}
+
+.toast-item.toast-hide{
+    opacity:0;
+    transform:translateX(40px);
+}
+
+[dir="rtl"] .toast-item.toast-hide{
+    transform:translateX(-40px);
+}
+
+.toast-icon{
+    flex-shrink:0;
+    font-size:20px;
+    color:var(--gold);
+    margin-top:1px;
+}
+
+.toast-content{
+    flex-grow:1;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.toast-message{
+    color:var(--text);
+    font-weight:500;
+}
+
+.toast-action{
+    align-self:flex-start;
+    background:transparent;
+    border:1px solid var(--gold-deep);
+    color:var(--gold);
+    padding:6px 14px;
+    border-radius:var(--radius);
+    font-size:12px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    cursor:pointer;
+    transition:var(--transition);
+    font-family:var(--font-body);
+}
+
+.toast-action:hover,
+.toast-action:focus{
+    border-color:var(--gold);
+    background:rgba(198,161,91,.12);
+    color:var(--gold-soft);
+}
+
+.toast-close{
+    flex-shrink:0;
+    background:none;
+    border:none;
+    color:var(--text-muted);
+    font-size:18px;
+    cursor:pointer;
+    padding:0;
+    width:24px;
+    height:24px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:color .2s;
+}
+
+.toast-close:hover,
+.toast-close:focus{
+    color:var(--gold);
 }
 
 /* ---------- Responsive ---------- */
 
 @media(max-width:992px){
-
     #productImage{
-
         height:350px;
-
     }
-
 }
 
 @media(max-width:768px){
-
     .site-header .container{
-
         flex-direction:column;
-
         gap:12px;
-
         text-align:center;
-
     }
-
     #productImage{
-
         height:280px;
-
     }
-
     .btn{
-
         width:100%;
-
         margin-bottom:10px;
-
     }
-
     .text-end{
-
         text-align:center !important;
-
     }
-
-}
-/* ---------- Toast ---------- */
-
-.toast-container {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    pointer-events: none;
-}
-
-[dir="rtl"] .toast-container {
-    right: auto;
-    left: 20px;
-}
-
-.toast-item {
-    pointer-events: auto;
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    min-width: 300px;
-    max-width: 420px;
-    padding: 16px 18px;
-    background: var(--surface);
-    border: 1px solid var(--gold-deep);
-    border-inline-start: 3px solid var(--gold);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow);
-    color: var(--text);
-    font-family: var(--font-body);
-    font-size: 14px;
-    line-height: 1.5;
-    opacity: 0;
-    transform: translateX(40px);
-    transition: opacity .35s ease, transform .35s ease;
-}
-
-[dir="rtl"] .toast-item {
-    transform: translateX(-40px);
-}
-
-.toast-item.toast-show {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.toast-item.toast-hide {
-    opacity: 0;
-    transform: translateX(40px);
-}
-
-[dir="rtl"] .toast-item.toast-hide {
-    transform: translateX(-40px);
-}
-
-.toast-icon {
-    flex-shrink: 0;
-    font-size: 20px;
-    color: var(--gold);
-    margin-top: 1px;
-}
-
-.toast-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.toast-message {
-    color: var(--text);
-    font-weight: 500;
-}
-
-.toast-action {
-    align-self: flex-start;
-    background: transparent;
-    border: 1px solid var(--gold-deep);
-    color: var(--gold);
-    padding: 6px 14px;
-    border-radius: var(--radius);
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: .06em;
-    cursor: pointer;
-    transition: var(--transition);
-    font-family: var(--font-body);
-}
-
-.toast-action:hover,
-.toast-action:focus {
-    border-color: var(--gold);
-    background: rgba(198,161,91,.12);
-    color: var(--gold-soft);
-}
-
-.toast-close {
-    flex-shrink: 0;
-    background: none;
-    border: none;
-    color: var(--text-muted);
-    font-size: 18px;
-    cursor: pointer;
-    padding: 0;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: color .2s;
-}
-
-.toast-close:hover,
-.toast-close:focus {
-    color: var(--gold);
-}
-
-/* Responsive toast */
-@media(max-width:576px) {
-    .toast-container {
-        right: 12px;
-        left: 12px;
-        top: 12px;
+    .toast-container{
+        right:12px;
+        left:12px;
+        top:12px;
     }
-    [dir="rtl"] .toast-container {
-        left: 12px;
-        right: 12px;
+    [dir="rtl"] .toast-container{
+        left:12px;
+        right:12px;
     }
-    .toast-item {
-        min-width: unset;
-        width: 100%;
+    .toast-item{
+        min-width:unset;
+        width:100%;
     }
 }
