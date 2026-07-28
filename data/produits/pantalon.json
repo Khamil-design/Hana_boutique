@@ -1,225 +1,207 @@
 {
   "id": "pantalon",
-
-  "nom": "Pantalon Homme",
-
-  "categorie": "Vêtements",
-
-  "description": "Pantalon personnalisable selon vos préférences.",
-
+  "nom": {
+    "fr": "Pantalon Homme",
+    "ar": "بنطلون رجالي"
+  },
+  "categorie": {
+    "fr": "Vêtements",
+    "ar": "ملابس"
+  },
+  "description": {
+    "fr": "Pantalon personnalisable selon vos préférences.",
+    "ar": "بنطلون قابل للتخصيص حسب رغبتك."
+  },
   "reference": "PAN-001",
-
   "prixBase": 40,
-
-  "devise": "€",
-
-"images":  {
+  "devise": "DH",
+  "images": {
     "dependDe": "couleur",
-
     "parCouleur": {
-
-        "noir": [
-            "images/pantalon/noir/principal.jpg",
-            "images/pantalon/noir/profil.jpg",
-            "images/pantalon/noir/dos.jpg",
-            "images/pantalon/noir/detail.jpg"
-        ],
-
-        "bleu": [
-            "images/pantalon/bleu/principal.jpg",
-            "images/pantalon/bleu/profil.jpg",
-            "images/pantalon/bleu/dos.jpg",
-            "images/pantalon/bleu/detail.jpg"
-        ],
-
-        "gris": [
-            "images/pantalon/gris/parincipale.jpg",
-            "images/pantalon/gris/profil.jpg",
-            "images/pantalon/gris/dos.jpg",
-            "images/pantalon/gris/detail.jpg"
-        ],
-
-        "vertPistache": [
-            "images/pantalon/vert/principale.jpg",
-            "images/pantalon/vert/profil.jpg",
-            "images/pantalon/vert/dos.jpg",
-            "images/pantalon/vert/detail.jpg"
-        ]
-
+      "noir": [
+        "images/pantalon/noir/principal.jpg",
+        "images/pantalon/noir/profil.jpg",
+        "images/pantalon/noir/dos.jpg",
+        "images/pantalon/noir/detail.jpg"
+      ],
+      "bleu": [
+        "images/pantalon/bleu/principal.jpg",
+        "images/pantalon/bleu/profil.jpg",
+        "images/pantalon/bleu/dos.jpg",
+        "images/pantalon/bleu/detail.jpg"
+      ],
+      "gris": [
+        "images/pantalon/gris/parincipale.jpg",
+        "images/pantalon/gris/profil.jpg",
+        "images/pantalon/gris/dos.jpg",
+        "images/pantalon/gris/detail.jpg"
+      ],
+      "vertPistache": [
+        "images/pantalon/vert/principale.jpg",
+        "images/pantalon/vert/profil.jpg",
+        "images/pantalon/vert/dos.jpg",
+        "images/pantalon/vert/detail.jpg"
+      ]
     }
-},
-
+  },
   "options": [
-
     {
       "id": "taille",
-
-      "nom": "Taille",
-
+      "nom": {
+        "fr": "Taille",
+        "ar": "المقاس"
+      },
       "type": "select",
-
       "obligatoire": true,
-
       "valeurDefaut": "M",
-
       "choix": [
-
         {
           "id": "S",
-          "libelle": "S",
+          "libelle": {
+            "fr": "S",
+            "ar": "S"
+          },
           "prix": 0
         },
-
         {
           "id": "M",
-          "libelle": "M",
+          "libelle": {
+            "fr": "M",
+            "ar": "M"
+          },
           "prix": 5
         },
-
         {
           "id": "L",
-          "libelle": "L",
+          "libelle": {
+            "fr": "L",
+            "ar": "L"
+          },
           "prix": 10
         },
-
         {
           "id": "XL",
-          "libelle": "XL",
+          "libelle": {
+            "fr": "XL",
+            "ar": "XL"
+          },
           "prix": 15
         }
-
       ]
-
     },
-
     {
       "id": "couleur",
-
-      "nom": "Couleur",
-
+      "nom": {
+        "fr": "Couleur",
+        "ar": "اللون"
+      },
       "type": "radio",
-
       "obligatoire": true,
-
       "choix": [
-
         {
           "id": "noir",
-          "libelle": "Noir",
+          "libelle": {
+            "fr": "Noir",
+            "ar": "أسود"
+          },
           "prix": 0,
           "codeCouleur": "#000000"
         },
-
         {
           "id": "bleu",
-          "libelle": "Bleu",
+          "libelle": {
+            "fr": "Bleu",
+            "ar": "أزرق"
+          },
           "prix": 3,
           "codeCouleur": "#0d6efd"
         },
-
         {
           "id": "gris",
-          "libelle": "Gris",
+          "libelle": {
+            "fr": "Gris",
+            "ar": "رمادي"
+          },
           "prix": 2,
           "codeCouleur": "#6c757d"
         },
-
         {
           "id": "vertPistache",
-          "libelle": "Vert pistache",
+          "libelle": {
+            "fr": "Vert pistache",
+            "ar": "أخضر فستقي"
+          },
           "prix": 5,
           "codeCouleur": "#A9C299"
         }
-
       ]
-
     },
-
     {
       "id": "matiere",
-
-      "nom": "Matière",
-
+      "nom": {
+        "fr": "Matière",
+        "ar": "الخامة"
+      },
       "type": "select",
-
       "obligatoire": true,
-
       "valeurDefaut": "coton",
-
       "choix": [
-
         {
           "id": "coton",
-          "libelle": "Coton",
+          "libelle": {
+            "fr": "Coton",
+            "ar": "قطن"
+          },
           "prix": 0
         },
-
         {
           "id": "jean",
-          "libelle": "Jean",
+          "libelle": {
+            "fr": "Jean",
+            "ar": "جينز"
+          },
           "prix": 12
         },
-
         {
           "id": "lin",
-          "libelle": "Lin",
+          "libelle": {
+            "fr": "Lin",
+            "ar": "كتان"
+          },
           "prix": 20
         }
-
       ]
-
     },
-
     {
       "id": "broderie",
-
-      "nom": "Broderie personnalisée",
-
+      "nom": {
+        "fr": "Broderie personnalisée",
+        "ar": "تطريز مخصص"
+      },
       "type": "checkbox",
-
       "prix": 15,
-
       "valeurDefaut": false
-
     },
-
     {
       "id": "quantite",
-
-      "nom": "Quantité",
-
+      "nom": {
+        "fr": "Quantité",
+        "ar": "الكمية"
+      },
       "type": "number",
-
       "minimum": 1,
-
       "maximum": 20,
-
       "valeurDefaut": 1
-
     }
-
   ],
-
-  "regles": [
-
-  ],
-
+  "regles": [],
   "stock": {
-
     "gestion": false,
-
     "quantite": 0
-
   },
-
   "promotion": {
-
     "active": false,
-
     "type": "pourcentage",
-
     "valeur": 0
-
   }
-
 }
