@@ -3,6 +3,7 @@
  * Gestion de toute l'interface utilisateur
  ********************************************************************/
 import Galerie from "./galerie.js";
+import { champ, getLangue } from "./i18n.js";
 export default class UI {
 
     constructor() {
@@ -18,11 +19,15 @@ export default class UI {
      **************************************************************/
     afficherProduit(produit){
 
+        const langue = getLangue();
+
+        const nomProduit = champ(produit.nom, langue);
+
         document.getElementById("productTitle").textContent =
-            produit.nom;
+            nomProduit;
 
         document.getElementById("productDescription").textContent =
-            produit.description;
+            champ(produit.description, langue);
 
 // Initialisation de la galerie
 
@@ -35,7 +40,7 @@ if (produit.images.parCouleur) {
 
     this.galerie.initialiser(
         produit.images.parCouleur[premiereCouleur],
-        produit.nom
+        nomProduit
     );
 
 }
@@ -54,14 +59,37 @@ else {
 
     ];
 
-    this.galerie.initialiser(images, produit.nom);
+    this.galerie.initialiser(images, nomProduit);
 
 }
 }
+    /**
+     * Retraduit le titre/la description du produit affiché,
+     * sans toucher à la couleur/l'image actuellement sélectionnée
+     * (utilisé lors d'un changement de langue, pas d'un changement
+     * de produit ou de couleur).
+     */
+    retraduireProduit(produit){
+
+        const langue = getLangue();
+
+        const nomProduit = champ(produit.nom, langue);
+
+        document.getElementById("productTitle").textContent =
+            nomProduit;
+
+        document.getElementById("productDescription").textContent =
+            champ(produit.description, langue);
+
+        this.galerie.mettreAJourNom(nomProduit);
+
+    }
     /**************************************************************
      * Génération automatique des options
      **************************************************************/
     genererOptions(options){
+
+        const langue = getLangue();
 
         this.form.innerHTML = "";
 
@@ -70,6 +98,8 @@ else {
             const bloc = document.createElement("div");
 
             bloc.className = "option-group";
+
+            bloc.dataset.optionId = option.id;
 
             // Pour select/number : un vrai <label> relié au champ.
             // Pour radio/checkbox : chaque choix a déjà son propre
@@ -89,7 +119,7 @@ else {
 
             }
 
-            titre.textContent = option.nom;
+            titre.textContent = champ(option.nom, langue);
 
             bloc.appendChild(titre);
 
@@ -127,10 +157,120 @@ else {
 
     }
 
+    /**
+     * Retraduit les libellés des options déjà générées, SANS
+     * reconstruire le formulaire — les choix déjà faits par le
+     * client (taille, couleur, quantité...) restent intacts.
+     * Utilisé uniquement lors d'un changement de langue.
+     */
+    retraduireOptions(options){
+
+        const langue = getLangue();
+
+        options.forEach(option => {
+
+            const bloc = this.form.querySelector(
+
+                `[data-option-id="${option.id}"]`
+
+            );
+
+            if (!bloc) {
+
+                return;
+
+            }
+
+            const titre = bloc.querySelector(".option-title");
+
+            if (titre) {
+
+                titre.textContent = champ(option.nom, langue);
+
+            }
+
+            switch (option.type) {
+
+                case "select": {
+
+                    const select = bloc.querySelector("select");
+
+                    if (select) {
+
+                        Array.from(select.options).forEach(opt => {
+
+                            const choix = option.choix.find(
+                                c => c.id === opt.value
+                            );
+
+                            if (choix) {
+
+                                opt.textContent =
+                                    `${champ(choix.libelle, langue)} (+${choix.prix})`;
+
+                            }
+
+                        });
+
+                    }
+
+                    break;
+
+                }
+
+                case "radio": {
+
+                    const labels =
+                        bloc.querySelectorAll(".form-check-label");
+
+                    labels.forEach((label, index) => {
+
+                        const choix = option.choix[index];
+
+                        if (choix) {
+
+                            label.textContent =
+                                `${champ(choix.libelle, langue)} (+${choix.prix})`;
+
+                        }
+
+                    });
+
+                    break;
+
+                }
+
+                case "checkbox": {
+
+                    const label =
+                        bloc.querySelector(".form-check-label");
+
+                    if (label) {
+
+                        label.textContent =
+                            `${champ(option.nom, langue)} (+${option.prix})`;
+
+                    }
+
+                    break;
+
+                }
+
+                // "number" : le titre du groupe suffit, rien de plus
+                // à traduire sur le champ lui-même.
+
+            }
+
+        });
+
+    }
+
     /**************************************************************
      * SELECT
      **************************************************************/
     creerSelect(option){
+
+        const langue = getLangue();
 
         const select = document.createElement("select");
 
@@ -145,7 +285,7 @@ else {
             opt.value = choix.id;
 
             opt.textContent =
-                `${choix.libelle} (+${choix.prix})`;
+                `${champ(choix.libelle, langue)} (+${choix.prix})`;
 
             if(option.valeurDefaut===choix.id)
                 opt.selected=true;
@@ -162,6 +302,8 @@ else {
      * RADIO
      **************************************************************/
     creerRadio(option){
+
+        const langue = getLangue();
 
         const div = document.createElement("div");
 
@@ -196,7 +338,7 @@ else {
             label.htmlFor=radio.id;
 
             label.textContent=
-                `${choix.libelle} (+${choix.prix})`;
+                `${champ(choix.libelle, langue)} (+${choix.prix})`;
 
             wrapper.appendChild(radio);
 
@@ -214,6 +356,8 @@ else {
      * CHECKBOX
      **************************************************************/
     creerCheckbox(option){
+
+        const langue = getLangue();
 
         const wrapper=document.createElement("div");
 
@@ -237,7 +381,7 @@ else {
         label.htmlFor=option.id;
 
         label.textContent=
-            `${option.nom} (+${option.prix})`;
+            `${champ(option.nom, langue)} (+${option.prix})`;
 
         wrapper.appendChild(check);
 
