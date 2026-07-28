@@ -1,10 +1,6 @@
 /*****************************************************************
  * i18n.js
  * Dictionnaire de traduction de l'interface (FR / AR)
- *
- * Les textes du contenu produit (noms, descriptions, options)
- * sont eux stockés directement dans les fichiers JSON de chaque
- * produit sous la forme { "fr": "...", "ar": "..." }.
  *****************************************************************/
 
 export const LANGUE_PAR_DEFAUT = "fr";
@@ -63,8 +59,14 @@ export const traductions = {
         livraisonAutres: "Autres villes : livraison possible sur devis — contactez-nous directement via WhatsApp.",
         paiementTitre: "Paiement",
         paiementTexte: "Paiement à la livraison (espèces) ou par virement bancaire — les coordonnées bancaires vous seront communiquées par WhatsApp après confirmation de votre commande.",
+
+        // Toast
         produitAjoute: "Produit ajouté au panier",
         voirMonPanier: "Voir mon panier",
+
+        // === NOUVEAU : Vider le panier ===
+        viderPanier: "Vider",
+
     },
 
     ar: {
@@ -119,16 +121,18 @@ export const traductions = {
         livraisonAutres: "المدن الأخرى: التوصيل متاح حسب الطلب — تواصلوا معنا مباشرة عبر واتساب.",
         paiementTitre: "الدفع",
         paiementTexte: "الدفع عند الاستلام (نقدًا) أو عن طريق التحويل البنكي — سيتم إرسال المعلومات البنكية عبر واتساب بعد تأكيد طلبكم.",
+
+        // Toast
         produitAjoute: "تمت إضافة المنتج إلى السلة",
         voirMonPanier: "عرض السلة",
+
+        // === NOUVEAU : Vider le panier ===
+        viderPanier: "إفراغ",
 
     }
 
 };
 
-/**
- * Langue actuellement sélectionnée, mémorisée d'une visite à l'autre.
- */
 let langueCourante = LANGUE_PAR_DEFAUT;
 
 try {
@@ -145,8 +149,6 @@ try {
 
 catch (erreur) {
 
-    // Stockage indisponible (navigation privée, etc.) : on
-    // reste simplement sur la langue par défaut pour cette visite.
     console.warn("i18n : impossible de lire la langue enregistrée.", erreur);
 
 }
@@ -181,10 +183,6 @@ export function setLangue(langue) {
 
 }
 
-/**
- * Renvoie le texte traduit correspondant à la clé, pour la
- * langue donnée (repli sur le français si la clé est absente).
- */
 export function t(cle, langue) {
 
     const dict = traductions[langue] || traductions[LANGUE_PAR_DEFAUT];
@@ -195,12 +193,6 @@ export function t(cle, langue) {
 
 }
 
-/**
- * Extrait la bonne langue d'un champ bilingue venant des
- * fichiers produits, ex: { fr: "...", ar: "..." }.
- * Si le champ est une simple chaîne (ancien format), on la
- * renvoie telle quelle par sécurité.
- */
 export function champ(valeur, langue) {
 
     if (valeur === undefined || valeur === null) {
