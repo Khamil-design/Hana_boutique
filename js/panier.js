@@ -3,6 +3,8 @@
  * Gestion du panier
  *****************************************************************/
 
+import { t, getLangue } from "./i18n.js";
+
 export default class Panier {
 
     constructor() {
@@ -15,6 +17,9 @@ export default class Panier {
         // sans le "+" ni espaces). À remplacer par le numéro
         // professionnel définitif le moment venu.
         this.numeroWhatsApp = "212676725257";
+
+        // Devise affichée dans le panier et le message de commande
+        this.devise = "DH";
 
         this.ecouterCheckout();
 
@@ -46,7 +51,9 @@ export default class Panier {
      **************************************************************/
     construireMessageWhatsApp() {
 
-        let message = "Bonjour, je souhaite commander :\n\n";
+        const langue = getLangue();
+
+        let message = t("bonjourCommande", langue) + "\n\n";
 
         this.articles.forEach((article, index) => {
 
@@ -58,15 +65,15 @@ export default class Panier {
 
             });
 
-            message += `   - Quantité : ${article.quantitePanier}\n`;
+            message += `   - ${t("quantiteLabel", langue)} : ${article.quantitePanier}\n`;
 
-            message += `   - Prix : ${(
+            message += `   - ${t("prixLabel", langue)} : ${(
                 article.prixUnitaire * article.quantitePanier
-            ).toFixed(2)} €\n\n`;
+            ).toFixed(2)} ${this.devise}\n\n`;
 
         });
 
-        message += `Total : ${this.total().toFixed(2)} €`;
+        message += `${t("totalCommandeLabel", langue)} : ${this.total().toFixed(2)} ${this.devise}`;
 
         return message;
 
@@ -91,7 +98,7 @@ export default class Panier {
 
                 <p class="text-muted mb-0">
 
-                    Votre panier est vide.
+                    ${t("panierVide", getLangue())}
 
                 </p>
 
@@ -123,9 +130,7 @@ export default class Panier {
 
                 <i class="bi bi-whatsapp fs-3 d-block mb-2"></i>
 
-                Vous allez être redirigé vers WhatsApp pour envoyer
-                votre commande. Il ne vous reste qu'à appuyer sur
-                "Envoyer" là-bas !
+                ${t("confirmationWhatsApp", getLangue())}
 
             </div>
 
@@ -226,7 +231,11 @@ ajouter(article, quantiteInitiale = 1) {
 
     const index = this.articles.findIndex(item =>
 
-        item.produit === article.produit &&
+        (
+            article.produitId
+                ? item.produitId === article.produitId
+                : item.produit === article.produit
+        ) &&
 
         JSON.stringify(item.configuration) ===
         JSON.stringify(article.configuration)
@@ -394,13 +403,13 @@ afficher() {
 
             <p class="text-muted">
 
-                Votre panier est vide.
+                ${t("panierVide", getLangue())}
 
             </p>
 
         `;
 
-        total.textContent = "0 €";
+        total.textContent = "0 " + this.devise;
 
         return;
 
@@ -441,26 +450,11 @@ afficher() {
 
             <small class="text-muted">
 
-                ${Object.entries(article.configuration)
+                ${(article.details || [])
 
-                    .map(([cle, valeur]) => {
-
-                        const labels = {
-
-                            couleur: "Couleur",
-                            taille: "Taille",
-                            longueur: "Longueur",
-                            matiere: "Matière",
-                            quantite: "Quantité"
-
-                        };
-
-                        return `
-                            <strong>${labels[cle] || cle}</strong> :
-                            ${String(valeur).charAt(0).toUpperCase() + String(valeur).slice(1)}
-                        `;
-
-                    })
+                    .map(detail =>
+                        `<strong>${detail.label}</strong> : ${detail.valeur}`
+                    )
 
                     .join("<br>")
                 }
@@ -471,7 +465,7 @@ afficher() {
     <button
         class="btn btn-sm btn-outline-secondary btn-moins"
         data-index="${index}"
-        aria-label="Diminuer la quantité">
+        aria-label="${t("diminuerQuantite", getLangue())}">
 
         <i class="bi bi-dash"></i>
 
@@ -486,7 +480,7 @@ afficher() {
     <button
         class="btn btn-sm btn-outline-secondary btn-plus"
         data-index="${index}"
-        aria-label="Augmenter la quantité">
+        aria-label="${t("augmenterQuantite", getLangue())}">
 
         <i class="bi bi-plus"></i>
 
@@ -498,14 +492,14 @@ afficher() {
 
                 <strong>
 
-                    ${(article.prixUnitaire * (article.quantitePanier || 1)).toFixed(2)} €
+                    ${(article.prixUnitaire * (article.quantitePanier || 1)).toFixed(2)} ${this.devise}
 
                 </strong>
 
                 <button
                     class="btn btn-sm btn-outline-danger btn-supprimer"
                     data-index="${index}"
-                    aria-label="Retirer cet article du panier">
+                    aria-label="${t("retirerArticle", getLangue())}">
 
                     <i class="bi bi-trash"></i>
 
@@ -560,7 +554,7 @@ zone.querySelectorAll(".btn-supprimer").forEach(btn => {
 
 });
     total.textContent =
-        this.total().toFixed(2) + " €";
+        this.total().toFixed(2) + " " + this.devise;
 
 }
 }
