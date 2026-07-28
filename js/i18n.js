@@ -68,8 +68,9 @@ export const traductions = {
         // Vider panier
         viderPanier: "Vider",
 
-        // === NOUVEAU : Code promo ===
-        codePromoPlaceholder: "Code promo (ex: HANA10)",
+        // Code promo
+        codePromoTitre: "Code promo",
+        codePromoPlaceholder: "HANA10",
         appliquerPromo: "Appliquer",
         retirerPromo: "Retirer",
         promoInvalide: "Code promo invalide.",
@@ -139,8 +140,9 @@ export const traductions = {
         // Vider panier
         viderPanier: "إفراغ",
 
-        // === NOUVEAU : Code promo ===
-        codePromoPlaceholder: "رمز التخفيض (مثال: HANA10)",
+        // Code promo
+        codePromoTitre: "رمز التخفيض",
+        codePromoPlaceholder: "HANA10",
         appliquerPromo: "تطبيق",
         retirerPromo: "إزالة",
         promoInvalide: "رمز التخفيض غير صالح.",
