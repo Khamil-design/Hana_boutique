@@ -1,9 +1,12 @@
 /* =====================================================
    HANA BOUTIQUE
-   style.css — identité chic & élégante (noir / or)
+   style.css — identité chic & élégante
+   Thèmes : Sombre (dark) & Clair (light)
 ===================================================== */
 
-/* ---------- Variables ---------- */
+/* =====================================================
+   VARIABLES — Thème SOMBRE (par défaut)
+===================================================== */
 
 :root {
 
@@ -43,18 +46,54 @@
 
 }
 
-/* ---------- Général ---------- */
+/* =====================================================
+   VARIABLES — Thème CLAIR
+===================================================== */
+
+[data-theme="light"] {
+
+    /* Fond & surfaces */
+    --bg:            #F8F6F3;
+    --surface:       #FFFFFF;
+    --surface-alt:   #F2EFEA;
+    --border:        #E5E2DE;
+    --border-soft:   #EDEAE6;
+
+    /* Or reste identique */
+    --gold:          #C6A15B;
+    --gold-soft:     #A88940;
+    --gold-deep:     #8C6D2F;
+
+    /* Texte inversé */
+    --text:          #1A1A1A;
+    --text-muted:    #8A8279;
+
+    /* Accents */
+    --success:       #3E7A67;
+    --danger:        #B0524C;
+    --whatsapp:      #25D366;
+
+    --shadow:
+        0 10px 30px rgba(0,0,0,.08);
+
+}
+
+/* =====================================================
+   GÉNÉRAL
+===================================================== */
 
 body{
     background:var(--bg);
     color:var(--text);
     font-family:var(--font-body);
     font-size:15px;
+    transition: background-color .35s ease, color .35s ease;
 }
 
 h1,h2,h3,h4,h5,h6{
     font-family:var(--font-display);
     color:var(--text);
+    transition: color .35s ease;
 }
 
 a{
@@ -72,13 +111,17 @@ a{
     letter-spacing:.09em;
     font-size:12.5px;
     color:var(--text-muted);
+    transition: color .35s ease;
 }
 
-/* ---------- Header / Marque ---------- */
+/* =====================================================
+   HEADER / MARQUE
+===================================================== */
 
 .site-header{
     background:var(--bg);
     border-bottom:1px solid var(--gold-deep);
+    transition: background-color .35s ease, border-color .35s ease;
 }
 
 .brand{
@@ -106,6 +149,7 @@ a{
     font-size:28px;
     letter-spacing:.06em;
     color:var(--text);
+    transition: color .35s ease;
 }
 
 .brand-subtitle{
@@ -117,15 +161,57 @@ a{
     margin-top:2px;
 }
 
-/* ---------- Titre produit ---------- */
+/* =====================================================
+   BOUTON TOGGLE THÈME
+===================================================== */
+
+.btn-theme{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:1px solid var(--gold-deep);
+    background:transparent;
+    color:var(--gold);
+    font-size:16px;
+    cursor:pointer;
+    transition:var(--transition);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0;
+}
+
+.btn-theme:hover,
+.btn-theme:focus{
+    border-color:var(--gold);
+    background:rgba(198,161,91,.12);
+    color:var(--gold-soft);
+}
+
+[data-theme="light"] .btn-theme{
+    color:var(--gold-deep);
+    border-color:var(--gold);
+}
+
+[data-theme="light"] .btn-theme:hover{
+    background:rgba(198,161,91,.15);
+    color:var(--gold);
+}
+
+/* =====================================================
+   TITRE PRODUIT
+===================================================== */
 
 .product-title{
     font-weight:600;
     font-size:32px;
     color:var(--text);
+    transition: color .35s ease;
 }
 
-/* ---------- Cartes ---------- */
+/* =====================================================
+   CARTES
+===================================================== */
 
 .card{
     background:var(--surface);
@@ -133,7 +219,7 @@ a{
     border-radius:var(--radius-lg);
     box-shadow:var(--shadow);
     overflow:hidden;
-    transition:var(--transition);
+    transition: background-color .35s ease, border-color .35s ease, box-shadow .35s ease;
     color:var(--text);
 }
 
@@ -141,13 +227,17 @@ a{
     background:var(--surface-alt);
     border-bottom:1px solid var(--border);
     font-weight:600;
+    transition: background-color .35s ease, border-color .35s ease;
 }
 
 .card-body{
     color:var(--text);
+    transition: color .35s ease;
 }
 
-/* ---------- Galerie photo ---------- */
+/* =====================================================
+   GALERIE PHOTO
+===================================================== */
 
 .gallery{
     display:flex;
@@ -191,7 +281,9 @@ a{
     color:var(--gold-soft);
 }
 
-/* ---------- Image ---------- */
+/* =====================================================
+   IMAGE
+===================================================== */
 
 #productImage{
     width:100%;
@@ -200,6 +292,7 @@ a{
     background:var(--surface-alt);
     border:1px solid var(--border);
     border-radius:var(--radius);
+    transition: background-color .35s ease, border-color .35s ease;
 }
 
 /* Miniatures */
@@ -208,15 +301,20 @@ a{
     border-color:var(--gold) !important;
 }
 
-/* ---------- Description ---------- */
+/* =====================================================
+   DESCRIPTION
+===================================================== */
 
 #productDescription{
     font-size:15px;
     line-height:1.7;
     color:var(--text-muted);
+    transition: color .35s ease;
 }
 
-/* ---------- Formulaire ---------- */
+/* =====================================================
+   FORMULAIRE
+===================================================== */
 
 #configForm{
     display:flex;
@@ -227,6 +325,7 @@ a{
 .option-group{
     padding-bottom:15px;
     border-bottom:1px solid var(--border-soft);
+    transition: border-color .35s ease;
 }
 
 .option-group:last-child{
@@ -239,7 +338,9 @@ a{
     margin-bottom:10px;
 }
 
-/* ---------- Radios ---------- */
+/* =====================================================
+   RADIOS
+===================================================== */
 
 .form-check{
     margin-bottom:8px;
@@ -251,11 +352,13 @@ a{
     display:flex;
     align-items:center;
     gap:10px;
+    transition: color .35s ease;
 }
 
 .form-check-input{
     background-color:var(--surface-alt);
     border-color:var(--border);
+    transition: background-color .35s ease, border-color .35s ease;
 }
 
 .form-check-input:checked{
@@ -268,7 +371,9 @@ a{
     box-shadow:0 0 0 .2rem rgba(198,161,91,.25);
 }
 
-/* ---------- Pastilles de couleur ---------- */
+/* =====================================================
+   PASTILLES DE COULEUR
+===================================================== */
 
 .color-swatch{
     display:inline-block;
@@ -287,7 +392,9 @@ a{
     transform:scale(1.15);
 }
 
-/* ---------- Select ---------- */
+/* =====================================================
+   SELECT
+===================================================== */
 
 .form-select,
 .form-control{
@@ -295,6 +402,7 @@ a{
     border:1px solid var(--border);
     color:var(--text);
     border-radius:var(--radius);
+    transition: background-color .35s ease, border-color .35s ease, color .35s ease;
 }
 
 .form-select:focus,
@@ -310,13 +418,17 @@ a{
     color:var(--text);
 }
 
-/* ---------- Nombre ---------- */
+/* =====================================================
+   NOMBRE
+===================================================== */
 
 input[type=number]{
     max-width:130px;
 }
 
-/* ---------- Prix ---------- */
+/* =====================================================
+   PRIX
+===================================================== */
 
 #totalPrice{
     font-family:var(--font-display);
@@ -325,7 +437,9 @@ input[type=number]{
     font-size:34px;
 }
 
-/* ---------- Récapitulatif ---------- */
+/* =====================================================
+   RÉCAPITULATIF
+===================================================== */
 
 #summary{
     display:flex;
@@ -339,6 +453,7 @@ input[type=number]{
     align-items:center;
     padding:8px 0;
     border-bottom:1px dashed var(--border);
+    transition: border-color .35s ease;
 }
 
 .summary-row:last-child{
@@ -350,7 +465,9 @@ input[type=number]{
     font-weight:600;
 }
 
-/* ---------- Boutons ---------- */
+/* =====================================================
+   BOUTONS
+===================================================== */
 
 .btn{
     border-radius:var(--radius);
@@ -377,7 +494,6 @@ input[type=number]{
     color:#1A1611;
 }
 
-/* Bouton Commander désactivé */
 .btn-success:disabled,
 .btn-success.disabled{
     background-color:var(--border) !important;
@@ -391,6 +507,7 @@ input[type=number]{
     border-color:var(--border);
     color:var(--text-muted);
     background:transparent;
+    transition: border-color .35s ease, color .35s ease;
 }
 
 .btn-outline-secondary:hover{
@@ -403,6 +520,7 @@ input[type=number]{
     border:1px solid var(--gold-deep);
     color:var(--gold);
     background:transparent;
+    transition: border-color .35s ease, color .35s ease, background-color .35s ease;
 }
 
 .btn-outline-gold:hover,
@@ -412,24 +530,33 @@ input[type=number]{
     background:rgba(198,161,91,.08);
 }
 
-/* ---------- Panier (offcanvas) ---------- */
+/* =====================================================
+   PANIER (offcanvas)
+===================================================== */
 
 .offcanvas{
     background:var(--surface);
     color:var(--text);
     border-left:1px solid var(--gold-deep);
+    transition: background-color .35s ease, border-color .35s ease, color .35s ease;
 }
 
 .offcanvas-header{
     border-bottom:1px solid var(--border);
+    transition: border-color .35s ease;
 }
 
 .offcanvas .card{
     background:var(--surface-alt);
+    transition: background-color .35s ease;
 }
 
 .btn-close{
     filter:invert(1) grayscale(1) brightness(1.4);
+}
+
+[data-theme="light"] .btn-close{
+    filter:invert(0) grayscale(0) brightness(0.4);
 }
 
 .alert-success{
@@ -438,15 +565,26 @@ input[type=number]{
     color:#8FE3B2;
 }
 
-/* ---------- Footer ---------- */
+[data-theme="light"] .alert-success{
+    background-color:rgba(37,211,102,.08);
+    border:1px solid rgba(37,211,102,.25);
+    color:#2E8B57;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer{
     background:var(--bg);
     border-top:1px solid var(--border);
     color:var(--text-muted);
+    transition: background-color .35s ease, border-color .35s ease, color .35s ease;
 }
 
-/* ---------- Animation ---------- */
+/* =====================================================
+   ANIMATIONS
+===================================================== */
 
 .fade-in{
     animation:fade .4s ease;
@@ -464,7 +602,7 @@ footer{
 }
 
 #productImage{
-    transition: opacity .28s ease-in-out;
+    transition: opacity .28s ease-in-out, background-color .35s ease, border-color .35s ease;
 }
 
 .gallery-viewer img{
@@ -475,7 +613,9 @@ footer{
     transform: scale(1.05);
 }
 
-/* ---------- Accessibilité ---------- */
+/* =====================================================
+   ACCESSIBILITÉ
+===================================================== */
 
 a:focus-visible,
 button:focus-visible,
@@ -485,7 +625,9 @@ select:focus-visible{
     outline-offset:2px;
 }
 
-/* ---------- Livraison & Paiement ---------- */
+/* =====================================================
+   LIVRAISON & PAIEMENT
+===================================================== */
 
 .info-bloc{
     display:flex;
@@ -504,6 +646,7 @@ select:focus-visible{
     align-items:center;
     justify-content:center;
     font-size:18px;
+    transition: border-color .35s ease, color .35s ease;
 }
 
 .info-bloc h6{
@@ -518,6 +661,8 @@ select:focus-visible{
 .info-bloc p{
     font-size:14px;
     line-height:1.6;
+    color:var(--text-muted);
+    transition: color .35s ease;
 }
 
 [lang="ar"] .info-bloc h6{
@@ -525,7 +670,9 @@ select:focus-visible{
     text-transform:none;
 }
 
-/* ---------- Langue arabe / RTL ---------- */
+/* =====================================================
+   LANGUE ARABE / RTL
+===================================================== */
 
 [lang="ar"]{
     font-family:var(--font-arabe);
@@ -559,7 +706,9 @@ select:focus-visible{
     font-family:var(--font-body);
 }
 
-/* ---------- Toast ---------- */
+/* =====================================================
+   TOAST
+===================================================== */
 
 .toast-container{
     position:fixed;
@@ -596,7 +745,7 @@ select:focus-visible{
     line-height:1.5;
     opacity:0;
     transform:translateX(40px);
-    transition:opacity .35s ease, transform .35s ease;
+    transition: opacity .35s ease, transform .35s ease, background-color .35s ease, border-color .35s ease, color .35s ease;
 }
 
 [dir="rtl"] .toast-item{
@@ -634,6 +783,7 @@ select:focus-visible{
 .toast-message{
     color:var(--text);
     font-weight:500;
+    transition: color .35s ease;
 }
 
 .toast-action{
@@ -680,7 +830,9 @@ select:focus-visible{
     color:var(--gold);
 }
 
-/* ---------- Animation badge panier ---------- */
+/* =====================================================
+   ANIMATION BADGE PANIER
+===================================================== */
 
 @keyframes badgePulse{
     0%   { transform: scale(1); }
@@ -702,7 +854,9 @@ select:focus-visible{
     animation: badgePulse .5s ease;
 }
 
-/* ---------- Code Promo ---------- */
+/* =====================================================
+   CODE PROMO
+===================================================== */
 
 .promo-section{
     margin-bottom: 12px;
@@ -719,6 +873,7 @@ select:focus-visible{
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: .04em;
+    transition: background-color .35s ease, border-color .35s ease, color .35s ease;
 }
 
 .promo-section .form-control:focus{
@@ -740,7 +895,6 @@ select:focus-visible{
     min-width: unset;
 }
 
-/* === NOUVEAU : Label Code Promo === */
 .promo-label{
     display: block;
     font-family: var(--font-body);
@@ -749,6 +903,7 @@ select:focus-visible{
     font-size: 11px;
     color: var(--text-muted);
     margin-bottom: 6px;
+    transition: color .35s ease;
 }
 
 .promo-message{
@@ -766,7 +921,9 @@ select:focus-visible{
     color: var(--danger);
 }
 
-/* ---------- Responsive ---------- */
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
 @media(max-width:992px){
     #productImage{
