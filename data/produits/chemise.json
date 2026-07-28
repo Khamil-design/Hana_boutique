@@ -1,228 +1,255 @@
 {
   "id": "chemise",
-
-  "nom": "Chemise Homme",
-
-  "categorie": "Vêtements",
-
-  "description": "Chemise personnalisable selon la taille, la couleur, le col, les manches et le tissu.",
-
+  "nom": {
+    "fr": "Chemise Homme",
+    "ar": "قميص رجالي"
+  },
+  "categorie": {
+    "fr": "Vêtements",
+    "ar": "ملابس"
+  },
+  "description": {
+    "fr": "Chemise personnalisable selon la taille, la couleur, le col, les manches et le tissu.",
+    "ar": "قميص قابل للتخصيص حسب المقاس واللون والياقة والأكمام والقماش."
+  },
   "reference": "CHE-001",
-
   "prixBase": 35,
-
-  "devise": "€",
-
+  "devise": "DH",
   "images": {
     "dependDe": "couleur",
-
     "parCouleur": {
-
-        "blanche": [
-            "images/chemise/blanche/principale.jpg",
-            "images/chemise/blanche/profil.jpg",
-            "images/chemise/blanche/dos.jpg",
-            "images/chemise/blanche/detail.jpg"
-        ],
-
-        "beige": [
-            "images/chemise/beige/principale.jpg",
-            "images/chemise/beige/profil.jpg",
-            "images/chemise/beige/dos.jpg",
-            "images/chemise/beige/detail.jpg"
-        ],
-
-        "bleu": [
-            "images/chemise/bleu/principale.jpg",
-            "images/chemise/bleu/profil.jpg",
-            "images/chemise/bleu/dos.jpg",
-            "images/chemise/bleu/detail.jpg"
-        ]
-
+      "blanche": [
+        "images/chemise/blanche/principale.jpg",
+        "images/chemise/blanche/profil.jpg",
+        "images/chemise/blanche/dos.jpg",
+        "images/chemise/blanche/detail.jpg"
+      ],
+      "beige": [
+        "images/chemise/beige/principale.jpg",
+        "images/chemise/beige/profil.jpg",
+        "images/chemise/beige/dos.jpg",
+        "images/chemise/beige/detail.jpg"
+      ],
+      "bleu": [
+        "images/chemise/bleu/principale.jpg",
+        "images/chemise/bleu/profil.jpg",
+        "images/chemise/bleu/dos.jpg",
+        "images/chemise/bleu/detail.jpg"
+      ]
     }
   },
-
   "options": [
-
     {
       "id": "taille",
-
-      "nom": "Taille",
-
+      "nom": {
+        "fr": "Taille",
+        "ar": "المقاس"
+      },
       "type": "select",
-
       "obligatoire": true,
-
       "valeurDefaut": "M",
-
       "choix": [
-        { "id": "S",  "libelle": "S",  "prix": 0 },
-        { "id": "M",  "libelle": "M",  "prix": 3 },
-        { "id": "L",  "libelle": "L",  "prix": 6 },
-        { "id": "XL", "libelle": "XL", "prix": 9 }
+        {
+          "id": "S",
+          "libelle": {
+            "fr": "S",
+            "ar": "S"
+          },
+          "prix": 0
+        },
+        {
+          "id": "M",
+          "libelle": {
+            "fr": "M",
+            "ar": "M"
+          },
+          "prix": 3
+        },
+        {
+          "id": "L",
+          "libelle": {
+            "fr": "L",
+            "ar": "L"
+          },
+          "prix": 6
+        },
+        {
+          "id": "XL",
+          "libelle": {
+            "fr": "XL",
+            "ar": "XL"
+          },
+          "prix": 9
+        }
       ]
     },
-
     {
       "id": "couleur",
-
-      "nom": "Couleur",
-
+      "nom": {
+        "fr": "Couleur",
+        "ar": "اللون"
+      },
       "type": "radio",
-
       "obligatoire": true,
-
       "choix": [
         {
           "id": "blanche",
-          "libelle": "Blanche",
+          "libelle": {
+            "fr": "Blanche",
+            "ar": "أبيض"
+          },
           "prix": 0,
           "codeCouleur": "#FFFFFF"
         },
         {
           "id": "beige",
-          "libelle": "Beige",
+          "libelle": {
+            "fr": "Beige",
+            "ar": "بيج"
+          },
           "prix": 0,
           "codeCouleur": "#E8DCC6"
         },
         {
           "id": "bleu",
-          "libelle": "Bleu marine",
+          "libelle": {
+            "fr": "Bleu marine",
+            "ar": "أزرق كحلي"
+          },
           "prix": 2,
           "codeCouleur": "#1B263B"
         }
       ]
     },
-
     {
       "id": "col",
-
-      "nom": "Type de col",
-
+      "nom": {
+        "fr": "Type de col",
+        "ar": "نوع الياقة"
+      },
       "type": "select",
-
       "obligatoire": true,
-
       "valeurDefaut": "classique",
-
       "choix": [
         {
           "id": "classique",
-          "libelle": "Classique",
+          "libelle": {
+            "fr": "Classique",
+            "ar": "كلاسيكي"
+          },
           "prix": 0
         },
         {
           "id": "italien",
-          "libelle": "Italien",
+          "libelle": {
+            "fr": "Italien",
+            "ar": "إيطالي"
+          },
           "prix": 5
         },
         {
           "id": "mao",
-          "libelle": "Mao",
+          "libelle": {
+            "fr": "Mao",
+            "ar": "ماو"
+          },
           "prix": 7
         }
       ]
     },
-
     {
       "id": "manches",
-
-      "nom": "Manches",
-
+      "nom": {
+        "fr": "Manches",
+        "ar": "الأكمام"
+      },
       "type": "radio",
-
       "obligatoire": true,
-
       "choix": [
         {
           "id": "courtes",
-          "libelle": "Courtes",
+          "libelle": {
+            "fr": "Courtes",
+            "ar": "قصيرة"
+          },
           "prix": 0
         },
         {
           "id": "longues",
-          "libelle": "Longues",
+          "libelle": {
+            "fr": "Longues",
+            "ar": "طويلة"
+          },
           "prix": 4
         }
       ]
     },
-
     {
       "id": "tissu",
-
-      "nom": "Tissu",
-
+      "nom": {
+        "fr": "Tissu",
+        "ar": "القماش"
+      },
       "type": "select",
-
       "obligatoire": true,
-
       "valeurDefaut": "coton",
-
       "choix": [
         {
           "id": "coton",
-          "libelle": "Coton",
+          "libelle": {
+            "fr": "Coton",
+            "ar": "قطن"
+          },
           "prix": 0
         },
         {
           "id": "lin",
-          "libelle": "Lin",
+          "libelle": {
+            "fr": "Lin",
+            "ar": "كتان"
+          },
           "prix": 10
         },
         {
           "id": "soie",
-          "libelle": "Soie",
+          "libelle": {
+            "fr": "Soie",
+            "ar": "حرير"
+          },
           "prix": 25
         }
       ]
     },
-
     {
       "id": "broderie",
-
-      "nom": "Broder les initiales",
-
+      "nom": {
+        "fr": "Broder les initiales",
+        "ar": "تطريز الأحرف الأولى"
+      },
       "type": "checkbox",
-
       "prix": 12,
-
       "valeurDefaut": false
     },
-
     {
       "id": "quantite",
-
-      "nom": "Quantité",
-
+      "nom": {
+        "fr": "Quantité",
+        "ar": "الكمية"
+      },
       "type": "number",
-
       "minimum": 1,
-
       "maximum": 20,
-
       "valeurDefaut": 1
     }
-
   ],
-
   "regles": [],
-
   "stock": {
-
     "gestion": false,
-
     "quantite": 0
-
   },
-
   "promotion": {
-
     "active": false,
-
     "type": "pourcentage",
-
     "valeur": 0
-
   }
-
 }
