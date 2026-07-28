@@ -712,6 +712,74 @@ select:focus-visible{
 
 }
 
+/* ---------- Livraison & Paiement ---------- */
+
+.info-bloc{
+
+    display:flex;
+
+    gap:16px;
+
+    align-items:flex-start;
+
+}
+
+.info-icone{
+
+    flex-shrink:0;
+
+    width:44px;
+
+    height:44px;
+
+    border-radius:50%;
+
+    border:1px solid var(--gold-deep);
+
+    color:var(--gold);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:18px;
+
+}
+
+.info-bloc h6{
+
+    font-family:var(--font-body);
+
+    text-transform:uppercase;
+
+    letter-spacing:.08em;
+
+    font-size:12.5px;
+
+    color:var(--gold);
+
+    margin-bottom:8px;
+
+}
+
+.info-bloc p{
+
+    font-size:14px;
+
+    line-height:1.6;
+
+}
+
+[lang="ar"] .info-bloc h6{
+
+    letter-spacing:normal;
+
+    text-transform:none;
+
+}
+
 /* ---------- Langue arabe / RTL ---------- */
 
 [lang="ar"]{
