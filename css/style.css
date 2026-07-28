@@ -681,7 +681,21 @@ footer{
 
 #productImage{
 
-    transition: opacity .25s ease-in-out;
+    transition: opacity .28s ease-in-out;
+
+}
+
+/* Miniatures : transition douce sur le changement de contour actif */
+
+.gallery-viewer img{
+
+    transition: border-color .2s ease, transform .15s ease;
+
+}
+
+.gallery-viewer img:not(#productImage):hover{
+
+    transform: scale(1.05);
 
 }
 
