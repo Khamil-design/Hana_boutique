@@ -53,6 +53,8 @@ export function setTheme(theme) {
  */
 export function appliquerTheme(theme) {
 
+    console.log("[Theme] Application du thème :", theme);
+
     const html = document.documentElement;
 
     html.setAttribute("data-theme", theme);
@@ -87,6 +89,8 @@ export function basculerTheme() {
     const actuel = getTheme();
     const nouveau = actuel === THEME_CLAIR ? THEME_SOMBRE : THEME_CLAIR;
 
+    console.log("[Theme] Basculement :", actuel, "→", nouveau);
+
     setTheme(nouveau);
     appliquerTheme(nouveau);
 
@@ -101,9 +105,15 @@ export function ecouterToggleTheme() {
 
     const btnToggle = document.getElementById("btnTheme");
 
-    if (!btnToggle) return;
+    if (!btnToggle) {
+        console.warn("[Theme] Bouton btnTheme introuvable dans le DOM !");
+        return;
+    }
+
+    console.log("[Theme] Écouteur attaché au bouton toggle");
 
     btnToggle.addEventListener("click", () => {
+        console.log("[Theme] Clic détecté sur le bouton toggle");
         basculerTheme();
     });
 
@@ -115,6 +125,7 @@ export function ecouterToggleTheme() {
 export function initialiserTheme() {
 
     const theme = getTheme();
+    console.log("[Theme] Thème initial :", theme);
     appliquerTheme(theme);
     ecouterToggleTheme();
 
