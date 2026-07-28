@@ -250,7 +250,7 @@ document.getElementById("cartBadge").textContent =
 
 //const panneau = bootstrap.Offcanvas.getOrCreateInstance(
     document.getElementById("panierCanvas")
-);
+
 
 panneau.show();/
         // Toast de confirmation au lieu d'ouvrir brutalement le panier
