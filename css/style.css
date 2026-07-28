@@ -281,14 +281,6 @@ a{
     box-shadow:inset 0 0 0 1px rgba(0,0,0,.2);
 }
 
-.form-check-input:checked ~ .form-check-label .color-swatch,
-.form-check-label:has(+ .form-check-input:checked) .color-swatch{
-    border-color:var(--gold);
-    box-shadow:0 0 0 2px var(--gold-deep), inset 0 0 0 1px rgba(0,0,0,.2);
-    transform:scale(1.15);
-}
-
-/* Support navigateurs sans :has() */
 .form-check-input:checked + .form-check-label .color-swatch{
     border-color:var(--gold);
     box-shadow:0 0 0 2px var(--gold-deep), inset 0 0 0 1px rgba(0,0,0,.2);
@@ -676,6 +668,81 @@ select:focus-visible{
 .toast-close:hover,
 .toast-close:focus{
     color:var(--gold);
+}
+
+/* ---------- Animation badge panier ---------- */
+
+@keyframes badgePulse{
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.35); }
+    70%  { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+#cartBadge{
+    transition: transform .2s ease;
+    display: none;
+}
+
+#cartBadge:not(:empty){
+    display: block;
+}
+
+#cartBadge.badge-pulse{
+    animation: badgePulse .5s ease;
+}
+
+/* ---------- Code Promo ---------- */
+
+.promo-section{
+    margin-bottom: 12px;
+}
+
+.promo-section .input-group{
+    gap: 8px;
+}
+
+.promo-section .form-control{
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.promo-section .form-control:focus{
+    border-color: var(--gold);
+    box-shadow: 0 0 0 .2rem rgba(198,161,91,.25);
+    background: var(--surface-alt);
+    color: var(--text);
+}
+
+.promo-section .form-control:disabled{
+    opacity: 0.5;
+    background: var(--bg);
+    cursor: not-allowed;
+}
+
+.promo-section .btn{
+    padding: 6px 14px;
+    font-size: 11.5px;
+    min-width: unset;
+}
+
+.promo-message{
+    font-size: 12.5px;
+    margin-top: 6px;
+    min-height: 18px;
+    font-weight: 500;
+}
+
+.promo-message.success{
+    color: var(--success);
+}
+
+.promo-message.error{
+    color: var(--danger);
 }
 
 /* ---------- Responsive ---------- */
