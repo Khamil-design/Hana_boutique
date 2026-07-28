@@ -18,6 +18,7 @@ export default class Panier {
         this.devise = "DH";
 
         this.ecouterCheckout();
+        this.ecouterVider();
 
     }
 
@@ -34,6 +35,28 @@ export default class Panier {
         bouton.addEventListener("click", () => {
 
             this.commander();
+
+        });
+
+    }
+
+    /**************************************************************
+     * Ecoute le bouton "Vider le panier"
+     **************************************************************/
+    ecouterVider() {
+
+        const bouton = document.getElementById("btnViderPanier");
+
+        if (!bouton) {
+
+            return;
+
+        }
+
+        bouton.addEventListener("click", () => {
+
+            this.vider();
+            this.afficher();
 
         });
 
@@ -275,9 +298,6 @@ export default class Panier {
 
     }
 
-    /**************************************************************
-     * Mise à jour du badge avec animation pulse
-     **************************************************************/
     mettreAJourBadge() {
 
         const badge = document.getElementById("cartBadge");
@@ -292,22 +312,16 @@ export default class Panier {
 
         badge.textContent = nombre;
 
-        // Masquer le badge si vide, sinon l'afficher
         if (nombre === 0) {
             badge.style.display = "none";
         } else {
             badge.style.display = "block";
         }
 
-        // Animation pulse
         badge.classList.remove("badge-pulse");
-
-        // Force le reflow pour relancer l'animation
         void badge.offsetWidth;
-
         badge.classList.add("badge-pulse");
 
-        // Nettoyage après l'animation
         setTimeout(() => {
             badge.classList.remove("badge-pulse");
         }, 500);
