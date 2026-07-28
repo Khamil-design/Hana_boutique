@@ -31,6 +31,7 @@
     /* Typo */
     --font-display:  'Cormorant Garamond', Georgia, serif;
     --font-body:     'Jost', 'Segoe UI', Arial, sans-serif;
+    --font-arabe:    'Cairo', 'Segoe UI', Tahoma, sans-serif;
 
     --radius: 4px;
     --radius-lg: 6px;
@@ -694,6 +695,64 @@ select:focus-visible{
     outline:2px solid var(--gold);
 
     outline-offset:2px;
+
+}
+
+/* ---------- Langue arabe / RTL ---------- */
+
+[lang="ar"]{
+
+    font-family:var(--font-arabe);
+
+}
+
+/* L'arabe est une écriture cursive : les lettres capitales et
+   l'espacement des lettres n'existent pas, on désactive donc ces
+   effets typographiques latins sur les libellés en arabe */
+
+[lang="ar"] .form-label,
+[lang="ar"] .option-title,
+[lang="ar"] .card-header h4,
+[lang="ar"] .summary-label,
+[lang="ar"] .btn{
+
+    letter-spacing:normal;
+
+    text-transform:none;
+
+}
+
+/* Le nom de la marque reste toujours en écriture latine,
+   quelle que soit la langue choisie */
+
+.brand-name,
+.brand-subtitle{
+
+    font-family:var(--font-display);
+
+}
+
+.brand-subtitle{
+
+    font-family:var(--font-body);
+
+}
+
+/* Bouton de changement de langue */
+
+.btn-langue{
+
+    font-family:var(--font-body);
+
+    font-size:12.5px;
+
+    padding:8px 14px;
+
+}
+
+[lang="ar"] .btn-langue{
+
+    font-family:var(--font-body);
 
 }
 
