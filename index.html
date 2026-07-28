@@ -34,7 +34,6 @@
     <!-- Feuille de style -->
     <link rel="stylesheet" href="css/style.css">
 
-<base target="_blank">
 </head>
 
 <body>
@@ -66,6 +65,14 @@
         </div>
 
         <div class="d-flex align-items-center gap-2">
+
+            <!-- === NOUVEAU : Toggle thème clair/sombre === -->
+            <button
+                id="btnTheme"
+                class="btn btn-theme"
+                aria-label="Passer au thème clair">
+                <i class="bi bi-sun-fill"></i>
+            </button>
 
             <button
                 id="btnLangue"
@@ -242,7 +249,6 @@
         </h4>
 
         <div class="d-flex align-items-center gap-2">
-            <!-- === NOUVEAU : Bouton Vider le panier === -->
             <button
                 id="btnViderPanier"
                 class="btn btn-sm btn-outline-danger"
