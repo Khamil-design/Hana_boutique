@@ -5,6 +5,7 @@
  ********************************************************************/
 
 import Configurateur from "./configurateur.js";
+import { getLangue, setLangue, t, champ } from "./i18n.js";
 
 export default class Application {
 
@@ -21,6 +22,11 @@ export default class Application {
     async demarrer() {
 
         try {
+
+            // Applique la langue mémorisée (ou le français par défaut)
+            this.appliquerLangue(getLangue());
+
+            this.ecouterSelecteurLangue();
 
             // Chargement du catalogue
             this.catalogue = await this.chargerCatalogue();
@@ -54,6 +60,133 @@ export default class Application {
 
     }
 
+    /**************************************************************
+     * Langue (FR / AR)
+     **************************************************************/
+
+    appliquerLangue(langue) {
+
+        const html = document.documentElement;
+
+        html.lang = langue;
+
+        html.dir = langue === "ar" ? "rtl" : "ltr";
+
+        // Bascule Bootstrap sur sa version RTL en arabe
+        const bootstrapCss =
+            document.getElementById("bootstrapCss");
+
+        if (bootstrapCss) {
+
+            bootstrapCss.href = langue === "ar"
+                ? "https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.rtl.min.css"
+                : "https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css";
+
+        }
+
+        // Titre de page et meta description
+        document.title = t("titrePage", langue);
+
+        const meta =
+            document.querySelector('meta[name="description"]');
+
+        if (meta) {
+
+            meta.content = t("metaDescription", langue);
+
+        }
+
+        // Tous les textes statiques marqués data-i18n
+        document.querySelectorAll("[data-i18n]").forEach(el => {
+
+            el.textContent = t(el.dataset.i18n, langue);
+
+        });
+
+        // Tous les aria-label statiques marqués data-i18n-aria
+        document.querySelectorAll("[data-i18n-aria]").forEach(el => {
+
+            el.setAttribute(
+                "aria-label",
+                t(el.dataset.i18nAria, langue)
+            );
+
+        });
+
+        // Pied de page (avec année dynamique)
+        const footerText =
+            document.getElementById("footerText");
+
+        if (footerText) {
+
+            const annee = new Date().getFullYear();
+
+            footerText.textContent =
+                `${t("footer", langue)} © ${annee}`;
+
+        }
+
+        // Bouton de langue : propose l'AUTRE langue
+        const boutonLangue =
+            document.getElementById("btnLangue");
+
+        if (boutonLangue) {
+
+            const autreLangue = langue === "ar" ? "fr" : "ar";
+
+            boutonLangue.textContent = t("nomLangue", autreLangue);
+
+            boutonLangue.setAttribute(
+                "aria-label",
+                t("selecteurLangueLabel", langue)
+            );
+
+        }
+
+        // Si un produit est déjà affiché, on le retraduit sans
+        // recharger la page (titre, description, options, panier...)
+        if (this.configurateur) {
+
+            this.configurateur.changerLangue(langue);
+
+        }
+
+        // Le menu déroulant des produits doit aussi être retraduit
+        if (this.catalogue) {
+
+            this.genererSelecteurProduits();
+
+        }
+
+    }
+
+    /**
+     * Ecoute le clic sur le bouton de changement de langue
+     */
+    ecouterSelecteurLangue() {
+
+        const bouton =
+            document.getElementById("btnLangue");
+
+        if (!bouton) {
+
+            return;
+
+        }
+
+        bouton.addEventListener("click", () => {
+
+            const nouvelleLangue =
+                getLangue() === "ar" ? "fr" : "ar";
+
+            setLangue(nouvelleLangue);
+
+            this.appliquerLangue(nouvelleLangue);
+
+        });
+
+    }
+
     /**
      * Remplit le menu déroulant avec la liste des produits du catalogue
      */
@@ -68,6 +201,10 @@ export default class Application {
 
         }
 
+        const valeurActuelle = select.value;
+
+        const langue = getLangue();
+
         select.innerHTML = "";
 
         this.catalogue.produits.forEach(produit => {
@@ -77,11 +214,20 @@ export default class Application {
 
             option.value = produit.fichier;
 
-            option.textContent = produit.nom;
+            option.textContent = champ(produit.nom, langue);
 
             select.appendChild(option);
 
         });
+
+        // On garde le produit actuellement affiché sélectionné
+        // (utile quand cette fonction est rappelée après un
+        // changement de langue, pour ne pas revenir au 1er produit)
+        if (valeurActuelle) {
+
+            select.value = valeurActuelle;
+
+        }
 
     }
 
@@ -111,9 +257,7 @@ export default class Application {
 
                 console.error(erreur);
 
-                alert(
-                    "Ce produit n'a pas pu être chargé pour le moment. Merci de réessayer dans un instant."
-                );
+                alert(t("erreurChargementProduit", getLangue()));
 
             }
 
