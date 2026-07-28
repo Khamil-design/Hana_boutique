@@ -63,7 +63,8 @@ export const traductions = {
         livraisonAutres: "Autres villes : livraison possible sur devis — contactez-nous directement via WhatsApp.",
         paiementTitre: "Paiement",
         paiementTexte: "Paiement à la livraison (espèces) ou par virement bancaire — les coordonnées bancaires vous seront communiquées par WhatsApp après confirmation de votre commande.",
-
+        produitAjoute: "Produit ajouté au panier",
+        voirMonPanier: "Voir mon panier",
     },
 
     ar: {
@@ -118,6 +119,8 @@ export const traductions = {
         livraisonAutres: "المدن الأخرى: التوصيل متاح حسب الطلب — تواصلوا معنا مباشرة عبر واتساب.",
         paiementTitre: "الدفع",
         paiementTexte: "الدفع عند الاستلام (نقدًا) أو عن طريق التحويل البنكي — سيتم إرسال المعلومات البنكية عبر واتساب بعد تأكيد طلبكم.",
+        produitAjoute: "تمت إضافة المنتج إلى السلة",
+        voirMonPanier: "عرض السلة",
 
     }
 

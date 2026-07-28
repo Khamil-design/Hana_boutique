@@ -248,11 +248,22 @@ this.panier.afficher();
 document.getElementById("cartBadge").textContent =
     this.panier.nombreArticles();
 
-const panneau = bootstrap.Offcanvas.getOrCreateInstance(
+//const panneau = bootstrap.Offcanvas.getOrCreateInstance(
     document.getElementById("panierCanvas")
 );
 
-panneau.show();
+panneau.show();/
+        // Toast de confirmation au lieu d'ouvrir brutalement le panier
+        this.ui.afficherToast(
+            t("produitAjoute", getLangue()),
+            t("voirMonPanier", getLangue()),
+            () => {
+                const panneau = bootstrap.Offcanvas.getOrCreateInstance(
+                    document.getElementById("panierCanvas")
+                );
+                panneau.show();
+            }
+        );
 
 }
 

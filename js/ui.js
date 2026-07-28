@@ -13,7 +13,98 @@ export default class UI {
         this.total = document.getElementById("totalPrice");
         this.galerie = new Galerie();
     }
+    /**************************************************************
+     * Toast notification
+     **************************************************************/
+    afficherToast(message, actionText = null, actionCallback = null) {
 
+        const container = document.getElementById("toastContainer");
+
+        if (!container) return;
+
+        const toast = document.createElement("div");
+
+        toast.className = "toast-item";
+
+        toast.innerHTML = `
+
+            <i class="bi bi-check-circle-fill toast-icon"></i>
+
+            <div class="toast-content">
+
+                <div class="toast-message">${message}</div>
+
+                ${actionText ? `<button class="toast-action">${actionText}</button>` : ""}
+
+            </div>
+
+            <button class="toast-close" aria-label="${typeof t !== 'undefined' ? t("fermer", getLangue()) : "Fermer"}">
+
+                <i class="bi bi-x"></i>
+
+            </button>
+
+        `;
+
+        // Animation d'entrée
+        requestAnimationFrame(() => {
+
+            requestAnimationFrame(() => {
+
+                toast.classList.add("toast-show");
+
+            });
+
+        });
+
+        // Fermeture auto après 3.5s
+        const timeout = setTimeout(() => this.fermerToast(toast), 3500);
+
+        // Fermeture manuelle
+        toast.querySelector(".toast-close").addEventListener("click", () => {
+
+            clearTimeout(timeout);
+
+            this.fermerToast(toast);
+
+        });
+
+        // Action optionnelle (ex: "Voir mon panier")
+        if (actionText && actionCallback) {
+
+            toast.querySelector(".toast-action").addEventListener("click", () => {
+
+                clearTimeout(timeout);
+
+                actionCallback();
+
+                this.fermerToast(toast);
+
+            });
+
+        }
+
+        container.appendChild(toast);
+
+    }
+
+    fermerToast(toast) {
+
+        toast.classList.remove("toast-show");
+
+        toast.classList.add("toast-hide");
+
+        toast.addEventListener("transitionend", () => {
+
+            if (toast.parentElement) {
+
+                toast.remove();
+
+            }
+
+        });
+
+    }
     /**************************************************************
      * Affichage du produit
      **************************************************************/
