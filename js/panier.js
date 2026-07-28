@@ -54,9 +54,6 @@ export default class Panier {
 
     }
 
-    /**************************************************************
-     * Promo : validation
-     **************************************************************/
     validerCodePromo(code) {
 
         if (!code) return null;
@@ -67,9 +64,6 @@ export default class Panier {
 
     }
 
-    /**************************************************************
-     * Promo : calcul du montant de la remise
-     **************************************************************/
     calculerRemise(sousTotal) {
 
         if (!this.codePromoActif) return 0;
@@ -90,9 +84,6 @@ export default class Panier {
 
     }
 
-    /**************************************************************
-     * Promo : appliquer
-     **************************************************************/
     appliquerPromo(code) {
 
         const promo = this.validerCodePromo(code);
@@ -122,9 +113,6 @@ export default class Panier {
 
     }
 
-    /**************************************************************
-     * Promo : retirer
-     **************************************************************/
     retirerPromo() {
 
         this.codePromoActif = null;
@@ -133,9 +121,6 @@ export default class Panier {
 
     }
 
-    /**************************************************************
-     * Promo : persistance
-     **************************************************************/
     sauvegarderPromo() {
 
         try {
@@ -374,9 +359,6 @@ export default class Panier {
 
     }
 
-    /**************************************************************
-     * Sous-total (avant remise)
-     **************************************************************/
     sousTotal() {
         return this.articles.reduce(
             (total, article) =>
@@ -385,13 +367,29 @@ export default class Panier {
         );
     }
 
-    /**************************************************************
-     * Total (après remise promo)
-     **************************************************************/
     total() {
         const sousTotal = this.sousTotal();
         const remise = this.calculerRemise(sousTotal);
         return Math.max(0, sousTotal - remise);
+    }
+
+    /**************************************************************
+     * Met à jour l'état du bouton Commander (actif/inactif)
+     **************************************************************/
+    mettreAJourBoutonCommander() {
+
+        const btnCheckout = document.getElementById("btnCheckout");
+
+        if (!btnCheckout) return;
+
+        if (this.articles.length === 0) {
+            btnCheckout.disabled = true;
+            btnCheckout.classList.add("disabled");
+        } else {
+            btnCheckout.disabled = false;
+            btnCheckout.classList.remove("disabled");
+        }
+
     }
 
     afficher() {
@@ -411,12 +409,14 @@ export default class Panier {
         if (this.articles.length === 0) {
             zone.innerHTML = `<p class="text-muted">${t("panierVide", langue)}</p>`;
             totalEl.textContent = "0 " + this.devise;
+            this.mettreAJourBoutonCommander();
             return;
         }
 
-        // --- Section Code Promo ---
+        // --- Section Code Promo (avec label) ---
         let promoHTML = `
             <div class="promo-section mb-3">
+                <label for="codePromo" class="promo-label">${t("codePromoTitre", langue)}</label>
                 <div class="input-group input-group-sm">
                     <input
                         type="text"
@@ -566,6 +566,9 @@ export default class Panier {
         }
 
         totalEl.textContent = totalFinal.toFixed(2) + " " + this.devise;
+
+        // Met à jour l'état du bouton Commander
+        this.mettreAJourBoutonCommander();
 
     }
 }
