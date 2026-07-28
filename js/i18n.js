@@ -41,6 +41,7 @@ export const traductions = {
         quantiteLabel: "Quantité",
         prixLabel: "Prix",
         totalCommandeLabel: "Total",
+        sousTotalLabel: "Sous-total",
 
         erreurChargementProduit:
             "Ce produit n'a pas pu être chargé pour le moment. Merci de réessayer dans un instant.",
@@ -64,8 +65,16 @@ export const traductions = {
         produitAjoute: "Produit ajouté au panier",
         voirMonPanier: "Voir mon panier",
 
-        // === NOUVEAU : Vider le panier ===
+        // Vider panier
         viderPanier: "Vider",
+
+        // === NOUVEAU : Code promo ===
+        codePromoPlaceholder: "Code promo (ex: HANA10)",
+        appliquerPromo: "Appliquer",
+        retirerPromo: "Retirer",
+        promoInvalide: "Code promo invalide.",
+        promoValide: "Code promo appliqué !",
+        remiseLabel: "Remise",
 
     },
 
@@ -103,6 +112,7 @@ export const traductions = {
         quantiteLabel: "الكمية",
         prixLabel: "السعر",
         totalCommandeLabel: "المجموع",
+        sousTotalLabel: "المجموع الفرعي",
 
         erreurChargementProduit:
             "تعذر تحميل هذا المنتج حاليًا. يرجى المحاولة مرة أخرى بعد قليل.",
@@ -126,8 +136,16 @@ export const traductions = {
         produitAjoute: "تمت إضافة المنتج إلى السلة",
         voirMonPanier: "عرض السلة",
 
-        // === NOUVEAU : Vider le panier ===
+        // Vider panier
         viderPanier: "إفراغ",
+
+        // === NOUVEAU : Code promo ===
+        codePromoPlaceholder: "رمز التخفيض (مثال: HANA10)",
+        appliquerPromo: "تطبيق",
+        retirerPromo: "إزالة",
+        promoInvalide: "رمز التخفيض غير صالح.",
+        promoValide: "تم تطبيق رمز التخفيض!",
+        remiseLabel: "الخصم",
 
     }
 
