@@ -6,6 +6,7 @@
 import UI from "./ui.js";
 import Calculateur from "./calculateur.js";
 import Panier from "./panier.js";
+import { champ, getLangue, t } from "./i18n.js";
 export default class Configurateur {
 
     constructor(produit) {
@@ -66,6 +67,26 @@ export default class Configurateur {
         this.lireConfiguration();
 
         this.mettreAJour();
+
+    }
+
+    /**
+     * Changement de langue : retraduit le produit affiché et les
+     * options SANS toucher à la configuration en cours (le client
+     * garde ses choix), ni à la couleur/photo actuellement affichée.
+     */
+    changerLangue(langue) {
+
+        this.ui.retraduireProduit(this.produit);
+
+        this.ui.retraduireOptions(this.produit.options);
+
+        // Recalcule le récapitulatif (les libellés viennent de là)
+        // et le prix, désormais dans la nouvelle langue.
+        this.mettreAJour();
+
+        // Le panier (déjà affiché) doit aussi être retraduit.
+        this.panier.afficher();
 
     }
 
@@ -204,7 +225,8 @@ ajouterAuPanier() {
 
     const article = {
 
-        produit: this.produit.nom,
+        produit: champ(this.produit.nom, getLangue()),
+        produitId: this.produit.id,
         image: document.getElementById("productImage").src,
 
         configuration: {
@@ -243,6 +265,8 @@ construireDetailsLisibles() {
 
     const details = [];
 
+    const langue = getLangue();
+
     this.produit.options.forEach(option => {
 
         // La quantité est déjà affichée séparément dans le panier
@@ -258,7 +282,10 @@ construireDetailsLisibles() {
 
             if (valeur) {
 
-                details.push({ label: option.nom, valeur: "Oui" });
+                details.push({
+                    label: champ(option.nom, langue),
+                    valeur: t("oui", langue)
+                });
 
             }
 
@@ -278,8 +305,8 @@ construireDetailsLisibles() {
 
         details.push({
 
-            label: option.nom,
-            valeur: choix ? choix.libelle : valeur
+            label: champ(option.nom, langue),
+            valeur: choix ? champ(choix.libelle, langue) : valeur
 
         });
 
