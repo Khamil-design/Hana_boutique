@@ -2,14 +2,14 @@
   "produits": [
     {
       "id": "pantalon",
-      "nom": "Pantalon Homme",
-      "categorie": "Vêtements",
+      "nom": { "fr": "Pantalon Homme", "ar": "بنطلون رجالي" },
+      "categorie": { "fr": "Vêtements", "ar": "ملابس" },
       "fichier": "pantalon.json"
     },
     {
       "id": "chemise",
-      "nom": "Chemise Homme",
-      "categorie": "Vêtements",
+      "nom": { "fr": "Chemise Homme", "ar": "قميص رجالي" },
+      "categorie": { "fr": "Vêtements", "ar": "ملابس" },
       "fichier": "chemise.json"
     }
   ]
