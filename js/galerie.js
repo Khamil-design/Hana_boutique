@@ -111,6 +111,25 @@ export default class Galerie {
 
     }
 
+    /**
+     * Met à jour uniquement le nom du produit utilisé dans les
+     * textes alt (accessibilité), sans changer la photo affichée
+     * ni l'index en cours. Utilisé lors d'un changement de langue.
+     */
+    mettreAJourNom(nomProduit) {
+
+        this.nomProduit = nomProduit;
+
+        if (this.images.length) {
+
+            this.image.alt = `${this.nomProduit} — vue ${this.index + 1} sur ${this.images.length}`;
+
+        }
+
+        this.genererMiniatures();
+
+    }
+
 afficher() {
 
     // Disparition
