@@ -1,0 +1,205 @@
+/*****************************************************************
+ * i18n.js
+ * Dictionnaire de traduction de l'interface (FR / AR)
+ *
+ * Les textes du contenu produit (noms, descriptions, options)
+ * sont eux stockés directement dans les fichiers JSON de chaque
+ * produit sous la forme { "fr": "...", "ar": "..." }.
+ *****************************************************************/
+
+export const LANGUE_PAR_DEFAUT = "fr";
+
+export const traductions = {
+
+    fr: {
+
+        choisirProduit: "Choisir un produit",
+        personnalisation: "Personnalisation",
+        recapitulatif: "Récapitulatif",
+        prixTotalTitre: "Prix total",
+        reinitialiser: "Réinitialiser",
+        ajouterAuPanier: "Ajouter au panier",
+        monPanier: "Mon panier",
+        panierVide: "Votre panier est vide.",
+        totalLabel: "Total :",
+        commander: "Commander",
+        chargement: "Chargement...",
+        descriptionPlaceholder: "Description...",
+
+        voirLePanier: "Voir le panier",
+        photoPrecedente: "Photo précédente",
+        photoSuivante: "Photo suivante",
+        diminuerQuantite: "Diminuer la quantité",
+        augmenterQuantite: "Augmenter la quantité",
+        retirerArticle: "Retirer cet article du panier",
+        fermer: "Fermer",
+
+        footer: "Hana Boutique — Tous droits réservés",
+
+        photoAVenir: "Photo à venir",
+
+        confirmationWhatsApp:
+            "Vous allez être redirigé vers WhatsApp pour envoyer votre commande. Il ne vous reste qu'à appuyer sur \"Envoyer\" là-bas !",
+
+        bonjourCommande: "Bonjour, je souhaite commander :",
+        quantiteLabel: "Quantité",
+        prixLabel: "Prix",
+        totalCommandeLabel: "Total",
+
+        erreurChargementProduit:
+            "Ce produit n'a pas pu être chargé pour le moment. Merci de réessayer dans un instant.",
+
+        titrePage: "Hana Boutique — Configurateur",
+        metaDescription:
+            "Hana Boutique — pantalons et chemises pour homme personnalisables : choisissez la couleur, la taille et les finitions, et commandez directement via WhatsApp.",
+
+        nomLangue: "Français",
+        selecteurLangueLabel: "Changer de langue",
+        oui: "Oui",
+
+    },
+
+    ar: {
+
+        choisirProduit: "اختر منتجًا",
+        personnalisation: "التخصيص",
+        recapitulatif: "الملخص",
+        prixTotalTitre: "السعر الإجمالي",
+        reinitialiser: "إعادة تعيين",
+        ajouterAuPanier: "أضف إلى السلة",
+        monPanier: "سلتي",
+        panierVide: "سلتك فارغة.",
+        totalLabel: "المجموع:",
+        commander: "إتمام الطلب",
+        chargement: "جارٍ التحميل...",
+        descriptionPlaceholder: "...الوصف",
+
+        voirLePanier: "عرض السلة",
+        photoPrecedente: "الصورة السابقة",
+        photoSuivante: "الصورة التالية",
+        diminuerQuantite: "تقليل الكمية",
+        augmenterQuantite: "زيادة الكمية",
+        retirerArticle: "إزالة هذا المنتج من السلة",
+        fermer: "إغلاق",
+
+        footer: "هانا بوتيك — جميع الحقوق محفوظة",
+
+        photoAVenir: "الصورة غير متوفرة حاليًا",
+
+        confirmationWhatsApp:
+            "سيتم تحويلك إلى واتساب لإرسال طلبك. كل ما عليك هو الضغط على \"إرسال\" هناك!",
+
+        bonjourCommande: "مرحبًا، أرغب في طلب:",
+        quantiteLabel: "الكمية",
+        prixLabel: "السعر",
+        totalCommandeLabel: "المجموع",
+
+        erreurChargementProduit:
+            "تعذر تحميل هذا المنتج حاليًا. يرجى المحاولة مرة أخرى بعد قليل.",
+
+        titrePage: "هانا بوتيك — مُهيئ المنتجات",
+        metaDescription:
+            "هانا بوتيك — بناطيل وقمصان رجالية قابلة للتخصيص: اختر اللون والمقاس والتفاصيل، واطلب مباشرة عبر واتساب.",
+
+        nomLangue: "العربية",
+        selecteurLangueLabel: "تغيير اللغة",
+        oui: "نعم",
+
+    }
+
+};
+
+/**
+ * Langue actuellement sélectionnée, mémorisée d'une visite à l'autre.
+ */
+let langueCourante = LANGUE_PAR_DEFAUT;
+
+try {
+
+    const langueEnregistree = localStorage.getItem("hana_langue");
+
+    if (langueEnregistree && traductions[langueEnregistree]) {
+
+        langueCourante = langueEnregistree;
+
+    }
+
+}
+
+catch (erreur) {
+
+    // Stockage indisponible (navigation privée, etc.) : on
+    // reste simplement sur la langue par défaut pour cette visite.
+    console.warn("i18n : impossible de lire la langue enregistrée.", erreur);
+
+}
+
+export function getLangue() {
+
+    return langueCourante;
+
+}
+
+export function setLangue(langue) {
+
+    if (!traductions[langue]) {
+
+        return;
+
+    }
+
+    langueCourante = langue;
+
+    try {
+
+        localStorage.setItem("hana_langue", langue);
+
+    }
+
+    catch (erreur) {
+
+        console.warn("i18n : impossible d'enregistrer la langue choisie.", erreur);
+
+    }
+
+}
+
+/**
+ * Renvoie le texte traduit correspondant à la clé, pour la
+ * langue donnée (repli sur le français si la clé est absente).
+ */
+export function t(cle, langue) {
+
+    const dict = traductions[langue] || traductions[LANGUE_PAR_DEFAUT];
+
+    return dict[cle] !== undefined
+        ? dict[cle]
+        : traductions[LANGUE_PAR_DEFAUT][cle];
+
+}
+
+/**
+ * Extrait la bonne langue d'un champ bilingue venant des
+ * fichiers produits, ex: { fr: "...", ar: "..." }.
+ * Si le champ est une simple chaîne (ancien format), on la
+ * renvoie telle quelle par sécurité.
+ */
+export function champ(valeur, langue) {
+
+    if (valeur === undefined || valeur === null) {
+
+        return "";
+
+    }
+
+    if (typeof valeur === "string") {
+
+        return valeur;
+
+    }
+
+    return valeur[langue] !== undefined
+        ? valeur[langue]
+        : valeur[LANGUE_PAR_DEFAUT];
+
+}
