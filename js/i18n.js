@@ -57,6 +57,13 @@ export const traductions = {
         selecteurLangueLabel: "Changer de langue",
         oui: "Oui",
 
+        livraisonPaiementTitre: "Livraison & Paiement",
+        livraisonTitre: "Livraison",
+        livraisonTanger: "Tanger : livraison gratuite sous 24 à 48h.",
+        livraisonAutres: "Autres villes : livraison possible sur devis — contactez-nous directement via WhatsApp.",
+        paiementTitre: "Paiement",
+        paiementTexte: "Paiement à la livraison (espèces) ou par virement bancaire — les coordonnées bancaires vous seront communiquées par WhatsApp après confirmation de votre commande.",
+
     },
 
     ar: {
@@ -104,6 +111,13 @@ export const traductions = {
         nomLangue: "العربية",
         selecteurLangueLabel: "تغيير اللغة",
         oui: "نعم",
+
+        livraisonPaiementTitre: "التوصيل والدفع",
+        livraisonTitre: "التوصيل",
+        livraisonTanger: "طنجة: التوصيل مجاني خلال 24 إلى 48 ساعة.",
+        livraisonAutres: "المدن الأخرى: التوصيل متاح حسب الطلب — تواصلوا معنا مباشرة عبر واتساب.",
+        paiementTitre: "الدفع",
+        paiementTexte: "الدفع عند الاستلام (نقدًا) أو عن طريق التحويل البنكي — سيتم إرسال المعلومات البنكية عبر واتساب بعد تأكيد طلبكم.",
 
     }
 
