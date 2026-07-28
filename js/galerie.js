@@ -132,10 +132,12 @@ export default class Galerie {
 
 afficher() {
 
-    // Disparition
+    const DUREE_FONDU = 280; // ms — doit correspondre à la transition CSS de #productImage
+
+    // Disparition en fondu
     this.image.style.opacity = 0;
 
-    // Changement de l'image
+    // Changement de l'image une fois le fondu de sortie terminé
     setTimeout(() => {
 
         this.image.src = this.images[this.index];
@@ -144,14 +146,15 @@ afficher() {
             ? `${this.nomProduit} — vue ${this.index + 1} sur ${this.images.length}`
             : `Vue ${this.index + 1} sur ${this.images.length}`;
 
-    }, 180);
-
-    // Réapparition
-    this.image.onload = () => {
+        // Force le navigateur à prendre en compte le opacity:0
+        // avant de relancer la transition vers opacity:1 — sans
+        // ça, la réapparition peut sauter directement à 1 sans
+        // animation (notamment quand l'image vient du cache).
+        void this.image.offsetWidth;
 
         this.image.style.opacity = 1;
 
-    };
+    }, DUREE_FONDU);
 
     // Photo manquante ou cassée : on affiche un visuel de secours
     // plutôt que l'icône d'image cassée du navigateur
