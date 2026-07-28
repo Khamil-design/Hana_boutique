@@ -4,6 +4,7 @@
  ********************************************************************/
 import Galerie from "./galerie.js";
 import { champ, getLangue } from "./i18n.js";
+
 export default class UI {
 
     constructor() {
@@ -13,6 +14,7 @@ export default class UI {
         this.total = document.getElementById("totalPrice");
         this.galerie = new Galerie();
     }
+
     /**************************************************************
      * Toast notification
      **************************************************************/
@@ -27,84 +29,50 @@ export default class UI {
         toast.className = "toast-item";
 
         toast.innerHTML = `
-
             <i class="bi bi-check-circle-fill toast-icon"></i>
-
             <div class="toast-content">
-
                 <div class="toast-message">${message}</div>
-
                 ${actionText ? `<button class="toast-action">${actionText}</button>` : ""}
-
             </div>
-
-            <button class="toast-close" aria-label="${typeof t !== 'undefined' ? t("fermer", getLangue()) : "Fermer"}">
-
+            <button class="toast-close" aria-label="Fermer">
                 <i class="bi bi-x"></i>
-
             </button>
-
         `;
 
-        // Animation d'entrée
         requestAnimationFrame(() => {
-
             requestAnimationFrame(() => {
-
                 toast.classList.add("toast-show");
-
             });
-
         });
 
-        // Fermeture auto après 3.5s
         const timeout = setTimeout(() => this.fermerToast(toast), 3500);
 
-        // Fermeture manuelle
         toast.querySelector(".toast-close").addEventListener("click", () => {
-
             clearTimeout(timeout);
-
             this.fermerToast(toast);
-
         });
 
-        // Action optionnelle (ex: "Voir mon panier")
         if (actionText && actionCallback) {
-
             toast.querySelector(".toast-action").addEventListener("click", () => {
-
                 clearTimeout(timeout);
-
                 actionCallback();
-
                 this.fermerToast(toast);
-
             });
-
         }
 
         container.appendChild(toast);
-
     }
 
     fermerToast(toast) {
-
         toast.classList.remove("toast-show");
-
         toast.classList.add("toast-hide");
-
         toast.addEventListener("transitionend", () => {
-
             if (toast.parentElement) {
-
                 toast.remove();
-
             }
-
         });
-
     }
+
     /**************************************************************
      * Affichage du produit
      **************************************************************/
@@ -120,46 +88,31 @@ export default class UI {
         document.getElementById("productDescription").textContent =
             champ(produit.description, langue);
 
-// Initialisation de la galerie
+        if (produit.images.parCouleur) {
 
-if (produit.images.parCouleur) {
+            const premiereCouleur =
+                Object.keys(produit.images.parCouleur)[0];
 
-    // Produits avec une image différente par couleur (ex: pantalon)
+            this.galerie.initialiser(
+                produit.images.parCouleur[premiereCouleur],
+                nomProduit
+            );
 
-    const premiereCouleur =
-        Object.keys(produit.images.parCouleur)[0];
+        }
+        else {
 
-    this.galerie.initialiser(
-        produit.images.parCouleur[premiereCouleur],
-        nomProduit
-    );
+            const images = [
+                ...(produit.images.principale
+                    ? [produit.images.principale]
+                    : []),
+                ...(produit.images.galerie || [])
+            ];
 
-}
-else {
+            this.galerie.initialiser(images, nomProduit);
 
-    // Produits avec une galerie fixe (ex: chemise) :
-    // image principale + photos complémentaires
+        }
+    }
 
-    const images = [
-
-        ...(produit.images.principale
-            ? [produit.images.principale]
-            : []),
-
-        ...(produit.images.galerie || [])
-
-    ];
-
-    this.galerie.initialiser(images, nomProduit);
-
-}
-}
-    /**
-     * Retraduit le titre/la description du produit affiché,
-     * sans toucher à la couleur/l'image actuellement sélectionnée
-     * (utilisé lors d'un changement de langue, pas d'un changement
-     * de produit ou de couleur).
-     */
     retraduireProduit(produit){
 
         const langue = getLangue();
@@ -175,6 +128,7 @@ else {
         this.galerie.mettreAJourNom(nomProduit);
 
     }
+
     /**************************************************************
      * Génération automatique des options
      **************************************************************/
@@ -192,9 +146,6 @@ else {
 
             bloc.dataset.optionId = option.id;
 
-            // Pour select/number : un vrai <label> relié au champ.
-            // Pour radio/checkbox : chaque choix a déjà son propre
-            // <label>, celui-ci ne sert que de titre de groupe.
             const estChampUnique =
                 option.type === "select" || option.type === "number";
 
@@ -248,12 +199,6 @@ else {
 
     }
 
-    /**
-     * Retraduit les libellés des options déjà générées, SANS
-     * reconstruire le formulaire — les choix déjà faits par le
-     * client (taille, couleur, quantité...) restent intacts.
-     * Utilisé uniquement lors d'un changement de langue.
-     */
     retraduireOptions(options){
 
         const langue = getLangue();
@@ -261,9 +206,7 @@ else {
         options.forEach(option => {
 
             const bloc = this.form.querySelector(
-
                 `[data-option-id="${option.id}"]`
-
             );
 
             if (!bloc) {
@@ -320,8 +263,15 @@ else {
 
                         if (choix) {
 
-                            label.textContent =
-                                `${champ(choix.libelle, langue)} (+${choix.prix})`;
+                            const texte = `${champ(choix.libelle, langue)} (+${choix.prix})`;
+
+                            // Met à jour le texte sans toucher la pastille
+                            const textNode = label.querySelector(".radio-text");
+                            if (textNode) {
+                                textNode.textContent = texte;
+                            } else {
+                                label.lastChild.textContent = " " + texte;
+                            }
 
                         }
 
@@ -346,9 +296,6 @@ else {
                     break;
 
                 }
-
-                // "number" : le titre du groupe suffit, rien de plus
-                // à traduire sur le champ lui-même.
 
             }
 
@@ -390,7 +337,7 @@ else {
     }
 
     /**************************************************************
-     * RADIO
+     * RADIO (avec pastilles de couleur)
      **************************************************************/
     creerRadio(option){
 
@@ -428,8 +375,13 @@ else {
 
             label.htmlFor=radio.id;
 
-            label.textContent=
-                `${champ(choix.libelle, langue)} (+${choix.prix})`;
+            // === PASTILLE DE COULEUR ===
+            let pastilleHTML = "";
+            if (choix.codeCouleur) {
+                pastilleHTML = `<span class="color-swatch" style="background-color:${choix.codeCouleur};" aria-hidden="true"></span>`;
+            }
+
+            label.innerHTML = pastilleHTML + `<span class="radio-text">${champ(choix.libelle, langue)} (+${choix.prix})</span>`;
 
             wrapper.appendChild(radio);
 
@@ -521,9 +473,7 @@ else {
             case "radio":
 
                 const radio=document.querySelector(
-
                     `input[name="${option.id}"]:checked`
-
                 );
 
                 return radio ? radio.value : null;
@@ -537,11 +487,9 @@ else {
             case "number":
 
                 return parseInt(
-
                     document
                     .getElementById(option.id)
                     .value
-
                 );
 
         }
@@ -559,7 +507,7 @@ else {
     }
 
     /**************************************************************
-     * Récapitulatif
+     * Recapitulatif
      **************************************************************/
     mettreAJourRecapitulatif(resultat){
 
@@ -572,21 +520,13 @@ else {
             ligne.className="summary-row";
 
             ligne.innerHTML=`
-
                 <span>
-
                     ${item.option}
-
                     : ${item.choix}
-
                 </span>
-
                 <strong>
-
                     +${item.prix}
-
                 </strong>
-
             `;
 
             this.summary.appendChild(ligne);
