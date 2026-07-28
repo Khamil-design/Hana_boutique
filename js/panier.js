@@ -40,9 +40,6 @@ export default class Panier {
 
     }
 
-    /**************************************************************
-     * Ecoute le bouton "Vider le panier"
-     **************************************************************/
     ecouterVider() {
 
         const bouton = document.getElementById("btnViderPanier");
@@ -298,9 +295,13 @@ export default class Panier {
 
     }
 
+    /**************************************************************
+     * Mise à jour du badge + visibilité du bouton Vider
+     **************************************************************/
     mettreAJourBadge() {
 
         const badge = document.getElementById("cartBadge");
+        const btnVider = document.getElementById("btnViderPanier");
 
         if (!badge) {
 
@@ -314,8 +315,10 @@ export default class Panier {
 
         if (nombre === 0) {
             badge.style.display = "none";
+            if (btnVider) btnVider.style.display = "none";
         } else {
             badge.style.display = "block";
+            if (btnVider) btnVider.style.display = "inline-block";
         }
 
         badge.classList.remove("badge-pulse");
