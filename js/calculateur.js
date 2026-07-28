@@ -3,6 +3,8 @@
  * Calcul du prix du configurateur
  ********************************************************************/
 
+import { champ, getLangue, t } from "./i18n.js";
+
 export default class Calculateur {
 
     constructor() {
@@ -146,11 +148,13 @@ export default class Calculateur {
         if(!choix)
             return;
 
+        const langue = getLangue();
+
         resultat.supplements.push({
 
-            option: option.nom,
+            option: champ(option.nom, langue),
 
-            choix: choix.libelle,
+            choix: champ(choix.libelle, langue),
 
             prix: choix.prix
 
@@ -172,11 +176,13 @@ export default class Calculateur {
         if(!valeur)
             return;
 
+        const langue = getLangue();
+
         resultat.supplements.push({
 
-            option: option.nom,
+            option: champ(option.nom, langue),
 
-            choix: "Oui",
+            choix: t("oui", langue),
 
             prix: option.prix
 
