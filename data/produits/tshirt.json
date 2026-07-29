@@ -1,0 +1,192 @@
+{
+  "id": "tshirt",
+  "nom": {
+    "fr": "T-shirt Homme",
+    "ar": "تيشيرت رجالي"
+  },
+  "categorie": {
+    "fr": "Vêtements",
+    "ar": "ملابس"
+  },
+  "description": {
+    "fr": "T-shirt personnalisable selon vos préférences. Choisissez la taille, la couleur, la matière et ajoutez une broderie personnalisée.",
+    "ar": "تيشيرت قابل للتخصيص حسب رغبتك. اختر المقاس، اللون، الخامة وأضف تطريزًا مخصصًا."
+  },
+  "reference": "TSH-001",
+  "prixBase": 25,
+  "devise": "DH",
+  "images": {
+    "dependDe": "couleur",
+    "parCouleur": {
+      "bleuMarine": [
+        "images/teeshirt/bleuMarine/principale.jpg",
+        "images/teeshirt/bleuMarine/profil.jpg",
+        "images/teeshirt/bleuMarine/dos.jpg",
+        "images/teeshirt/bleuMarine/detail.jpg"
+      ],
+      "bordeaux": [
+        "images/teeshirt/bordeaux/principale.jpg",
+        "images/teeshirt/bordeaux/profil.jpg",
+        "images/teeshirt/bordeaux/dos.jpg",
+        "images/teeshirt/bordeaux/detail.jpg"
+      ],
+      "beigeSable": [
+        "images/teeshirt/beigeSable/principale.jpg",
+        "images/teeshirt/beigeSable/profil.jpg",
+        "images/teeshirt/beigeSable/dos.jpg",
+        "images/teeshirt/beigeSable/detail.jpg"
+      ]
+    }
+  },
+  "options": [
+    {
+      "id": "taille",
+      "nom": {
+        "fr": "Taille",
+        "ar": "المقاس"
+      },
+      "type": "select",
+      "obligatoire": true,
+      "valeurDefaut": "M",
+      "choix": [
+        {
+          "id": "S",
+          "libelle": {
+            "fr": "S",
+            "ar": "S"
+          },
+          "prix": 0
+        },
+        {
+          "id": "M",
+          "libelle": {
+            "fr": "M",
+            "ar": "M"
+          },
+          "prix": 3
+        },
+        {
+          "id": "L",
+          "libelle": {
+            "fr": "L",
+            "ar": "L"
+          },
+          "prix": 6
+        },
+        {
+          "id": "XL",
+          "libelle": {
+            "fr": "XL",
+            "ar": "XL"
+          },
+          "prix": 9
+        }
+      ]
+    },
+    {
+      "id": "couleur",
+      "nom": {
+        "fr": "Couleur",
+        "ar": "اللون"
+      },
+      "type": "radio",
+      "obligatoire": true,
+      "choix": [
+        {
+          "id": "bleuMarine",
+          "libelle": {
+            "fr": "Bleu marine",
+            "ar": "أزرق كحلي"
+          },
+          "prix": 0,
+          "codeCouleur": "#1B2A47"
+        },
+        {
+          "id": "bordeaux",
+          "libelle": {
+            "fr": "Bordeaux",
+            "ar": "خمري"
+          },
+          "prix": 3,
+          "codeCouleur": "#5C2331"
+        },
+        {
+          "id": "beigeSable",
+          "libelle": {
+            "fr": "Beige sable",
+            "ar": "بيج رملي"
+          },
+          "prix": 2,
+          "codeCouleur": "#C9A876"
+        }
+      ]
+    },
+    {
+      "id": "matiere",
+      "nom": {
+        "fr": "Matière",
+        "ar": "الخامة"
+      },
+      "type": "select",
+      "obligatoire": true,
+      "valeurDefaut": "coton",
+      "choix": [
+        {
+          "id": "coton",
+          "libelle": {
+            "fr": "Coton",
+            "ar": "قطن"
+          },
+          "prix": 0
+        },
+        {
+          "id": "coton_bio",
+          "libelle": {
+            "fr": "Coton bio",
+            "ar": "قطن عضوي"
+          },
+          "prix": 8
+        },
+        {
+          "id": "pique",
+          "libelle": {
+            "fr": "Piqué",
+            "ar": "بيكيه"
+          },
+          "prix": 10
+        }
+      ]
+    },
+    {
+      "id": "broderie",
+      "nom": {
+        "fr": "Broderie personnalisée",
+        "ar": "تطريز مخصص"
+      },
+      "type": "checkbox",
+      "prix": 15,
+      "valeurDefaut": false
+    },
+    {
+      "id": "quantite",
+      "nom": {
+        "fr": "Quantité",
+        "ar": "الكمية"
+      },
+      "type": "number",
+      "minimum": 1,
+      "maximum": 20,
+      "valeurDefaut": 1
+    }
+  ],
+  "regles": [],
+  "stock": {
+    "gestion": false,
+    "quantite": 0
+  },
+  "promotion": {
+    "active": false,
+    "type": "pourcentage",
+    "valeur": 0
+  }
+}
