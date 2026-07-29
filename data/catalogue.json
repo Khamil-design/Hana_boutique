@@ -56,12 +56,26 @@
       "prixBase": 55,
       "devise": "DH",
       "images": {
-        "principale": "images/chemise/principale.jpg",
-        "galerie": [
-          "images/chemise/profil.jpg",
-          "images/chemise/dos.jpg",
-          "images/chemise/detail.jpg"
-        ]
+        "parCouleur": {
+          "blanche": [
+            "images/chemise/blanche/principale.jpg",
+            "images/chemise/blanche/profil.jpg",
+            "images/chemise/blanche/dos.jpg",
+            "images/chemise/blanche/detail.jpg"
+          ],
+          "bleu": [
+            "images/chemise/bleu/principale.jpg",
+            "images/chemise/bleu/profil.jpg",
+            "images/chemise/bleu/dos.jpg",
+            "images/chemise/bleu/detail.jpg"
+          ],
+          "beige": [
+            "images/chemise/beige/principale.jpg",
+            "images/chemise/beige/profil.jpg",
+            "images/chemise/beige/dos.jpg",
+            "images/chemise/beige/detail.jpg"
+          ]
+        }
       }
     }
   ]
