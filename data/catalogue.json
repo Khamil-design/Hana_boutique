@@ -16,19 +16,19 @@
       "images": {
         "parCouleur": {
           "noir": [
-            "images/pantalon/noir/principal.jpg",
+            "images/pantalon/noir/principale.jpg",
             "images/pantalon/noir/profil.jpg",
             "images/pantalon/noir/dos.jpg",
             "images/pantalon/noir/detail.jpg"
           ],
           "bleu": [
-            "images/pantalon/bleu/principal.jpg",
+            "images/pantalon/bleu/principale.jpg",
             "images/pantalon/bleu/profil.jpg",
             "images/pantalon/bleu/dos.jpg",
             "images/pantalon/bleu/detail.jpg"
           ],
           "gris": [
-            "images/pantalon/gris/parincipale.jpg",
+            "images/pantalon/gris/principale.jpg",
             "images/pantalon/gris/profil.jpg",
             "images/pantalon/gris/dos.jpg",
             "images/pantalon/gris/detail.jpg"
