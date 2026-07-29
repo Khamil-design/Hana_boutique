@@ -24,7 +24,7 @@ export default class Application {
 
         try {
 
-            // === NOUVEAU : Initialise le thème (clair/sombre) ===
+            // === Initialise le thème (clair/sombre) ===
             initialiserTheme();
 
             // Applique la langue mémorisée (ou le français par défaut)
@@ -44,10 +44,24 @@ export default class Application {
             // Remplit le menu déroulant avec tous les produits du catalogue
             this.genererSelecteurProduits();
 
-            // Affiche le premier produit du catalogue
-            await this.afficherProduitParFichier(
-                this.catalogue.produits[0].fichier
-            );
+            // === NOUVEAU : Détecte si un produit est demandé via l'URL ===
+            const params = new URLSearchParams(window.location.search);
+            const produitDemande = params.get("produit");
+
+            let fichierProduit;
+
+            if (produitDemande) {
+                // Vérifie que le produit demandé existe dans le catalogue
+                const existe = this.catalogue.produits.find(
+                    p => p.fichier === produitDemande
+                );
+                fichierProduit = existe ? produitDemande : this.catalogue.produits[0].fichier;
+            } else {
+                fichierProduit = this.catalogue.produits[0].fichier;
+            }
+
+            // Affiche le produit (demandé ou le premier)
+            await this.afficherProduitParFichier(fichierProduit);
 
             // Ecoute les changements de produit via le sélecteur
             this.ecouterChangementProduit();
