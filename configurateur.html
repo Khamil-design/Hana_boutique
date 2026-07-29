@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hana Boutique — Configurateur</title>
+
+    <meta name="description" content="Hana Boutique — pantalons et chemises pour homme personnalisables : choisissez la couleur, la taille et les finitions, et commandez directement via WhatsApp.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Hana Boutique — Configurateur">
+    <meta property="og:description" content="Pantalons et chemises pour homme personnalisables, faits sur-mesure selon vos préférences.">
+    <meta property="og:image" content="https://khamil-design.github.io/Hana_boutique/images/favicon.svg">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+    <!-- Polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link id="bootstrapCss" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Feuille de style -->
+    <link rel="stylesheet" href="css/style.css?v=3">
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+<header class="site-header">
+
+    <div class="container py-3 d-flex justify-content-between align-items-center">
+
+        <a href="index.html" class="brand text-decoration-none">
+
+            <svg class="brand-emblem" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M50 52 C41 41 39 22 50 12 C61 22 59 41 50 52 Z" transform="rotate(0 50 50)"/>
+                    <path d="M50 52 C41 41 39 22 50 12 C61 22 59 41 50 52 Z" transform="rotate(72 50 50)"/>
+                    <path d="M50 52 C41 41 39 22 50 12 C61 22 59 41 50 52 Z" transform="rotate(144 50 50)"/>
+                    <path d="M50 52 C41 41 39 22 50 12 C61 22 59 41 50 52 Z" transform="rotate(216 50 50)"/>
+                    <path d="M50 52 C41 41 39 22 50 12 C61 22 59 41 50 52 Z" transform="rotate(288 50 50)"/>
+                </g>
+                <circle cx="50" cy="50" r="3.2" fill="currentColor" stroke="none"/>
+            </svg>
+
+            <div class="brand-text">
+                <span class="brand-name">Hana</span>
+                <span class="brand-subtitle">Boutique</span>
+            </div>
+
+        </a>
+
+        <div class="d-flex align-items-center gap-2">
+
+            <button
+                id="btnTheme"
+                class="btn btn-theme"
+                aria-label="Passer au thème clair">
+                <i class="bi bi-sun-fill"></i>
+            </button>
+
+            <button
+                id="btnLangue"
+                class="btn btn-outline-gold btn-langue"
+                aria-label="Changer de langue">
+                العربية
+            </button>
+
+            <button
+                class="btn btn-outline-gold position-relative"
+                id="btnPanier"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#panierCanvas"
+                aria-label="Voir le panier"
+                data-i18n-aria="voirLePanier">
+                <i class="bi bi-cart3 fs-4"></i>
+                <span
+                    id="cartBadge"
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    0
+                </span>
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+    <!-- ================= CONTENU ================= -->
+
+    <main class="container my-4">
+
+        <!-- ================= SELECTEUR DE PRODUIT ================= -->
+
+        <div class="row mb-4">
+            <div class="col-md-5">
+                <label for="productSelector" class="form-label fw-semibold" data-i18n="choisirProduit">
+                    Choisir un produit
+                </label>
+                <select id="productSelector" class="form-select">
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <!-- IMAGE PRODUIT -->
+            <div class="col-lg-5">
+                <div class="card shadow-sm">
+                <div class="gallery">
+    <div class="gallery-viewer">
+        <img id="productImage" class="img-fluid">
+    </div>
+    <div class="gallery-nav">
+        <button id="galleryPrev" class="gallery-btn" aria-label="Photo précédente" data-i18n-aria="photoPrecedente">
+            ❮
+        </button>
+        <button id="galleryNext" class="gallery-btn" aria-label="Photo suivante" data-i18n-aria="photoSuivante">
+            ❯
+        </button>
+    </div>
+</div>
+                    <div class="card-body">
+                        <h2 id="productTitle" class="product-title mb-2">Chargement...</h2>
+                        <p id="productDescription" class="text-muted mb-0">Description...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONFIGURATION -->
+            <div class="col-lg-7">
+                <div class="card shadow-sm">
+                    <div class="card-header">
+                        <h4 class="mb-0" data-i18n="personnalisation">Personnalisation</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="configForm">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= RECAP ================= -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card shadow">
+                    <div class="card-header">
+                        <h4 class="mb-0" data-i18n="recapitulatif">Récapitulatif</h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="summary"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= PRIX ================= -->
+        <div class="row mt-4">
+            <div class="col-lg-8"></div>
+            <div class="col-lg-4">
+                <div class="card border-success shadow">
+                    <div class="card-body text-center">
+                        <h5 data-i18n="prixTotalTitre">Prix total</h5>
+                        <h1 id="totalPrice" class="display-5 text-success">0 DH</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= ACTIONS ================= -->
+        <div class="row mt-4">
+            <div class="col text-end">
+                <button id="btnReset" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-counterclockwise"></i>
+                    <span data-i18n="reinitialiser">Réinitialiser</span>
+                </button>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <button id="btnOrder" class="btn btn-success w-100">
+                    <i class="bi bi-cart-check"></i>
+                    <span data-i18n="ajouterAuPanier">Ajouter au panier</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- ================= LIVRAISON & PAIEMENT ================= -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-header">
+                        <h4 class="mb-0" data-i18n="livraisonPaiementTitre">Livraison &amp; Paiement</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-4">
+                            <div class="col-md-6 info-bloc">
+                                <div class="info-icone">
+                                    <i class="bi bi-truck"></i>
+                                </div>
+                                <div>
+                                    <h6 data-i18n="livraisonTitre">Livraison</h6>
+                                    <p class="mb-1" data-i18n="livraisonTanger">Tanger : livraison gratuite sous 24 à 48h.</p>
+                                    <p class="mb-0 text-muted" data-i18n="livraisonAutres">Autres villes : livraison possible sur devis — contactez-nous directement via WhatsApp.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 info-bloc">
+                                <div class="info-icone">
+                                    <i class="bi bi-cash-coin"></i>
+                                </div>
+                                <div>
+                                    <h6 data-i18n="paiementTitre">Paiement</h6>
+                                    <p class="mb-0" data-i18n="paiementTexte">Paiement à la livraison (espèces) ou par virement bancaire — les coordonnées bancaires vous seront communiquées par WhatsApp après confirmation de votre commande.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<!-- ================= PANIER ================= -->
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="panierCanvas">
+
+    <div class="offcanvas-header">
+
+        <h4>
+            <i class="bi bi-cart3"></i>
+            <span data-i18n="monPanier">Mon panier</span>
+        </h4>
+
+        <div class="d-flex align-items-center gap-2">
+            <button
+                id="btnViderPanier"
+                class="btn btn-sm btn-outline-danger"
+                data-i18n="viderPanier">
+                Vider
+            </button>
+            <button
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Fermer"
+                data-i18n-aria="fermer">
+            </button>
+        </div>
+
+    </div>
+
+    <div class="offcanvas-body">
+
+        <div id="cartItems">
+            <p class="text-muted">Votre panier est vide.</p>
+        </div>
+
+        <hr>
+
+        <div class="d-flex justify-content-between">
+            <strong data-i18n="totalLabel">Total :</strong>
+            <strong id="cartTotal">0 DH</strong>
+        </div>
+
+        <div class="d-grid mt-4">
+            <button class="btn btn-success" id="btnCheckout">
+                <span data-i18n="commander">Commander</span>
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="mt-5 py-3">
+        <div class="container text-center" id="footerText">
+            Hana Boutique — Tous droits réservés
+        </div>
+    </footer>
+
+    <!-- ================= TOASTS ================= -->
+    <div id="toastContainer" class="toast-container" role="status" aria-live="polite"></div>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script type="module" src="js/app.js?v=3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
