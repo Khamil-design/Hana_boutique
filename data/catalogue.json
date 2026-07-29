@@ -2,15 +2,67 @@
   "produits": [
     {
       "id": "pantalon",
-      "nom": { "fr": "Pantalon Homme", "ar": "بنطلون رجالي" },
-      "categorie": { "fr": "Vêtements", "ar": "ملابس" },
-      "fichier": "pantalon.json"
+      "fichier": "pantalon.json",
+      "nom": {
+        "fr": "Pantalon Homme",
+        "ar": "بنطلون رجالي"
+      },
+      "description": {
+        "fr": "Pantalon personnalisable selon vos préférences. Choisissez la taille, la couleur, la matière et ajoutez une broderie personnalisée.",
+        "ar": "بنطلون قابل للتخصيص حسب رغبتك. اختر المقاس، اللون، الخامة وأضف تطريزًا مخصصًا."
+      },
+      "prixBase": 40,
+      "devise": "DH",
+      "images": {
+        "parCouleur": {
+          "noir": [
+            "images/pantalon/noir/principal.jpg",
+            "images/pantalon/noir/profil.jpg",
+            "images/pantalon/noir/dos.jpg",
+            "images/pantalon/noir/detail.jpg"
+          ],
+          "bleu": [
+            "images/pantalon/bleu/principal.jpg",
+            "images/pantalon/bleu/profil.jpg",
+            "images/pantalon/bleu/dos.jpg",
+            "images/pantalon/bleu/detail.jpg"
+          ],
+          "gris": [
+            "images/pantalon/gris/parincipale.jpg",
+            "images/pantalon/gris/profil.jpg",
+            "images/pantalon/gris/dos.jpg",
+            "images/pantalon/gris/detail.jpg"
+          ],
+          "vertPistache": [
+            "images/pantalon/vert/principale.jpg",
+            "images/pantalon/vert/profil.jpg",
+            "images/pantalon/vert/dos.jpg",
+            "images/pantalon/vert/detail.jpg"
+          ]
+        }
+      }
     },
     {
       "id": "chemise",
-      "nom": { "fr": "Chemise Homme", "ar": "قميص رجالي" },
-      "categorie": { "fr": "Vêtements", "ar": "ملابس" },
-      "fichier": "chemise.json"
+      "fichier": "chemise.json",
+      "nom": {
+        "fr": "Chemise Homme",
+        "ar": "قميص رجالي"
+      },
+      "description": {
+        "fr": "Chemise élégante et personnalisable. Sélectionnez le tissu, la coupe, les boutons et les finitions pour un style unique.",
+        "ar": "قميص أنيق وقابل للتخصيص. اختر القماش، القصة، الأزرار والتشطيبات لأسلوب فريد."
+      },
+      "prixBase": 55,
+      "devise": "DH",
+      "images": {
+        "principale": "images/chemise/principale.jpg",
+        "galerie": [
+          "images/chemise/profil.jpg",
+          "images/chemise/dos.jpg",
+          "images/chemise/detail.jpg"
+        ]
+      }
     }
   ]
 }
