@@ -43,6 +43,42 @@
       }
     },
     {
+      "id": "tshirt",
+      "fichier": "tshirt.json",
+      "nom": {
+        "fr": "T-shirt Homme",
+        "ar": "تيشيرت رجالي"
+      },
+      "description": {
+        "fr": "T-shirt personnalisable et confortable. Choisissez la couleur, la matière et ajoutez une broderie personnalisée.",
+        "ar": "تيشيرت مريح وقابل للتخصيص. اختر اللون، الخامة وأضف تطريزًا مخصصًا."
+      },
+      "prixBase": 25,
+      "devise": "DH",
+      "images": {
+        "parCouleur": {
+          "bleuMarine": [
+            "images/teeshirt/bleuMarine/principale.jpg",
+            "images/teeshirt/bleuMarine/profil.jpg",
+            "images/teeshirt/bleuMarine/dos.jpg",
+            "images/teeshirt/bleuMarine/detail.jpg"
+          ],
+          "bordeaux": [
+            "images/teeshirt/bordeaux/principale.jpg",
+            "images/teeshirt/bordeaux/profil.jpg",
+            "images/teeshirt/bordeaux/dos.jpg",
+            "images/teeshirt/bordeaux/detail.jpg"
+          ],
+          "beigeSable": [
+            "images/teeshirt/beigeSable/principale.jpg",
+            "images/teeshirt/beigeSable/profil.jpg",
+            "images/teeshirt/beigeSable/dos.jpg",
+            "images/teeshirt/beigeSable/detail.jpg"
+          ]
+        }
+      }
+    },
+    {
       "id": "chemise",
       "fichier": "chemise.json",
       "nom": {
