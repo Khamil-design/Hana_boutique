@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://khamil-design.github.io/Hana_boutique/sitemap.xml
