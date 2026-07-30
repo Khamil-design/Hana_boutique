@@ -1,0 +1,151 @@
+{
+  "id": "jupe",
+  "genre": "femme",
+  "nom": {
+    "fr": "Jupe Femme",
+    "ar": "تنورة نسائية"
+  },
+  "categorie": {
+    "fr": "Vêtements",
+    "ar": "ملابس"
+  },
+  "description": {
+    "fr": "Jupe personnalisable, élégante et confortable. Sélectionnez la longueur, la couleur et la matière selon votre style.",
+    "ar": "تنورة أنيقة ومريحة وقابلة للتخصيص. اختاري الطول، اللون والخامة حسب أسلوبك."
+  },
+  "reference": "JUP-001",
+  "prixBase": 45,
+  "devise": "DH",
+  "images": {
+    "dependDe": "couleur",
+    "parCouleur": {
+      "noir": [
+        "images/femme/jupe/noir/principale.jpg",
+        "images/femme/jupe/noir/profil.jpg",
+        "images/femme/jupe/noir/dos.jpg",
+        "images/femme/jupe/noir/detail.jpg"
+      ],
+      "bordeaux": [
+        "images/femme/jupe/bordeaux/principale.jpg",
+        "images/femme/jupe/bordeaux/profil.jpg",
+        "images/femme/jupe/bordeaux/dos.jpg",
+        "images/femme/jupe/bordeaux/detail.jpg"
+      ],
+      "beigeSable": [
+        "images/femme/jupe/beigeSable/principale.jpg",
+        "images/femme/jupe/beigeSable/profil.jpg",
+        "images/femme/jupe/beigeSable/dos.jpg",
+        "images/femme/jupe/beigeSable/detail.jpg"
+      ]
+    }
+  },
+  "options": [
+    {
+      "id": "taille",
+      "nom": {
+        "fr": "Taille",
+        "ar": "المقاس"
+      },
+      "type": "select",
+      "obligatoire": true,
+      "valeurDefaut": "M",
+      "choix": [
+        { "id": "XS", "libelle": { "fr": "XS", "ar": "XS" }, "prix": 0 },
+        { "id": "S",  "libelle": { "fr": "S",  "ar": "S"  }, "prix": 0 },
+        { "id": "M",  "libelle": { "fr": "M",  "ar": "M"  }, "prix": 3 },
+        { "id": "L",  "libelle": { "fr": "L",  "ar": "L"  }, "prix": 6 },
+        { "id": "XL", "libelle": { "fr": "XL", "ar": "XL" }, "prix": 9 }
+      ]
+    },
+    {
+      "id": "couleur",
+      "nom": {
+        "fr": "Couleur",
+        "ar": "اللون"
+      },
+      "type": "radio",
+      "obligatoire": true,
+      "choix": [
+        {
+          "id": "noir",
+          "libelle": { "fr": "Noir", "ar": "أسود" },
+          "prix": 0,
+          "codeCouleur": "#000000"
+        },
+        {
+          "id": "bordeaux",
+          "libelle": { "fr": "Bordeaux", "ar": "خمري" },
+          "prix": 3,
+          "codeCouleur": "#5C2331"
+        },
+        {
+          "id": "beigeSable",
+          "libelle": { "fr": "Beige sable", "ar": "بيج رملي" },
+          "prix": 2,
+          "codeCouleur": "#C9A876"
+        }
+      ]
+    },
+    {
+      "id": "longueur",
+      "nom": {
+        "fr": "Longueur",
+        "ar": "الطول"
+      },
+      "type": "select",
+      "obligatoire": true,
+      "valeurDefaut": "genou",
+      "choix": [
+        { "id": "courte", "libelle": { "fr": "Courte",     "ar": "قصير" }, "prix": 0 },
+        { "id": "genou",  "libelle": { "fr": "Au genou",   "ar": "حتى الركبة" }, "prix": 4 },
+        { "id": "longue", "libelle": { "fr": "Longue",     "ar": "طويل" }, "prix": 8 }
+      ]
+    },
+    {
+      "id": "matiere",
+      "nom": {
+        "fr": "Matière",
+        "ar": "الخامة"
+      },
+      "type": "select",
+      "obligatoire": true,
+      "valeurDefaut": "coton",
+      "choix": [
+        { "id": "coton",    "libelle": { "fr": "Coton",     "ar": "قطن" }, "prix": 0 },
+        { "id": "lin",      "libelle": { "fr": "Lin",       "ar": "كتان" }, "prix": 15 },
+        { "id": "coton_bio","libelle": { "fr": "Coton bio", "ar": "قطن عضوي" }, "prix": 10 }
+      ]
+    },
+    {
+      "id": "broderie",
+      "nom": {
+        "fr": "Broderie personnalisée",
+        "ar": "تطريز مخصص"
+      },
+      "type": "checkbox",
+      "prix": 15,
+      "valeurDefaut": false
+    },
+    {
+      "id": "quantite",
+      "nom": {
+        "fr": "Quantité",
+        "ar": "الكمية"
+      },
+      "type": "number",
+      "minimum": 1,
+      "maximum": 20,
+      "valeurDefaut": 1
+    }
+  ],
+  "regles": [],
+  "stock": {
+    "gestion": false,
+    "quantite": 0
+  },
+  "promotion": {
+    "active": false,
+    "type": "pourcentage",
+    "valeur": 0
+  }
+}
