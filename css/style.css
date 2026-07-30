@@ -331,6 +331,48 @@ a{
 }
 
 /* =====================================================
+   ONGLETS HOMME / FEMME
+===================================================== */
+
+.genre-tabs{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 44px;
+}
+
+.genre-tab{
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px 32px;
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.genre-tab:hover{
+    color: var(--gold);
+    border-color: var(--gold-deep);
+}
+
+.genre-tab.active{
+    background: var(--gold);
+    color: #14120F;
+    border-color: var(--gold);
+}
+
+.genre-tabs-inline{
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+/* =====================================================
    CARDS PRODUITS (ACCUEIL)
 ===================================================== */
 
