@@ -14,6 +14,7 @@ export default class Application {
 
         this.configurateur = null;
         this.catalogue = null;
+        this.genreActif = "homme";
 
     }
 
@@ -41,26 +42,37 @@ export default class Application {
 
             }
 
-            // Remplit le menu déroulant avec tous les produits du catalogue
-            this.genererSelecteurProduits();
-
-            // === NOUVEAU : Détecte si un produit est demandé via l'URL ===
+            // === Détecte le produit et le genre demandés via l'URL ===
             const params = new URLSearchParams(window.location.search);
             const produitDemande = params.get("produit");
+            const genreDemande = params.get("genre");
 
-            let fichierProduit;
+            const produitTrouve = produitDemande
+                ? this.catalogue.produits.find(p => p.fichier === produitDemande)
+                : null;
 
-            if (produitDemande) {
-                // Vérifie que le produit demandé existe dans le catalogue
-                const existe = this.catalogue.produits.find(
-                    p => p.fichier === produitDemande
-                );
-                fichierProduit = existe ? produitDemande : this.catalogue.produits[0].fichier;
-            } else {
-                fichierProduit = this.catalogue.produits[0].fichier;
+            if (produitTrouve) {
+                // Le genre suit celui du produit demandé (source la plus fiable)
+                this.genreActif = produitTrouve.genre || "homme";
+            } else if (genreDemande === "homme" || genreDemande === "femme") {
+                this.genreActif = genreDemande;
             }
 
-            // Affiche le produit (demandé ou le premier)
+            this.ecouterOngletsGenre();
+            this.appliquerOngletGenreActif();
+
+            // Remplit le menu déroulant avec les produits du genre actif
+            this.genererSelecteurProduits();
+
+            const produitsDuGenre = this.catalogue.produits.filter(
+                p => (p.genre || "homme") === this.genreActif
+            );
+
+            const fichierProduit = produitTrouve
+                ? produitTrouve.fichier
+                : (produitsDuGenre[0] ? produitsDuGenre[0].fichier : this.catalogue.produits[0].fichier);
+
+            // Affiche le produit (demandé ou le premier du genre actif)
             await this.afficherProduitParFichier(fichierProduit);
 
             // Ecoute les changements de produit via le sélecteur
@@ -225,7 +237,11 @@ export default class Application {
 
         select.innerHTML = "";
 
-        this.catalogue.produits.forEach(produit => {
+        const produitsDuGenre = this.catalogue.produits.filter(
+            p => (p.genre || "homme") === this.genreActif
+        );
+
+        produitsDuGenre.forEach(produit => {
 
             const option =
                 document.createElement("option");
@@ -244,6 +260,46 @@ export default class Application {
             select.value = valeurActuelle;
 
         }
+
+    }
+
+    /**
+     * Ecoute les clics sur les onglets Homme / Femme
+     */
+    ecouterOngletsGenre() {
+
+        document.querySelectorAll(".genre-tab").forEach(onglet => {
+
+            onglet.addEventListener("click", async () => {
+
+                this.genreActif = onglet.dataset.genre;
+                this.appliquerOngletGenreActif();
+                this.genererSelecteurProduits();
+
+                const produitsDuGenre = this.catalogue.produits.filter(
+                    p => (p.genre || "homme") === this.genreActif
+                );
+
+                if (produitsDuGenre.length) {
+                    await this.afficherProduitParFichier(produitsDuGenre[0].fichier);
+                }
+
+            });
+
+        });
+
+    }
+
+    /**
+     * Met à jour l'état visuel actif/inactif des onglets Homme / Femme
+     */
+    appliquerOngletGenreActif() {
+
+        document.querySelectorAll(".genre-tab").forEach(onglet => {
+            const actif = onglet.dataset.genre === this.genreActif;
+            onglet.classList.toggle("active", actif);
+            onglet.setAttribute("aria-selected", actif ? "true" : "false");
+        });
 
     }
 

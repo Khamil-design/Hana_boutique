@@ -10,6 +10,8 @@ export const traductions = {
     fr: {
 
         choisirProduit: "Choisir un produit",
+        ongletHomme: "Homme",
+        ongletFemme: "Femme",
         personnalisation: "Personnalisation",
         recapitulatif: "Récapitulatif",
         prixTotalTitre: "Prix total",
@@ -82,6 +84,8 @@ export const traductions = {
     ar: {
 
         choisirProduit: "اختر منتجًا",
+        ongletHomme: "رجال",
+        ongletFemme: "نساء",
         personnalisation: "التخصيص",
         recapitulatif: "الملخص",
         prixTotalTitre: "السعر الإجمالي",
