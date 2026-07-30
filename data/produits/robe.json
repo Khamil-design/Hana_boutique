@@ -1,0 +1,151 @@
+{
+  "id": "robe",
+  "genre": "femme",
+  "nom": {
+    "fr": "Robe Femme",
+    "ar": "فستان نسائي"
+  },
+  "categorie": {
+    "fr": "Vêtements",
+    "ar": "ملابس"
+  },
+  "description": {
+    "fr": "Robe élégante et personnalisable selon vos préférences. Choisissez la longueur, la couleur, la matière et ajoutez une broderie personnalisée.",
+    "ar": "فستان أنيق وقابل للتخصيص حسب رغبتك. اختاري الطول، اللون، الخامة وأضيفي تطريزًا مخصصًا."
+  },
+  "reference": "ROB-001",
+  "prixBase": 60,
+  "devise": "DH",
+  "images": {
+    "dependDe": "couleur",
+    "parCouleur": {
+      "noir": [
+        "images/femme/robe/noir/principale.jpg",
+        "images/femme/robe/noir/profil.jpg",
+        "images/femme/robe/noir/dos.jpg",
+        "images/femme/robe/noir/detail.jpg"
+      ],
+      "bordeaux": [
+        "images/femme/robe/bordeaux/principale.jpg",
+        "images/femme/robe/bordeaux/profil.jpg",
+        "images/femme/robe/bordeaux/dos.jpg",
+        "images/femme/robe/bordeaux/detail.jpg"
+      ],
+      "beigeSable": [
+        "images/femme/robe/beigeSable/principale.jpg",
+        "images/femme/robe/beigeSable/profil.jpg",
+        "images/femme/robe/beigeSable/dos.jpg",
+        "images/femme/robe/beigeSable/detail.jpg"
+      ]
+    }
+  },
+  "options": [
+    {
+      "id": "taille",
+      "nom": {
+        "fr": "Taille",
+        "ar": "المقاس"
+      },
+      "type": "select",
+      "obligatoire": true,
+      "valeurDefaut": "M",
+      "choix": [
+        { "id": "XS", "libelle": { "fr": "XS", "ar": "XS" }, "prix": 0 },
+        { "id": "S",  "libelle": { "fr": "S",  "ar": "S"  }, "prix": 0 },
+        { "id": "M",  "libelle": { "fr": "M",  "ar": "M"  }, "prix": 4 },
+        { "id": "L",  "libelle": { "fr": "L",  "ar": "L"  }, "prix": 8 },
+        { "id": "XL", "libelle": { "fr": "XL", "ar": "XL" }, "prix": 12 }
+      ]
+    },
+    {
+      "id": "couleur",
+      "nom": {
+        "fr": "Couleur",
+        "ar": "اللون"
+      },
+      "type": "radio",
+      "obligatoire": true,
+      "choix": [
+        {
+          "id": "noir",
+          "libelle": { "fr": "Noir", "ar": "أسود" },
+          "prix": 0,
+          "codeCouleur": "#000000"
+        },
+        {
+          "id": "bordeaux",
+          "libelle": { "fr": "Bordeaux", "ar": "خمري" },
+          "prix": 4,
+          "codeCouleur": "#5C2331"
+        },
+        {
+          "id": "beigeSable",
+          "libelle": { "fr": "Beige sable", "ar": "بيج رملي" },
+          "prix": 3,
+          "codeCouleur": "#C9A876"
+        }
+      ]
+    },
+    {
+      "id": "longueur",
+      "nom": {
+        "fr": "Longueur",
+        "ar": "الطول"
+      },
+      "type": "select",
+      "obligatoire": true,
+      "valeurDefaut": "midi",
+      "choix": [
+        { "id": "courte", "libelle": { "fr": "Courte", "ar": "قصير" }, "prix": 0 },
+        { "id": "midi",   "libelle": { "fr": "Midi",   "ar": "متوسط" }, "prix": 5 },
+        { "id": "longue", "libelle": { "fr": "Longue", "ar": "طويل" }, "prix": 10 }
+      ]
+    },
+    {
+      "id": "matiere",
+      "nom": {
+        "fr": "Matière",
+        "ar": "الخامة"
+      },
+      "type": "select",
+      "obligatoire": true,
+      "valeurDefaut": "viscose",
+      "choix": [
+        { "id": "viscose",  "libelle": { "fr": "Viscose",  "ar": "فيسكوز" }, "prix": 0 },
+        { "id": "soie",     "libelle": { "fr": "Soie",     "ar": "حرير" }, "prix": 25 },
+        { "id": "coton_bio","libelle": { "fr": "Coton bio","ar": "قطن عضوي" }, "prix": 12 }
+      ]
+    },
+    {
+      "id": "broderie",
+      "nom": {
+        "fr": "Broderie personnalisée",
+        "ar": "تطريز مخصص"
+      },
+      "type": "checkbox",
+      "prix": 18,
+      "valeurDefaut": false
+    },
+    {
+      "id": "quantite",
+      "nom": {
+        "fr": "Quantité",
+        "ar": "الكمية"
+      },
+      "type": "number",
+      "minimum": 1,
+      "maximum": 20,
+      "valeurDefaut": 1
+    }
+  ],
+  "regles": [],
+  "stock": {
+    "gestion": false,
+    "quantite": 0
+  },
+  "promotion": {
+    "active": false,
+    "type": "pourcentage",
+    "valeur": 0
+  }
+}
