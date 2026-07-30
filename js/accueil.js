@@ -10,6 +10,7 @@ class PageAccueil {
 
     constructor() {
         this.catalogue = null;
+        this.genreActif = "homme";
     }
 
     async demarrer() {
@@ -25,6 +26,16 @@ class PageAccueil {
 
             // Catalogue
             this.catalogue = await this.chargerCatalogue();
+
+            // Genre demandé via l'URL (ex: lien retour depuis le configurateur)
+            const params = new URLSearchParams(window.location.search);
+            const genreDemande = params.get("genre");
+            if (genreDemande === "homme" || genreDemande === "femme") {
+                this.genreActif = genreDemande;
+            }
+
+            this.ecouterOngletsGenre();
+            this.appliquerOngletGenreActif();
             this.afficherProduits();
 
             // Footer année
@@ -87,6 +98,28 @@ class PageAccueil {
     }
 
     /**************************************************************
+     * Onglets Homme / Femme
+     **************************************************************/
+    ecouterOngletsGenre() {
+        const onglets = document.querySelectorAll(".genre-tab");
+        onglets.forEach(onglet => {
+            onglet.addEventListener("click", () => {
+                this.genreActif = onglet.dataset.genre;
+                this.appliquerOngletGenreActif();
+                this.afficherProduits();
+            });
+        });
+    }
+
+    appliquerOngletGenreActif() {
+        document.querySelectorAll(".genre-tab").forEach(onglet => {
+            const actif = onglet.dataset.genre === this.genreActif;
+            onglet.classList.toggle("active", actif);
+            onglet.setAttribute("aria-selected", actif ? "true" : "false");
+        });
+    }
+
+    /**************************************************************
      * Catalogue
      **************************************************************/
     async chargerCatalogue() {
@@ -107,7 +140,16 @@ class PageAccueil {
 
         grid.innerHTML = "";
 
-        for (const produit of this.catalogue.produits) {
+        const produitsFiltres = this.catalogue.produits.filter(
+            p => (p.genre || "homme") === this.genreActif
+        );
+
+        if (!produitsFiltres.length) {
+            grid.innerHTML = `<p class="text-center produit-desc">${langue === "ar" ? "لا توجد منتجات بعد في هذه الفئة." : "Aucun produit disponible dans cette catégorie pour le moment."}</p>`;
+            return;
+        }
+
+        for (const produit of produitsFiltres) {
 
             const col = document.createElement("div");
             col.className = "col-md-6 col-lg-4";
@@ -142,7 +184,7 @@ class PageAccueil {
                             loading="lazy"
                             onerror="this.src='images/placeholder.jpg'">
                         <div class="produit-overlay">
-                            <a href="configurateur.html?produit=${encodeURIComponent(produit.fichier)}" class="btn btn-produit">
+                            <a href="configurateur.html?produit=${encodeURIComponent(produit.fichier)}&genre=${encodeURIComponent(produit.genre || 'homme')}" class="btn btn-produit">
                                 <i class="bi bi-sliders me-2"></i>${langue === "ar" ? "تخصيص" : "Personnaliser"}
                             </a>
                         </div>
@@ -184,10 +226,12 @@ class PageAccueil {
 const traductionsAccueil = {
     fr: {
         slogan: "L'élégance sur-mesure",
-        heroSubtitle: "Pantalons et chemises personnalisables pour homme. Choisissez, configurez, commandez.",
+        heroSubtitle: "Vêtements personnalisables pour homme et femme. Choisissez, configurez, commandez.",
         decouvrirCollection: "Découvrir la collection",
         nosProduits: "Nos produits",
         produitsSubtitle: "Chaque pièce est pensée pour s'adapter à votre style.",
+        ongletHomme: "Homme",
+        ongletFemme: "Femme",
         pourquoiHana: "Pourquoi Hana ?",
         avantage1Titre: "Sur-mesure",
         avantage1Texte: "Chaque vêtement est configurable selon vos préférences : taille, couleur, matière et finitions.",
@@ -204,7 +248,7 @@ const traductionsAccueil = {
         ctaTitre: "Prêt à créer votre style ?",
         ctaSubtitle: "Configurez votre pantalon ou votre chemise en quelques clics et commandez directement via WhatsApp.",
         ctaBouton: "Configurer mon produit",
-        footerDesc: "Pantalons et chemises personnalisables pour homme. Qualité, élégance et sur-mesure.",
+        footerDesc: "Vêtements personnalisables pour homme et femme. Qualité, élégance et sur-mesure.",
         footerLiens: "Liens",
         footerContact: "Contact",
         accueil: "Accueil",
@@ -213,10 +257,12 @@ const traductionsAccueil = {
     },
     ar: {
         slogan: "أناقة حسب الطلب",
-        heroSubtitle: "بناطيل وقمصان رجالية قابلة للتخصيص. اختر، خصص، اطلب.",
+        heroSubtitle: "ملابس قابلة للتخصيص للرجال والنساء. اختر، خصص، اطلب.",
         decouvrirCollection: "اكتشف المجموعة",
         nosProduits: "منتجاتنا",
         produitsSubtitle: "كل قطعة مصممة لتتناسب مع أسلوبك.",
+        ongletHomme: "رجال",
+        ongletFemme: "نساء",
         pourquoiHana: "لماذا هانا؟",
         avantage1Titre: "حسب الطلب",
         avantage1Texte: "كل قطعة ملابس قابلة للتخصيص حسب رغبتك: المقاس، اللون، الخامة والتفاصيل.",
@@ -233,7 +279,7 @@ const traductionsAccueil = {
         ctaTitre: "مستعد لابتكار أسلوبك؟",
         ctaSubtitle: "خصص بنطلونك أو قميصك في بضع نقرات واطلب مباشرة عبر واتساب.",
         ctaBouton: "تخصيص منتجي",
-        footerDesc: "بناطيل وقمصان رجالية قابلة للتخصيص. الجودة، الأناقة والتفصيل.",
+        footerDesc: "ملابس قابلة للتخصيص للرجال والنساء. الجودة، الأناقة والتفصيل.",
         footerLiens: "روابط",
         footerContact: "تواصل",
         accueil: "الرئيسية",
