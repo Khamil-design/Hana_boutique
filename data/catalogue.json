@@ -3,6 +3,7 @@
     {
       "id": "pantalon",
       "fichier": "pantalon.json",
+      "genre": "homme",
       "nom": {
         "fr": "Pantalon Homme",
         "ar": "بنطلون رجالي"
@@ -45,6 +46,7 @@
     {
       "id": "tshirt",
       "fichier": "tshirt.json",
+      "genre": "homme",
       "nom": {
         "fr": "T-shirt Homme",
         "ar": "تيشيرت رجالي"
@@ -81,6 +83,7 @@
     {
       "id": "chemise",
       "fichier": "chemise.json",
+      "genre": "homme",
       "nom": {
         "fr": "Chemise Homme",
         "ar": "قميص رجالي"
@@ -110,6 +113,117 @@
             "images/chemise/beige/profil.jpg",
             "images/chemise/beige/dos.jpg",
             "images/chemise/beige/detail.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "id": "robe",
+      "fichier": "robe.json",
+      "genre": "femme",
+      "nom": {
+        "fr": "Robe Femme",
+        "ar": "فستان نسائي"
+      },
+      "description": {
+        "fr": "Robe élégante et personnalisable. Choisissez la couleur, la matière et la longueur selon vos envies.",
+        "ar": "فستان أنيق وقابل للتخصيص. اختاري اللون، الخامة والطول حسب رغبتك."
+      },
+      "prixBase": 60,
+      "devise": "DH",
+      "images": {
+        "parCouleur": {
+          "noir": [
+            "images/femme/robe/noir/principale.jpg",
+            "images/femme/robe/noir/profil.jpg",
+            "images/femme/robe/noir/dos.jpg",
+            "images/femme/robe/noir/detail.jpg"
+          ],
+          "bordeaux": [
+            "images/femme/robe/bordeaux/principale.jpg",
+            "images/femme/robe/bordeaux/profil.jpg",
+            "images/femme/robe/bordeaux/dos.jpg",
+            "images/femme/robe/bordeaux/detail.jpg"
+          ],
+          "beigeSable": [
+            "images/femme/robe/beigeSable/principale.jpg",
+            "images/femme/robe/beigeSable/profil.jpg",
+            "images/femme/robe/beigeSable/dos.jpg",
+            "images/femme/robe/beigeSable/detail.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "id": "jupe",
+      "fichier": "jupe.json",
+      "genre": "femme",
+      "nom": {
+        "fr": "Jupe Femme",
+        "ar": "تنورة نسائية"
+      },
+      "description": {
+        "fr": "Jupe personnalisable, élégante et confortable. Sélectionnez la longueur, la couleur et la matière.",
+        "ar": "تنورة أنيقة ومريحة وقابلة للتخصيص. اختاري الطول، اللون والخامة."
+      },
+      "prixBase": 45,
+      "devise": "DH",
+      "images": {
+        "parCouleur": {
+          "noir": [
+            "images/femme/jupe/noir/principale.jpg",
+            "images/femme/jupe/noir/profil.jpg",
+            "images/femme/jupe/noir/dos.jpg",
+            "images/femme/jupe/noir/detail.jpg"
+          ],
+          "bordeaux": [
+            "images/femme/jupe/bordeaux/principale.jpg",
+            "images/femme/jupe/bordeaux/profil.jpg",
+            "images/femme/jupe/bordeaux/dos.jpg",
+            "images/femme/jupe/bordeaux/detail.jpg"
+          ],
+          "beigeSable": [
+            "images/femme/jupe/beigeSable/principale.jpg",
+            "images/femme/jupe/beigeSable/profil.jpg",
+            "images/femme/jupe/beigeSable/dos.jpg",
+            "images/femme/jupe/beigeSable/detail.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "id": "chemisier",
+      "fichier": "chemisier.json",
+      "genre": "femme",
+      "nom": {
+        "fr": "Chemisier Femme",
+        "ar": "قميص نسائي"
+      },
+      "description": {
+        "fr": "Chemisier raffiné et personnalisable. Choisissez le tissu, la coupe et les finitions pour un style unique.",
+        "ar": "قميص نسائي أنيق وقابل للتخصيص. اختاري القماش، القصة والتشطيبات لأسلوب فريد."
+      },
+      "prixBase": 50,
+      "devise": "DH",
+      "images": {
+        "parCouleur": {
+          "noir": [
+            "images/femme/chemisier/noir/principale.jpg",
+            "images/femme/chemisier/noir/profil.jpg",
+            "images/femme/chemisier/noir/dos.jpg",
+            "images/femme/chemisier/noir/detail.jpg"
+          ],
+          "bordeaux": [
+            "images/femme/chemisier/bordeaux/principale.jpg",
+            "images/femme/chemisier/bordeaux/profil.jpg",
+            "images/femme/chemisier/bordeaux/dos.jpg",
+            "images/femme/chemisier/bordeaux/detail.jpg"
+          ],
+          "beigeSable": [
+            "images/femme/chemisier/beigeSable/principale.jpg",
+            "images/femme/chemisier/beigeSable/profil.jpg",
+            "images/femme/chemisier/beigeSable/dos.jpg",
+            "images/femme/chemisier/beigeSable/detail.jpg"
           ]
         }
       }
