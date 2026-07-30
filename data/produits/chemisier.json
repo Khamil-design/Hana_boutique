@@ -19,23 +19,17 @@
   "images": {
     "dependDe": "couleur",
     "parCouleur": {
-      "noir": [
-        "images/femme/chemisier/noir/principale.jpg",
-        "images/femme/chemisier/noir/profil.jpg",
-        "images/femme/chemisier/noir/dos.jpg",
-        "images/femme/chemisier/noir/detail.jpg"
+      "vertSauge": [
+        "images/femme/chemisier/vertSauge/principale.jpg",
+        "images/femme/chemisier/vertSauge/profil.jpg",
+        "images/femme/chemisier/vertSauge/dos.jpg",
+        "images/femme/chemisier/vertSauge/detail.jpg"
       ],
-      "bordeaux": [
-        "images/femme/chemisier/bordeaux/principale.jpg",
-        "images/femme/chemisier/bordeaux/profil.jpg",
-        "images/femme/chemisier/bordeaux/dos.jpg",
-        "images/femme/chemisier/bordeaux/detail.jpg"
-      ],
-      "beigeSable": [
-        "images/femme/chemisier/beigeSable/principale.jpg",
-        "images/femme/chemisier/beigeSable/profil.jpg",
-        "images/femme/chemisier/beigeSable/dos.jpg",
-        "images/femme/chemisier/beigeSable/detail.jpg"
+      "creme": [
+        "images/femme/chemisier/creme/principale.jpg",
+        "images/femme/chemisier/creme/profil.jpg",
+        "images/femme/chemisier/creme/dos.jpg",
+        "images/femme/chemisier/creme/detail.jpg"
       ]
     }
   },
@@ -67,22 +61,16 @@
       "obligatoire": true,
       "choix": [
         {
-          "id": "noir",
-          "libelle": { "fr": "Noir", "ar": "أسود" },
+          "id": "vertSauge",
+          "libelle": { "fr": "Vert sauge", "ar": "أخضر مريمية" },
           "prix": 0,
-          "codeCouleur": "#000000"
+          "codeCouleur": "#9CAF88"
         },
         {
-          "id": "bordeaux",
-          "libelle": { "fr": "Bordeaux", "ar": "خمري" },
-          "prix": 3,
-          "codeCouleur": "#5C2331"
-        },
-        {
-          "id": "beigeSable",
-          "libelle": { "fr": "Beige sable", "ar": "بيج رملي" },
-          "prix": 2,
-          "codeCouleur": "#C9A876"
+          "id": "creme",
+          "libelle": { "fr": "Crème", "ar": "كريمي" },
+          "prix": 0,
+          "codeCouleur": "#EFE6D8"
         }
       ]
     },

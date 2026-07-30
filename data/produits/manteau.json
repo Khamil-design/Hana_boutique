@@ -1,0 +1,122 @@
+{
+  "id": "manteau",
+  "genre": "femme",
+  "nom": {
+    "fr": "Manteau Femme",
+    "ar": "معطف نسائي"
+  },
+  "categorie": {
+    "fr": "Vêtements",
+    "ar": "ملابس"
+  },
+  "description": {
+    "fr": "Manteau chic et personnalisable, parfait pour la mi-saison. Choisissez la couleur, la matière et la doublure.",
+    "ar": "معطف أنيق وقابل للتخصيص، مثالي لفصل الخريف. اختاري اللون، الخامة والبطانة."
+  },
+  "reference": "MAN-001",
+  "prixBase": 150,
+  "devise": "DH",
+  "images": {
+    "dependDe": "couleur",
+    "parCouleur": {
+      "camel": [
+        "images/femme/manteau/camel/principale.jpg",
+        "images/femme/manteau/camel/profil.jpg",
+        "images/femme/manteau/camel/dos.jpg",
+        "images/femme/manteau/camel/detail.jpg"
+      ]
+    }
+  },
+  "options": [
+    {
+      "id": "taille",
+      "nom": {
+        "fr": "Taille",
+        "ar": "المقاس"
+      },
+      "type": "select",
+      "obligatoire": true,
+      "valeurDefaut": "M",
+      "choix": [
+        { "id": "XS", "libelle": { "fr": "XS", "ar": "XS" }, "prix": 0 },
+        { "id": "S",  "libelle": { "fr": "S",  "ar": "S"  }, "prix": 0 },
+        { "id": "M",  "libelle": { "fr": "M",  "ar": "M"  }, "prix": 6 },
+        { "id": "L",  "libelle": { "fr": "L",  "ar": "L"  }, "prix": 12 },
+        { "id": "XL", "libelle": { "fr": "XL", "ar": "XL" }, "prix": 18 }
+      ]
+    },
+    {
+      "id": "couleur",
+      "nom": {
+        "fr": "Couleur",
+        "ar": "اللون"
+      },
+      "type": "radio",
+      "obligatoire": true,
+      "choix": [
+        {
+          "id": "camel",
+          "libelle": { "fr": "Camel", "ar": "كاميل" },
+          "prix": 0,
+          "codeCouleur": "#C19A6B"
+        }
+      ]
+    },
+    {
+      "id": "matiere",
+      "nom": {
+        "fr": "Matière",
+        "ar": "الخامة"
+      },
+      "type": "select",
+      "obligatoire": true,
+      "valeurDefaut": "laine",
+      "choix": [
+        { "id": "laine",     "libelle": { "fr": "Laine",     "ar": "صوف" }, "prix": 0 },
+        { "id": "cachemire", "libelle": { "fr": "Cachemire", "ar": "كشمير" }, "prix": 60 },
+        { "id": "coton_epais", "libelle": { "fr": "Coton épais", "ar": "قطن سميك" }, "prix": 20 }
+      ]
+    },
+    {
+      "id": "doublure",
+      "nom": {
+        "fr": "Doublure intérieure",
+        "ar": "بطانة داخلية"
+      },
+      "type": "checkbox",
+      "prix": 25,
+      "valeurDefaut": true
+    },
+    {
+      "id": "broderie",
+      "nom": {
+        "fr": "Broderie personnalisée",
+        "ar": "تطريز مخصص"
+      },
+      "type": "checkbox",
+      "prix": 20,
+      "valeurDefaut": false
+    },
+    {
+      "id": "quantite",
+      "nom": {
+        "fr": "Quantité",
+        "ar": "الكمية"
+      },
+      "type": "number",
+      "minimum": 1,
+      "maximum": 20,
+      "valeurDefaut": 1
+    }
+  ],
+  "regles": [],
+  "stock": {
+    "gestion": false,
+    "quantite": 0
+  },
+  "promotion": {
+    "active": false,
+    "type": "pourcentage",
+    "valeur": 0
+  }
+}

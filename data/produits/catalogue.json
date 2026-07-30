@@ -1,0 +1,202 @@
+{
+  "produits": [
+    {
+      "id": "pantalon",
+      "fichier": "pantalon.json",
+      "genre": "homme",
+      "nom": {
+        "fr": "Pantalon Homme",
+        "ar": "بنطلون رجالي"
+      },
+      "description": {
+        "fr": "Pantalon personnalisable selon vos préférences. Choisissez la taille, la couleur, la matière et ajoutez une broderie personnalisée.",
+        "ar": "بنطلون قابل للتخصيص حسب رغبتك. اختر المقاس، اللون، الخامة وأضف تطريزًا مخصصًا."
+      },
+      "prixBase": 40,
+      "devise": "DH",
+      "images": {
+        "parCouleur": {
+          "noir": [
+            "images/pantalon/noir/principale.jpg",
+            "images/pantalon/noir/profil.jpg",
+            "images/pantalon/noir/dos.jpg",
+            "images/pantalon/noir/detail.jpg"
+          ],
+          "bleu": [
+            "images/pantalon/bleu/principale.jpg",
+            "images/pantalon/bleu/profil.jpg",
+            "images/pantalon/bleu/dos.jpg",
+            "images/pantalon/bleu/detail.jpg"
+          ],
+          "gris": [
+            "images/pantalon/gris/principale.jpg",
+            "images/pantalon/gris/profil.jpg",
+            "images/pantalon/gris/dos.jpg",
+            "images/pantalon/gris/detail.jpg"
+          ],
+          "vertPistache": [
+            "images/pantalon/vert/principale.jpg",
+            "images/pantalon/vert/profil.jpg",
+            "images/pantalon/vert/dos.jpg",
+            "images/pantalon/vert/detail.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tshirt",
+      "fichier": "tshirt.json",
+      "genre": "homme",
+      "nom": {
+        "fr": "T-shirt Homme",
+        "ar": "تيشيرت رجالي"
+      },
+      "description": {
+        "fr": "T-shirt personnalisable et confortable. Choisissez la couleur, la matière et ajoutez une broderie personnalisée.",
+        "ar": "تيشيرت مريح وقابل للتخصيص. اختر اللون، الخامة وأضف تطريزًا مخصصًا."
+      },
+      "prixBase": 25,
+      "devise": "DH",
+      "images": {
+        "parCouleur": {
+          "bleuMarine": [
+            "images/teeshirt/bleuMarine/principale.jpg",
+            "images/teeshirt/bleuMarine/profil.jpg",
+            "images/teeshirt/bleuMarine/dos.jpg",
+            "images/teeshirt/bleuMarine/detail.jpg"
+          ],
+          "bordeaux": [
+            "images/teeshirt/bordeaux/principale.jpg",
+            "images/teeshirt/bordeaux/profil.jpg",
+            "images/teeshirt/bordeaux/dos.jpg",
+            "images/teeshirt/bordeaux/detail.jpg"
+          ],
+          "beigeSable": [
+            "images/teeshirt/beigeSable/principale.jpg",
+            "images/teeshirt/beigeSable/profil.jpg",
+            "images/teeshirt/beigeSable/dos.jpg",
+            "images/teeshirt/beigeSable/detail.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "id": "chemise",
+      "fichier": "chemise.json",
+      "genre": "homme",
+      "nom": {
+        "fr": "Chemise Homme",
+        "ar": "قميص رجالي"
+      },
+      "description": {
+        "fr": "Chemise élégante et personnalisable. Sélectionnez le tissu, la coupe, les boutons et les finitions pour un style unique.",
+        "ar": "قميص أنيق وقابل للتخصيص. اختر القماش، القصة، الأزرار والتشطيبات لأسلوب فريد."
+      },
+      "prixBase": 55,
+      "devise": "DH",
+      "images": {
+        "parCouleur": {
+          "blanche": [
+            "images/chemise/blanche/principale.jpg",
+            "images/chemise/blanche/profil.jpg",
+            "images/chemise/blanche/dos.jpg",
+            "images/chemise/blanche/detail.jpg"
+          ],
+          "bleu": [
+            "images/chemise/bleu/principale.jpg",
+            "images/chemise/bleu/profil.jpg",
+            "images/chemise/bleu/dos.jpg",
+            "images/chemise/bleu/detail.jpg"
+          ],
+          "beige": [
+            "images/chemise/beige/principale.jpg",
+            "images/chemise/beige/profil.jpg",
+            "images/chemise/beige/dos.jpg",
+            "images/chemise/beige/detail.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "id": "robe",
+      "fichier": "robe.json",
+      "genre": "femme",
+      "nom": {
+        "fr": "Robe Femme",
+        "ar": "فستان نسائي"
+      },
+      "description": {
+        "fr": "Robe élégante et personnalisable. Choisissez la couleur, la matière et la longueur selon vos envies.",
+        "ar": "فستان أنيق وقابل للتخصيص. اختاري اللون، الخامة والطول حسب رغبتك."
+      },
+      "prixBase": 60,
+      "devise": "DH",
+      "images": {
+        "parCouleur": {
+          "creme": [
+            "images/femme/robe/creme/principale.jpg",
+            "images/femme/robe/creme/profil.jpg",
+            "images/femme/robe/creme/dos.jpg",
+            "images/femme/robe/creme/detail.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "id": "chemisier",
+      "fichier": "chemisier.json",
+      "genre": "femme",
+      "nom": {
+        "fr": "Chemisier Femme",
+        "ar": "قميص نسائي"
+      },
+      "description": {
+        "fr": "Chemisier raffiné et personnalisable. Choisissez le tissu, la coupe et les finitions pour un style unique.",
+        "ar": "قميص نسائي أنيق وقابل للتخصيص. اختاري القماش، القصة والتشطيبات لأسلوب فريد."
+      },
+      "prixBase": 50,
+      "devise": "DH",
+      "images": {
+        "parCouleur": {
+          "vertSauge": [
+            "images/femme/chemisier/vertSauge/principale.jpg",
+            "images/femme/chemisier/vertSauge/profil.jpg",
+            "images/femme/chemisier/vertSauge/dos.jpg",
+            "images/femme/chemisier/vertSauge/detail.jpg"
+          ],
+          "creme": [
+            "images/femme/chemisier/creme/principale.jpg",
+            "images/femme/chemisier/creme/profil.jpg",
+            "images/femme/chemisier/creme/dos.jpg",
+            "images/femme/chemisier/creme/detail.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "id": "manteau",
+      "fichier": "manteau.json",
+      "genre": "femme",
+      "nom": {
+        "fr": "Manteau Femme",
+        "ar": "معطف نسائي"
+      },
+      "description": {
+        "fr": "Manteau chic et personnalisable, parfait pour la mi-saison. Choisissez la couleur, la matière et la doublure.",
+        "ar": "معطف أنيق وقابل للتخصيص، مثالي لفصل الخريف. اختاري اللون، الخامة والبطانة."
+      },
+      "prixBase": 150,
+      "devise": "DH",
+      "images": {
+        "parCouleur": {
+          "camel": [
+            "images/femme/manteau/camel/principale.jpg",
+            "images/femme/manteau/camel/profil.jpg",
+            "images/femme/manteau/camel/dos.jpg",
+            "images/femme/manteau/camel/detail.jpg"
+          ]
+        }
+      }
+    }
+  ]
+}
