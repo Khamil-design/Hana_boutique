@@ -19,23 +19,35 @@
   "images": {
     "dependDe": "couleur",
     "parCouleur": {
-      "noir": [
-        "images/femme/jupe/noir/principale.jpg",
-        "images/femme/jupe/noir/profil.jpg",
-        "images/femme/jupe/noir/dos.jpg",
-        "images/femme/jupe/noir/detail.jpg"
+      "vertSauge": [
+        "images/femme/jupe/vertSauge/principale.jpg",
+        "images/femme/jupe/vertSauge/profil.jpg",
+        "images/femme/jupe/vertSauge/dos.jpg",
+        "images/femme/jupe/vertSauge/detail.jpg"
       ],
-      "bordeaux": [
-        "images/femme/jupe/bordeaux/principale.jpg",
-        "images/femme/jupe/bordeaux/profil.jpg",
-        "images/femme/jupe/bordeaux/dos.jpg",
-        "images/femme/jupe/bordeaux/detail.jpg"
+      "canelle": [
+        "images/femme/jupe/canelle/principale.jpg",
+        "images/femme/jupe/canelle/profil.jpg",
+        "images/femme/jupe/canelle/dos.jpg",
+        "images/femme/jupe/canelle/detail.jpg"
       ],
-      "beigeSable": [
-        "images/femme/jupe/beigeSable/principale.jpg",
-        "images/femme/jupe/beigeSable/profil.jpg",
-        "images/femme/jupe/beigeSable/dos.jpg",
-        "images/femme/jupe/beigeSable/detail.jpg"
+      "corailPoudre": [
+        "images/femme/jupe/corailPoudre/principale.jpg",
+        "images/femme/jupe/corailPoudre/profil.jpg",
+        "images/femme/jupe/corailPoudre/dos.jpg",
+        "images/femme/jupe/corailPoudre/detail.jpg"
+      ],
+      "grisAntracite": [
+        "images/femme/jupe/grisAntracite/principale.jpg",
+        "images/femme/jupe/grisAntracite/profil.jpg",
+        "images/femme/jupe/grisAntracite/dos.jpg",
+        "images/femme/jupe/grisAntracite/detail.jpg"
+      ],
+      "prune": [
+        "images/femme/jupe/prune/principale.jpg",
+        "images/femme/jupe/prune/profil.jpg",
+        "images/femme/jupe/prune/dos.jpg",
+        "images/femme/jupe/prune/detail.jpg"
       ]
     }
   },
@@ -67,22 +79,34 @@
       "obligatoire": true,
       "choix": [
         {
-          "id": "noir",
-          "libelle": { "fr": "Noir", "ar": "أسود" },
+          "id": "vertSauge",
+          "libelle": { "fr": "Vert sauge", "ar": "أخضر مريمية" },
           "prix": 0,
-          "codeCouleur": "#000000"
+          "codeCouleur": "#9CAF88"
         },
         {
-          "id": "bordeaux",
-          "libelle": { "fr": "Bordeaux", "ar": "خمري" },
+          "id": "canelle",
+          "libelle": { "fr": "Cannelle", "ar": "قرفي" },
           "prix": 3,
-          "codeCouleur": "#5C2331"
+          "codeCouleur": "#A85C32"
         },
         {
-          "id": "beigeSable",
-          "libelle": { "fr": "Beige sable", "ar": "بيج رملي" },
-          "prix": 2,
-          "codeCouleur": "#C9A876"
+          "id": "corailPoudre",
+          "libelle": { "fr": "Corail poudré", "ar": "مرجاني فاتح" },
+          "prix": 3,
+          "codeCouleur": "#E6A69A"
+        },
+        {
+          "id": "grisAntracite",
+          "libelle": { "fr": "Gris anthracite", "ar": "رمادي غامق" },
+          "prix": 0,
+          "codeCouleur": "#3B3B3D"
+        },
+        {
+          "id": "prune",
+          "libelle": { "fr": "Prune", "ar": "بنفسجي داكن" },
+          "prix": 4,
+          "codeCouleur": "#6B2C5E"
         }
       ]
     },
