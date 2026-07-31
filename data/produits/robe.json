@@ -24,6 +24,18 @@
         "images/femme/robe/creme/profil.jpg",
         "images/femme/robe/creme/dos.jpg",
         "images/femme/robe/creme/detail.jpg"
+      ],
+      "bordeaux": [
+        "images/femme/robe/bordeaux/principale.jpg",
+        "images/femme/robe/bordeaux/profil.jpg",
+        "images/femme/robe/bordeaux/dos.jpg",
+        "images/femme/robe/bordeaux/detail.jpg"
+      ],
+      "camelAmbre": [
+        "images/femme/robe/camelAmbre/principale.jpg",
+        "images/femme/robe/camelAmbre/profil.jpg",
+        "images/femme/robe/camelAmbre/dos.jpg",
+        "images/femme/robe/camelAmbre/detail.jpg"
       ]
     }
   },
@@ -59,6 +71,18 @@
           "libelle": { "fr": "Crème", "ar": "كريمي" },
           "prix": 0,
           "codeCouleur": "#EFE6D8"
+        },
+        {
+          "id": "bordeaux",
+          "libelle": { "fr": "Bordeaux", "ar": "خمري" },
+          "prix": 4,
+          "codeCouleur": "#5C2331"
+        },
+        {
+          "id": "camelAmbre",
+          "libelle": { "fr": "Camel ambré", "ar": "كاميل عنبري" },
+          "prix": 4,
+          "codeCouleur": "#B8703A"
         }
       ]
     },
