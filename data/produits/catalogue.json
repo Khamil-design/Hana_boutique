@@ -138,6 +138,18 @@
             "images/femme/robe/creme/profil.jpg",
             "images/femme/robe/creme/dos.jpg",
             "images/femme/robe/creme/detail.jpg"
+          ],
+          "bordeaux": [
+            "images/femme/robe/bordeaux/principale.jpg",
+            "images/femme/robe/bordeaux/profil.jpg",
+            "images/femme/robe/bordeaux/dos.jpg",
+            "images/femme/robe/bordeaux/detail.jpg"
+          ],
+          "camelAmbre": [
+            "images/femme/robe/camelAmbre/principale.jpg",
+            "images/femme/robe/camelAmbre/profil.jpg",
+            "images/femme/robe/camelAmbre/dos.jpg",
+            "images/femme/robe/camelAmbre/detail.jpg"
           ]
         }
       }
@@ -169,6 +181,61 @@
             "images/femme/chemisier/creme/profil.jpg",
             "images/femme/chemisier/creme/dos.jpg",
             "images/femme/chemisier/creme/detail.jpg"
+          ],
+          "ocreDore": [
+            "images/femme/chemisier/ocreDore/principale.jpg",
+            "images/femme/chemisier/ocreDore/profil.jpg",
+            "images/femme/chemisier/ocreDore/dos.jpg",
+            "images/femme/chemisier/ocreDore/detail.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "id": "jupe",
+      "fichier": "jupe.json",
+      "genre": "femme",
+      "nom": {
+        "fr": "Jupe Femme",
+        "ar": "تنورة نسائية"
+      },
+      "description": {
+        "fr": "Jupe personnalisable, élégante et confortable. Sélectionnez la longueur, la couleur et la matière.",
+        "ar": "تنورة أنيقة ومريحة وقابلة للتخصيص. اختاري الطول، اللون والخامة."
+      },
+      "prixBase": 45,
+      "devise": "DH",
+      "images": {
+        "parCouleur": {
+          "vertSauge": [
+            "images/femme/jupe/vertSauge/principale.jpg",
+            "images/femme/jupe/vertSauge/profil.jpg",
+            "images/femme/jupe/vertSauge/dos.jpg",
+            "images/femme/jupe/vertSauge/detail.jpg"
+          ],
+          "canelle": [
+            "images/femme/jupe/canelle/principale.jpg",
+            "images/femme/jupe/canelle/profil.jpg",
+            "images/femme/jupe/canelle/dos.jpg",
+            "images/femme/jupe/canelle/detail.jpg"
+          ],
+          "corailPoudre": [
+            "images/femme/jupe/corailPoudre/principale.jpg",
+            "images/femme/jupe/corailPoudre/profil.jpg",
+            "images/femme/jupe/corailPoudre/dos.jpg",
+            "images/femme/jupe/corailPoudre/detail.jpg"
+          ],
+          "grisAntracite": [
+            "images/femme/jupe/grisAntracite/principale.jpg",
+            "images/femme/jupe/grisAntracite/profil.jpg",
+            "images/femme/jupe/grisAntracite/dos.jpg",
+            "images/femme/jupe/grisAntracite/detail.jpg"
+          ],
+          "prune": [
+            "images/femme/jupe/prune/principale.jpg",
+            "images/femme/jupe/prune/profil.jpg",
+            "images/femme/jupe/prune/dos.jpg",
+            "images/femme/jupe/prune/detail.jpg"
           ]
         }
       }
@@ -194,6 +261,12 @@
             "images/femme/manteau/camel/profil.jpg",
             "images/femme/manteau/camel/dos.jpg",
             "images/femme/manteau/camel/detail.jpg"
+          ],
+          "bordeaux": [
+            "images/femme/manteau/bordeaux/principale.jpg",
+            "images/femme/manteau/bordeaux/profil.jpg",
+            "images/femme/manteau/bordeaux/dos.jpg",
+            "images/femme/manteau/bordeaux/detail.jpg"
           ]
         }
       }
