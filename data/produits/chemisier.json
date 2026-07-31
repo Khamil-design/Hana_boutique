@@ -30,6 +30,12 @@
         "images/femme/chemisier/creme/profil.jpg",
         "images/femme/chemisier/creme/dos.jpg",
         "images/femme/chemisier/creme/detail.jpg"
+      ],
+      "ocreDore": [
+        "images/femme/chemisier/ocreDore/principale.jpg",
+        "images/femme/chemisier/ocreDore/profil.jpg",
+        "images/femme/chemisier/ocreDore/dos.jpg",
+        "images/femme/chemisier/ocreDore/detail.jpg"
       ]
     }
   },
@@ -71,6 +77,12 @@
           "libelle": { "fr": "Crème", "ar": "كريمي" },
           "prix": 0,
           "codeCouleur": "#EFE6D8"
+        },
+        {
+          "id": "ocreDore",
+          "libelle": { "fr": "Ocre doré", "ar": "أصفر مذهب" },
+          "prix": 3,
+          "codeCouleur": "#C8932E"
         }
       ]
     },
