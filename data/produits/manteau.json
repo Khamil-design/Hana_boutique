@@ -24,6 +24,12 @@
         "images/femme/manteau/camel/profil.jpg",
         "images/femme/manteau/camel/dos.jpg",
         "images/femme/manteau/camel/detail.jpg"
+      ],
+      "bordeaux": [
+        "images/femme/manteau/bordeaux/principale.jpg",
+        "images/femme/manteau/bordeaux/profil.jpg",
+        "images/femme/manteau/bordeaux/dos.jpg",
+        "images/femme/manteau/bordeaux/detail.jpg"
       ]
     }
   },
@@ -59,6 +65,12 @@
           "libelle": { "fr": "Camel", "ar": "كاميل" },
           "prix": 0,
           "codeCouleur": "#C19A6B"
+        },
+        {
+          "id": "bordeaux",
+          "libelle": { "fr": "Bordeaux", "ar": "خمري" },
+          "prix": 10,
+          "codeCouleur": "#5C2331"
         }
       ]
     },
