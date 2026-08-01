@@ -88,7 +88,18 @@ export default class UI {
         document.getElementById("productDescription").textContent =
             champ(produit.description, langue);
 
-        if (produit.images.parCouleur) {
+        if (produit.images.parCombinaison && Array.isArray(produit.images.dependDe)) {
+
+            const premiereCombinaison =
+                Object.keys(produit.images.parCombinaison)[0];
+
+            this.galerie.initialiser(
+                produit.images.parCombinaison[premiereCombinaison],
+                nomProduit
+            );
+
+        }
+        else if (produit.images.parCouleur) {
 
             const premiereCouleur =
                 Object.keys(produit.images.parCouleur)[0];

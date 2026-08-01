@@ -159,9 +159,25 @@ export default class Configurateur {
                 this.produit,
                 this.configuration
             );
-// Changement automatique de la galerie selon la couleur
+// Changement automatique de la galerie selon la couleur (et, si applicable, une autre option comme la longueur)
 
-if (this.produit.images.parCouleur) {
+if (this.produit.images.parCombinaison && Array.isArray(this.produit.images.dependDe)) {
+
+    const cleCombinaison =
+        this.produit.images.dependDe
+            .map(idOption => this.configuration[idOption])
+            .join("|");
+
+    if (this.produit.images.parCombinaison[cleCombinaison]) {
+
+        this.ui.galerie.initialiser(
+            this.produit.images.parCombinaison[cleCombinaison]
+        );
+
+    }
+
+}
+else if (this.produit.images.parCouleur) {
 
     const couleurChoisie =
         this.configuration.couleur;
