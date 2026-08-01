@@ -17,33 +17,63 @@
   "prixBase": 45,
   "devise": "DH",
   "images": {
-    "dependDe": "couleur",
-    "parCouleur": {
-      "vertSauge": [
+    "dependDe": ["longueur", "couleur"],
+    "parCombinaison": {
+      "longue|vertSauge": [
         "images/femme/jupe/vertSauge/principale.jpg",
         "images/femme/jupe/vertSauge/profil.jpg",
         "images/femme/jupe/vertSauge/dos.jpg",
         "images/femme/jupe/vertSauge/detail.jpg"
       ],
-      "canelle": [
+      "longue|canelle": [
         "images/femme/jupe/canelle/principale.jpg",
         "images/femme/jupe/canelle/profil.jpg",
         "images/femme/jupe/canelle/dos.jpg",
         "images/femme/jupe/canelle/detail.jpg"
       ],
-      "corailPoudre": [
+      "longue|corailPoudre": [
         "images/femme/jupe/corailPoudre/principale.jpg",
         "images/femme/jupe/corailPoudre/profil.jpg",
         "images/femme/jupe/corailPoudre/dos.jpg",
         "images/femme/jupe/corailPoudre/detail.jpg"
       ],
-      "grisAntracite": [
+      "longue|grisAntracite": [
         "images/femme/jupe/grisAntracite/principale.jpg",
         "images/femme/jupe/grisAntracite/profil.jpg",
         "images/femme/jupe/grisAntracite/dos.jpg",
         "images/femme/jupe/grisAntracite/detail.jpg"
       ],
-      "prune": [
+      "longue|prune": [
+        "images/femme/jupe/prune/principale.jpg",
+        "images/femme/jupe/prune/profil.jpg",
+        "images/femme/jupe/prune/dos.jpg",
+        "images/femme/jupe/prune/detail.jpg"
+      ],
+      "genou|vertSauge": [
+        "images/femme/jupe/vertSauge/principale.jpg",
+        "images/femme/jupe/vertSauge/profil.jpg",
+        "images/femme/jupe/vertSauge/dos.jpg",
+        "images/femme/jupe/vertSauge/detail.jpg"
+      ],
+      "genou|canelle": [
+        "images/femme/jupe/canelle/principale.jpg",
+        "images/femme/jupe/canelle/profil.jpg",
+        "images/femme/jupe/canelle/dos.jpg",
+        "images/femme/jupe/canelle/detail.jpg"
+      ],
+      "genou|corailPoudre": [
+        "images/femme/jupe/corailPoudre/principale.jpg",
+        "images/femme/jupe/corailPoudre/profil.jpg",
+        "images/femme/jupe/corailPoudre/dos.jpg",
+        "images/femme/jupe/corailPoudre/detail.jpg"
+      ],
+      "genou|grisAntracite": [
+        "images/femme/jupe/grisAntracite/principale.jpg",
+        "images/femme/jupe/grisAntracite/profil.jpg",
+        "images/femme/jupe/grisAntracite/dos.jpg",
+        "images/femme/jupe/grisAntracite/detail.jpg"
+      ],
+      "genou|prune": [
         "images/femme/jupe/prune/principale.jpg",
         "images/femme/jupe/prune/profil.jpg",
         "images/femme/jupe/prune/dos.jpg",
@@ -120,7 +150,6 @@
       "obligatoire": true,
       "valeurDefaut": "genou",
       "choix": [
-        { "id": "courte", "libelle": { "fr": "Courte",     "ar": "قصير" }, "prix": 0 },
         { "id": "genou",  "libelle": { "fr": "Au genou",   "ar": "حتى الركبة" }, "prix": 4 },
         { "id": "longue", "libelle": { "fr": "Longue",     "ar": "طويل" }, "prix": 8 }
       ]
