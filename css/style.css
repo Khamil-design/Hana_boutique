@@ -407,7 +407,7 @@ a{
 .produit-image{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform .5s ease;
 }
 
@@ -904,7 +904,7 @@ a{
 #productImage{
     width:100%;
     height:500px;
-    object-fit:cover;
+    object-fit:contain;
     background:var(--surface-alt);
     border:1px solid var(--border);
     border-radius:var(--radius);
