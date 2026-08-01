@@ -133,11 +133,11 @@
       "devise": "DH",
       "images": {
         "parCouleur": {
-          "noir": [
-            "images/femme/robe/noir/principale.jpg",
-            "images/femme/robe/noir/profil.jpg",
-            "images/femme/robe/noir/dos.jpg",
-            "images/femme/robe/noir/detail.jpg"
+          "creme": [
+            "images/femme/robe/creme/principale.jpg",
+            "images/femme/robe/creme/profil.jpg",
+            "images/femme/robe/creme/dos.jpg",
+            "images/femme/robe/creme/detail.jpg"
           ],
           "bordeaux": [
             "images/femme/robe/bordeaux/principale.jpg",
@@ -145,48 +145,11 @@
             "images/femme/robe/bordeaux/dos.jpg",
             "images/femme/robe/bordeaux/detail.jpg"
           ],
-          "beigeSable": [
-            "images/femme/robe/beigeSable/principale.jpg",
-            "images/femme/robe/beigeSable/profil.jpg",
-            "images/femme/robe/beigeSable/dos.jpg",
-            "images/femme/robe/beigeSable/detail.jpg"
-          ]
-        }
-      }
-    },
-    {
-      "id": "jupe",
-      "fichier": "jupe.json",
-      "genre": "femme",
-      "nom": {
-        "fr": "Jupe Femme",
-        "ar": "تنورة نسائية"
-      },
-      "description": {
-        "fr": "Jupe personnalisable, élégante et confortable. Sélectionnez la longueur, la couleur et la matière.",
-        "ar": "تنورة أنيقة ومريحة وقابلة للتخصيص. اختاري الطول، اللون والخامة."
-      },
-      "prixBase": 45,
-      "devise": "DH",
-      "images": {
-        "parCouleur": {
-          "noir": [
-            "images/femme/jupe/noir/principale.jpg",
-            "images/femme/jupe/noir/profil.jpg",
-            "images/femme/jupe/noir/dos.jpg",
-            "images/femme/jupe/noir/detail.jpg"
-          ],
-          "bordeaux": [
-            "images/femme/jupe/bordeaux/principale.jpg",
-            "images/femme/jupe/bordeaux/profil.jpg",
-            "images/femme/jupe/bordeaux/dos.jpg",
-            "images/femme/jupe/bordeaux/detail.jpg"
-          ],
-          "beigeSable": [
-            "images/femme/jupe/beigeSable/principale.jpg",
-            "images/femme/jupe/beigeSable/profil.jpg",
-            "images/femme/jupe/beigeSable/dos.jpg",
-            "images/femme/jupe/beigeSable/detail.jpg"
+          "camelAmbre": [
+            "images/femme/robe/camelAmbre/principale.jpg",
+            "images/femme/robe/camelAmbre/profil.jpg",
+            "images/femme/robe/camelAmbre/dos.jpg",
+            "images/femme/robe/camelAmbre/detail.jpg"
           ]
         }
       }
@@ -207,23 +170,103 @@
       "devise": "DH",
       "images": {
         "parCouleur": {
-          "noir": [
-            "images/femme/chemisier/noir/principale.jpg",
-            "images/femme/chemisier/noir/profil.jpg",
-            "images/femme/chemisier/noir/dos.jpg",
-            "images/femme/chemisier/noir/detail.jpg"
+          "vertSauge": [
+            "images/femme/chemisier/vertSauge/principale.jpg",
+            "images/femme/chemisier/vertSauge/profil.jpg",
+            "images/femme/chemisier/vertSauge/dos.jpg",
+            "images/femme/chemisier/vertSauge/detail.jpg"
+          ],
+          "creme": [
+            "images/femme/chemisier/creme/principale.jpg",
+            "images/femme/chemisier/creme/profil.jpg",
+            "images/femme/chemisier/creme/dos.jpg",
+            "images/femme/chemisier/creme/detail.jpg"
+          ],
+          "ocreDore": [
+            "images/femme/chemisier/ocreDore/principale.jpg",
+            "images/femme/chemisier/ocreDore/profil.jpg",
+            "images/femme/chemisier/ocreDore/dos.jpg",
+            "images/femme/chemisier/ocreDore/detail.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "id": "jupe",
+      "fichier": "jupe.json",
+      "genre": "femme",
+      "nom": {
+        "fr": "Jupe Femme",
+        "ar": "تنورة نسائية"
+      },
+      "description": {
+        "fr": "Jupe personnalisable, élégante et confortable. Sélectionnez la longueur, la couleur et la matière.",
+        "ar": "تنورة أنيقة ومريحة وقابلة للتخصيص. اختاري الطول، اللون والخامة."
+      },
+      "prixBase": 45,
+      "devise": "DH",
+      "images": {
+        "parCouleur": {
+          "vertSauge": [
+            "images/femme/jupe/vertSauge/principale.jpg",
+            "images/femme/jupe/vertSauge/profil.jpg",
+            "images/femme/jupe/vertSauge/dos.jpg",
+            "images/femme/jupe/vertSauge/detail.jpg"
+          ],
+          "canelle": [
+            "images/femme/jupe/canelle/principale.jpg",
+            "images/femme/jupe/canelle/profil.jpg",
+            "images/femme/jupe/canelle/dos.jpg",
+            "images/femme/jupe/canelle/detail.jpg"
+          ],
+          "corailPoudre": [
+            "images/femme/jupe/corailPoudre/principale.jpg",
+            "images/femme/jupe/corailPoudre/profil.jpg",
+            "images/femme/jupe/corailPoudre/dos.jpg",
+            "images/femme/jupe/corailPoudre/detail.jpg"
+          ],
+          "grisAntracite": [
+            "images/femme/jupe/grisAntracite/principale.jpg",
+            "images/femme/jupe/grisAntracite/profil.jpg",
+            "images/femme/jupe/grisAntracite/dos.jpg",
+            "images/femme/jupe/grisAntracite/detail.jpg"
+          ],
+          "prune": [
+            "images/femme/jupe/prune/principale.jpg",
+            "images/femme/jupe/prune/profil.jpg",
+            "images/femme/jupe/prune/dos.jpg",
+            "images/femme/jupe/prune/detail.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "id": "manteau",
+      "fichier": "manteau.json",
+      "genre": "femme",
+      "nom": {
+        "fr": "Manteau Femme",
+        "ar": "معطف نسائي"
+      },
+      "description": {
+        "fr": "Manteau chic et personnalisable, parfait pour la mi-saison. Choisissez la couleur, la matière et la doublure.",
+        "ar": "معطف أنيق وقابل للتخصيص، مثالي لفصل الخريف. اختاري اللون، الخامة والبطانة."
+      },
+      "prixBase": 150,
+      "devise": "DH",
+      "images": {
+        "parCouleur": {
+          "camel": [
+            "images/femme/manteau/camel/principale.jpg",
+            "images/femme/manteau/camel/profil.jpg",
+            "images/femme/manteau/camel/dos.jpg",
+            "images/femme/manteau/camel/detail.jpg"
           ],
           "bordeaux": [
-            "images/femme/chemisier/bordeaux/principale.jpg",
-            "images/femme/chemisier/bordeaux/profil.jpg",
-            "images/femme/chemisier/bordeaux/dos.jpg",
-            "images/femme/chemisier/bordeaux/detail.jpg"
-          ],
-          "beigeSable": [
-            "images/femme/chemisier/beigeSable/principale.jpg",
-            "images/femme/chemisier/beigeSable/profil.jpg",
-            "images/femme/chemisier/beigeSable/dos.jpg",
-            "images/femme/chemisier/beigeSable/detail.jpg"
+            "images/femme/manteau/bordeaux/principale.jpg",
+            "images/femme/manteau/bordeaux/profil.jpg",
+            "images/femme/manteau/bordeaux/dos.jpg",
+            "images/femme/manteau/bordeaux/detail.jpg"
           ]
         }
       }
