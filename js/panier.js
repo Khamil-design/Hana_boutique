@@ -449,6 +449,7 @@ export default class Panier {
         <img
             src="${article.image}"
             alt="${article.produit}"
+            loading="lazy"
             style="
                 width:90px;
                 height:90px;
