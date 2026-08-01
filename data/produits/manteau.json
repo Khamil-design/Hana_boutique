@@ -30,6 +30,12 @@
         "images/femme/manteau/bordeaux/profil.jpg",
         "images/femme/manteau/bordeaux/dos.jpg",
         "images/femme/manteau/bordeaux/detail.jpg"
+      ],
+      "cannelle": [
+        "images/femme/manteau/cannelle/principale.jpg",
+        "images/femme/manteau/cannelle/profil.jpg",
+        "images/femme/manteau/cannelle/dos.jpg",
+        "images/femme/manteau/cannelle/detail.jpg"
       ]
     }
   },
