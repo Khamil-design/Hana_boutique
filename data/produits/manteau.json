@@ -36,6 +36,18 @@
         "images/femme/manteau/cannelle/profil.jpg",
         "images/femme/manteau/cannelle/dos.jpg",
         "images/femme/manteau/cannelle/detail.jpg"
+      ],
+      "rosePoudre": [
+        "images/femme/manteau/rosePoudre/principale.jpg",
+        "images/femme/manteau/rosePoudre/profil.jpg",
+        "images/femme/manteau/rosePoudre/dos.jpg",
+        "images/femme/manteau/rosePoudre/detail.jpg"
+      ],
+      "verForet": [
+        "images/femme/manteau/verForet/principale.jpg",
+        "images/femme/manteau/verForet/profil.jpg",
+        "images/femme/manteau/verForet/dos.jpg",
+        "images/femme/manteau/verForet/detail.jpg"
       ]
     }
   },
@@ -69,14 +81,26 @@
         {
           "id": "camel",
           "libelle": { "fr": "Camel", "ar": "كاميل" },
-          "prix": 0,
+          "prix": 100,
           "codeCouleur": "#C19A6B"
         },
         {
           "id": "bordeaux",
           "libelle": { "fr": "Bordeaux", "ar": "خمري" },
-          "prix": 10,
+          "prix": 100,
           "codeCouleur": "#5C2331"
+        },
+        {
+          "id": "rosePoudre",
+          "libelle": { "fr": "rosePoudre", "ar": "وردي" },
+          "prix": 100,
+          "codeCouleur": "#E7C9BD"
+        },
+        {
+          "id": "verForet",
+          "libelle": { "fr": "verForet", "ar": "أخضر" },
+          "prix": 100,
+          "codeCouleur": "#1F3A2B"
         },
         {
           "id": "cannelle",
