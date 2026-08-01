@@ -50,10 +50,10 @@
         "images/femme/jupe/prune/detail.jpg"
       ],
       "genou|vertSauge": [
-        "images/femme/jupe/vertSauge/principale.jpg",
-        "images/femme/jupe/vertSauge/profil.jpg",
-        "images/femme/jupe/vertSauge/dos.jpg",
-        "images/femme/jupe/vertSauge/detail.jpg"
+        "images/femme/jupe/genou/vertSauge/principale.jpg",
+        "images/femme/jupe/genou/vertSauge/profil.jpg",
+        "images/femme/jupe/genou/vertSauge/dos.jpg",
+        "images/femme/jupe/genou/vertSauge/detail.jpg"
       ],
       "genou|canelle": [
         "images/femme/jupe/canelle/principale.jpg",
@@ -68,16 +68,16 @@
         "images/femme/jupe/corailPoudre/detail.jpg"
       ],
       "genou|grisAntracite": [
-        "images/femme/jupe/grisAntracite/principale.jpg",
-        "images/femme/jupe/grisAntracite/profil.jpg",
-        "images/femme/jupe/grisAntracite/dos.jpg",
-        "images/femme/jupe/grisAntracite/detail.jpg"
+        "images/femme/jupe/genou/grisAntracite/principale.jpg",
+        "images/femme/jupe/genou/grisAntracite/profil.jpg",
+        "images/femme/jupe/genou/grisAntracite/dos.jpg",
+        "images/femme/jupe/genou/grisAntracite/detail.jpg"
       ],
       "genou|prune": [
-        "images/femme/jupe/prune/principale.jpg",
-        "images/femme/jupe/prune/profil.jpg",
-        "images/femme/jupe/prune/dos.jpg",
-        "images/femme/jupe/prune/detail.jpg"
+        "images/femme/jupe/genou/prune/principale.jpg",
+        "images/femme/jupe/genou/prune/profil.jpg",
+        "images/femme/jupe/genou/prune/dos.jpg",
+        "images/femme/jupe/genou/prune/detail.jpg"
       ]
     }
   },
