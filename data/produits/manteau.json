@@ -77,6 +77,12 @@
           "libelle": { "fr": "Bordeaux", "ar": "خمري" },
           "prix": 10,
           "codeCouleur": "#5C2331"
+        },
+        {
+          "id": "cannelle",
+          "libelle": { "fr": "Cannelle", "ar": "قرفي" },
+          "prix": 5,
+          "codeCouleur": "#A85C32"
         }
       ]
     },
