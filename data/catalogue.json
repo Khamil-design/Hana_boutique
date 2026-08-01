@@ -268,6 +268,18 @@
             "images/femme/manteau/bordeaux/dos.jpg",
             "images/femme/manteau/bordeaux/detail.jpg"
           ],
+          "verForet": [
+            "images/femme/manteau/verForet/principale.jpg",
+            "images/femme/manteau/verForet/profil.jpg",
+            "images/femme/manteau/verForet/dos.jpg",
+            "images/femme/manteau/verForet/detail.jpg"
+          ],
+          "rosePoudre": [
+            "images/femme/manteau/rosePoudre/principale.jpg",
+            "images/femme/manteau/rosePoudre/profil.jpg",
+            "images/femme/manteau/rosePoudre/dos.jpg",
+            "images/femme/manteau/rosePoudre/detail.jpg"
+          ],
           "cannelle": [
             "images/femme/manteau/cannelle/principale.jpg",
             "images/femme/manteau/cannelle/profil.jpg",
