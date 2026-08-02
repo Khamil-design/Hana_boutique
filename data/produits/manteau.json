@@ -81,32 +81,32 @@
         {
           "id": "camel",
           "libelle": { "fr": "Camel", "ar": "كاميل" },
-          "prix": 100,
+          "prix": 0,
           "codeCouleur": "#C19A6B"
         },
         {
           "id": "bordeaux",
           "libelle": { "fr": "Bordeaux", "ar": "خمري" },
-          "prix": 100,
+          "prix": 10,
           "codeCouleur": "#5C2331"
-        },
-        {
-          "id": "rosePoudre",
-          "libelle": { "fr": "rosePoudre", "ar": "وردي" },
-          "prix": 100,
-          "codeCouleur": "#E7C9BD"
-        },
-        {
-          "id": "verForet",
-          "libelle": { "fr": "verForet", "ar": "أخضر" },
-          "prix": 100,
-          "codeCouleur": "#1F3A2B"
         },
         {
           "id": "cannelle",
           "libelle": { "fr": "Cannelle", "ar": "قرفي" },
           "prix": 5,
           "codeCouleur": "#A85C32"
+        },
+        {
+          "id": "rosePoudre",
+          "libelle": { "fr": "Rose poudré", "ar": "وردي فاتح" },
+          "prix": 5,
+          "codeCouleur": "#D9A8A0"
+        },
+        {
+          "id": "verForet",
+          "libelle": { "fr": "Vert forêt", "ar": "أخضر غامق" },
+          "prix": 5,
+          "codeCouleur": "#1F3D2B"
         }
       ]
     },

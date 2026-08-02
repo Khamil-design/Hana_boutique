@@ -12,8 +12,9 @@ export default class Galerie {
         this.nomProduit = "";
 
         this.image = document.getElementById("productImage");
+        this.backdrop = document.getElementById("productImageBackdrop");
 
-        this.container = this.image.parentElement;
+        this.container = this.image.closest(".gallery-viewer");
         this.zoom = new Zoom(this.image);
 
         this.creerInterface();
@@ -142,6 +143,10 @@ afficher() {
 
         this.image.src = this.images[this.index];
 
+        if (this.backdrop) {
+            this.backdrop.style.backgroundImage = `url("${this.images[this.index]}")`;
+        }
+
         this.image.alt = this.nomProduit
             ? `${this.nomProduit} — vue ${this.index + 1} sur ${this.images.length}`
             : `Vue ${this.index + 1} sur ${this.images.length}`;
@@ -163,6 +168,10 @@ afficher() {
         this.image.onerror = null;
 
         this.image.src = this.imageIndisponible();
+
+        if (this.backdrop) {
+            this.backdrop.style.backgroundImage = "none";
+        }
 
         this.image.style.opacity = 1;
 

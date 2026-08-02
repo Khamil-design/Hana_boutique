@@ -402,9 +402,22 @@ a{
     position: relative;
     overflow: hidden;
     aspect-ratio: 4/3;
+    background: var(--surface-alt);
+}
+
+.produit-image-backdrop{
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(24px) brightness(.55) saturate(1.15);
+    transform: scale(1.2);
+    z-index: 0;
 }
 
 .produit-image{
+    position: relative;
+    z-index: 1;
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -901,14 +914,33 @@ a{
    IMAGE
 ===================================================== */
 
-#productImage{
-    width:100%;
-    height:500px;
-    object-fit:contain;
-    background:var(--surface-alt);
-    border:1px solid var(--border);
-    border-radius:var(--radius);
+.gallery-image-box{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
     transition: background-color .35s ease, border-color .35s ease;
+}
+
+.product-image-backdrop{
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(28px) brightness(.55) saturate(1.15);
+    transform: scale(1.2);
+    z-index: 0;
+}
+
+#productImage{
+    position: relative;
+    z-index: 1;
+    width:100%;
+    height:100%;
+    object-fit:contain;
 }
 
 .border-success{
@@ -1206,7 +1238,9 @@ footer{
 }
 
 #productImage{
-    transition: opacity .28s ease-in-out, background-color .35s ease, border-color .35s ease;
+    position: relative;
+    z-index: 1;
+    transition: opacity .28s ease-in-out;
 }
 
 .gallery-viewer img{

@@ -177,6 +177,7 @@ class PageAccueil {
             col.innerHTML = `
                 <div class="produit-card">
                     <div class="produit-image-wrapper">
+                        <div class="produit-image-backdrop" style="background-image:url('${imagePreview}')" aria-hidden="true"></div>
                         <img
                             src="${imagePreview}"
                             alt="${nom}"
