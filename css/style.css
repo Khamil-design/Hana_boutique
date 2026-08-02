@@ -401,7 +401,7 @@ a{
 .produit-image-wrapper{
     position: relative;
     overflow: hidden;
-    aspect-ratio: 4/3;
+    aspect-ratio: 3/4;
     background: var(--surface-alt);
 }
 
@@ -917,7 +917,7 @@ a{
 .gallery-image-box{
     position: relative;
     width: 100%;
-    height: 500px;
+    aspect-ratio: 3/4;
     overflow: hidden;
     background: var(--surface-alt);
     border: 1px solid var(--border);
@@ -1564,9 +1564,6 @@ select:focus-visible{
 ===================================================== */
 
 @media(max-width:992px){
-    #productImage{
-        height:350px;
-    }
     .hero-title{
         font-size: 52px;
     }
@@ -1581,9 +1578,6 @@ select:focus-visible{
         flex-direction:column;
         gap:12px;
         text-align:center;
-    }
-    #productImage{
-        height:280px;
     }
     .btn{
         width:100%;
