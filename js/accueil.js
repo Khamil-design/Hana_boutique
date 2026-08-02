@@ -11,6 +11,7 @@ class PageAccueil {
     constructor() {
         this.catalogue = null;
         this.genreActif = "homme";
+        this.variantesFemme = null;
     }
 
     async demarrer() {
@@ -37,6 +38,9 @@ class PageAccueil {
             this.ecouterOngletsGenre();
             this.appliquerOngletGenreActif();
             this.afficherProduits();
+
+            // Aperçu aléatoire de la collection Femme
+            this.afficherApercuAleatoire();
 
             // Footer année
             this.mettreAJourFooter();
@@ -85,6 +89,12 @@ class PageAccueil {
             this.afficherProduits();
         }
 
+        // Les libellés de l'aperçu (nom produit, couleur) sont mémorisés
+        // dans la langue où ils ont été construits : on invalide le
+        // cache pour les reconstruire dans la nouvelle langue.
+        this.variantesFemme = null;
+        this.afficherApercuAleatoire();
+
     }
 
     ecouterLangue() {
@@ -126,6 +136,170 @@ class PageAccueil {
         const reponse = await fetch("data/catalogue.json");
         if (!reponse.ok) throw new Error("Impossible de charger le catalogue.");
         return await reponse.json();
+    }
+
+    /**************************************************************
+     * Aperçu aléatoire de la collection Femme
+     **************************************************************/
+
+    /**
+     * Construit la liste de toutes les "variantes" (une par dossier
+     * de photos réel) pour les produits femme du catalogue :
+     * une couleur = une variante, et pour la jupe (qui dépend de la
+     * longueur ET de la couleur), chaque combinaison compte comme
+     * une variante à part entière.
+     */
+    async chargerVariantesFemme() {
+
+        if (this.variantesFemme) {
+            return this.variantesFemme;
+        }
+
+        if (!this.catalogue) {
+            return [];
+        }
+
+        const produitsFemme = this.catalogue.produits.filter(
+            p => p.genre === "femme"
+        );
+
+        const langue = getLangue();
+        const variantes = [];
+
+        for (const produitCatalogue of produitsFemme) {
+
+            try {
+
+                const reponse = await fetch(`data/produits/${produitCatalogue.fichier}`);
+                if (!reponse.ok) continue;
+
+                const detail = await reponse.json();
+                const nom = champ(produitCatalogue.nom, langue);
+
+                if (detail.images.parCombinaison && Array.isArray(detail.images.dependDe)) {
+
+                    // Cas à double dépendance (ex: jupe → longueur + couleur)
+                    Object.entries(detail.images.parCombinaison).forEach(([cle, images]) => {
+
+                        if (!images.length) return;
+
+                        const valeurs = cle.split("|");
+                        const parametres = {};
+                        detail.images.dependDe.forEach((idOption, index) => {
+                            parametres[idOption] = valeurs[index];
+                        });
+
+                        const optionCouleur = (detail.options.find(o => o.id === "couleur") || {}).choix || [];
+                        const choixCouleur = optionCouleur.find(c => c.id === parametres.couleur);
+
+                        variantes.push({
+                            fichier: produitCatalogue.fichier,
+                            genre: "femme",
+                            nomProduit: nom,
+                            image: images[0],
+                            couleur: parametres.couleur,
+                            longueur: parametres.longueur,
+                            libelleCouleur: choixCouleur ? champ(choixCouleur.libelle, langue) : parametres.couleur,
+                            codeCouleur: choixCouleur ? choixCouleur.codeCouleur : "#999"
+                        });
+
+                    });
+
+                } else if (detail.images.parCouleur) {
+
+                    // Cas simple : une variante par couleur
+                    const optionCouleur = (detail.options.find(o => o.id === "couleur") || {}).choix || [];
+
+                    Object.entries(detail.images.parCouleur).forEach(([idCouleur, images]) => {
+
+                        if (!images.length) return;
+
+                        const choixCouleur = optionCouleur.find(c => c.id === idCouleur);
+
+                        variantes.push({
+                            fichier: produitCatalogue.fichier,
+                            genre: "femme",
+                            nomProduit: nom,
+                            image: images[0],
+                            couleur: idCouleur,
+                            longueur: null,
+                            libelleCouleur: choixCouleur ? champ(choixCouleur.libelle, langue) : idCouleur,
+                            codeCouleur: choixCouleur ? choixCouleur.codeCouleur : "#999"
+                        });
+
+                    });
+
+                }
+
+            } catch (erreur) {
+                console.error(`Aperçu — impossible de charger ${produitCatalogue.fichier}`, erreur);
+            }
+
+        }
+
+        this.variantesFemme = variantes;
+
+        return variantes;
+
+    }
+
+    /**
+     * Affiche 3 variantes tirées au hasard (jamais deux fois le
+     * même dossier de photos, mais un même produit peut apparaître
+     * deux fois avec une couleur/longueur différente).
+     */
+    async afficherApercuAleatoire() {
+
+        const grid = document.getElementById("apercuGrid");
+        if (!grid) return;
+
+        const variantes = await this.chargerVariantesFemme();
+        if (!variantes.length) return;
+
+        // Mélange (Fisher-Yates) puis on prend les 3 premières
+        const melange = [...variantes];
+        for (let i = melange.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [melange[i], melange[j]] = [melange[j], melange[i]];
+        }
+        const selection = melange.slice(0, Math.min(3, melange.length));
+
+        grid.innerHTML = "";
+
+        selection.forEach(variante => {
+
+            const col = document.createElement("div");
+            col.className = "col-md-4";
+
+            const lienConfigurateur =
+                `configurateur.html?produit=${encodeURIComponent(variante.fichier)}` +
+                `&genre=femme&couleur=${encodeURIComponent(variante.couleur)}` +
+                (variante.longueur ? `&longueur=${encodeURIComponent(variante.longueur)}` : "");
+
+            col.innerHTML = `
+                <a href="${lienConfigurateur}" class="apercu-card text-decoration-none">
+                    <div class="apercu-image-wrapper">
+                        <div class="apercu-image-backdrop" style="background-image:url('${variante.image}')" aria-hidden="true"></div>
+                        <img
+                            src="${variante.image}"
+                            alt="${variante.nomProduit} — ${variante.libelleCouleur}"
+                            class="apercu-image"
+                            loading="lazy">
+                    </div>
+                    <div class="apercu-legende">
+                        <span class="apercu-nom">${variante.nomProduit}</span>
+                        <span class="apercu-couleur">
+                            <span class="apercu-pastille" style="background:${variante.codeCouleur}"></span>
+                            ${variante.libelleCouleur}
+                        </span>
+                    </div>
+                </a>
+            `;
+
+            grid.appendChild(col);
+
+        });
+
     }
 
     /**************************************************************
@@ -233,6 +407,8 @@ const traductionsAccueil = {
         produitsSubtitle: "Chaque pièce est pensée pour s'adapter à votre style.",
         ongletHomme: "Homme",
         ongletFemme: "Femme",
+        apercuTitre: "Un aperçu de la collection Femme",
+        apercuSubtitle: "Trois pièces choisies au hasard à chaque visite.",
         pourquoiHana: "Pourquoi Hana ?",
         avantage1Titre: "Sur-mesure",
         avantage1Texte: "Chaque vêtement est configurable selon vos préférences : taille, couleur, matière et finitions.",
@@ -264,6 +440,8 @@ const traductionsAccueil = {
         produitsSubtitle: "كل قطعة مصممة لتتناسب مع أسلوبك.",
         ongletHomme: "رجال",
         ongletFemme: "نساء",
+        apercuTitre: "لمحة عن مجموعة النساء",
+        apercuSubtitle: "ثلاث قطع مختارة عشوائيًا في كل زيارة.",
         pourquoiHana: "لماذا هانا؟",
         avantage1Titre: "حسب الطلب",
         avantage1Texte: "كل قطعة ملابس قابلة للتخصيص حسب رغبتك: المقاس، اللون، الخامة والتفاصيل.",

@@ -75,6 +75,10 @@ export default class Application {
             // Affiche le produit (demandé ou le premier du genre actif)
             await this.afficherProduitParFichier(fichierProduit);
 
+            // Pré-sélectionne la couleur / longueur passées dans l'URL
+            // (ex : lien depuis l'aperçu aléatoire de l'accueil)
+            this.preselectionnerOptionsDepuisURL(params);
+
             // Ecoute les changements de produit via le sélecteur
             this.ecouterChangementProduit();
 
@@ -357,6 +361,57 @@ export default class Application {
 
             this.configurateur.initialiser();
 
+        }
+
+    }
+
+    /**
+     * Applique une couleur et/ou une longueur passées dans l'URL
+     * (ex : ?couleur=bordeaux&longueur=genou) au formulaire du
+     * configurateur, si ces valeurs existent bien pour le produit
+     * actuellement affiché.
+     */
+    preselectionnerOptionsDepuisURL(params) {
+
+        const couleurDemandee = params.get("couleur");
+        const longueurDemandee = params.get("longueur");
+
+        if (!couleurDemandee && !longueurDemandee) {
+            return;
+        }
+
+        const formulaire = document.getElementById("configForm");
+        if (!formulaire) return;
+
+        let modifie = false;
+
+        if (couleurDemandee) {
+
+            const radio = formulaire.querySelector(
+                `input[name="couleur"][value="${couleurDemandee}"]`
+            );
+
+            if (radio) {
+                radio.checked = true;
+                modifie = true;
+            }
+
+        }
+
+        if (longueurDemandee) {
+
+            const select = document.getElementById("longueur");
+
+            if (select && [...select.options].some(o => o.value === longueurDemandee)) {
+                select.value = longueurDemandee;
+                modifie = true;
+            }
+
+        }
+
+        // Un seul rafraîchissement, une fois les deux champs appliqués
+        if (modifie) {
+            formulaire.dispatchEvent(new Event("change"));
         }
 
     }
