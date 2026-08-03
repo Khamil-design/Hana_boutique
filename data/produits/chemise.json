@@ -24,17 +24,29 @@
         "images/chemise/blanche/dos.jpg",
         "images/chemise/blanche/detail.jpg"
       ],
-      "beige": [
-        "images/chemise/beige/principale.jpg",
-        "images/chemise/beige/profil.jpg",
-        "images/chemise/beige/dos.jpg",
-        "images/chemise/beige/detail.jpg"
+      "beigeSable": [
+        "images/chemise/beigeSable/principale.jpg",
+        "images/chemise/beigeSable/profil.jpg",
+        "images/chemise/beigeSable/dos.jpg",
+        "images/chemise/beigeSable/detail.jpg"
       ],
-      "bleu": [
-        "images/chemise/bleu/principale.jpg",
-        "images/chemise/bleu/profil.jpg",
-        "images/chemise/bleu/dos.jpg",
-        "images/chemise/bleu/detail.jpg"
+      "bleuMarine": [
+        "images/chemise/bleuMarine/principale.jpg",
+        "images/chemise/bleuMarine/profil.jpg",
+        "images/chemise/bleuMarine/dos.jpg",
+        "images/chemise/bleuMarine/detail.jpg"
+      ],
+      "grisPerle": [
+        "images/chemise/grisPerle/principale.jpg",
+        "images/chemise/grisPerle/profil.jpg",
+        "images/chemise/grisPerle/dos.jpg",
+        "images/chemise/grisPerle/detail.jpg"
+      ],
+      "kakiOlive": [
+        "images/chemise/kakiOlive/principale.jpg",
+        "images/chemise/kakiOlive/profil.jpg",
+        "images/chemise/kakiOlive/dos.jpg",
+        "images/chemise/kakiOlive/detail.jpg"
       ]
     }
   },
@@ -102,22 +114,40 @@
           "codeCouleur": "#FFFFFF"
         },
         {
-          "id": "beige",
+          "id": "beigeSable",
           "libelle": {
-            "fr": "Beige",
-            "ar": "بيج"
+            "fr": "Beige sable",
+            "ar": "بيج رملي"
           },
           "prix": 0,
-          "codeCouleur": "#E8DCC6"
+          "codeCouleur": "#C9A876"
         },
         {
-          "id": "bleu",
+          "id": "bleuMarine",
           "libelle": {
             "fr": "Bleu marine",
             "ar": "أزرق كحلي"
           },
           "prix": 2,
-          "codeCouleur": "#1B263B"
+          "codeCouleur": "#1B2A47"
+        },
+        {
+          "id": "grisPerle",
+          "libelle": {
+            "fr": "Gris perle",
+            "ar": "رمادي لؤلؤي"
+          },
+          "prix": 2,
+          "codeCouleur": "#C6C4C2"
+        },
+        {
+          "id": "kakiOlive",
+          "libelle": {
+            "fr": "Kaki olive",
+            "ar": "أخضر زيتوني"
+          },
+          "prix": 3,
+          "codeCouleur": "#6B6B3A"
         }
       ]
     },

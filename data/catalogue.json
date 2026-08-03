@@ -108,17 +108,29 @@
             "images/chemise/blanche/dos.jpg",
             "images/chemise/blanche/detail.jpg"
           ],
-          "bleu": [
-            "images/chemise/bleu/principale.jpg",
-            "images/chemise/bleu/profil.jpg",
-            "images/chemise/bleu/dos.jpg",
-            "images/chemise/bleu/detail.jpg"
+          "beigeSable": [
+            "images/chemise/beigeSable/principale.jpg",
+            "images/chemise/beigeSable/profil.jpg",
+            "images/chemise/beigeSable/dos.jpg",
+            "images/chemise/beigeSable/detail.jpg"
           ],
-          "beige": [
-            "images/chemise/beige/principale.jpg",
-            "images/chemise/beige/profil.jpg",
-            "images/chemise/beige/dos.jpg",
-            "images/chemise/beige/detail.jpg"
+          "bleuMarine": [
+            "images/chemise/bleuMarine/principale.jpg",
+            "images/chemise/bleuMarine/profil.jpg",
+            "images/chemise/bleuMarine/dos.jpg",
+            "images/chemise/bleuMarine/detail.jpg"
+          ],
+          "grisPerle": [
+            "images/chemise/grisPerle/principale.jpg",
+            "images/chemise/grisPerle/profil.jpg",
+            "images/chemise/grisPerle/dos.jpg",
+            "images/chemise/grisPerle/detail.jpg"
+          ],
+          "kakiOlive": [
+            "images/chemise/kakiOlive/principale.jpg",
+            "images/chemise/kakiOlive/profil.jpg",
+            "images/chemise/kakiOlive/dos.jpg",
+            "images/chemise/kakiOlive/detail.jpg"
           ]
         }
       }
