@@ -349,7 +349,7 @@ class PageAccueil {
             }
 
             col.innerHTML = `
-                <div class="produit-card">
+                <a href="configurateur.html?produit=${encodeURIComponent(produit.fichier)}&genre=${encodeURIComponent(produit.genre || 'homme')}" class="produit-card">
                     <div class="produit-image-wrapper">
                         <div class="produit-image-backdrop" style="background-image:url('${imagePreview}')" aria-hidden="true"></div>
                         <img
@@ -359,9 +359,9 @@ class PageAccueil {
                             loading="lazy"
                             onerror="this.src='images/placeholder.jpg'">
                         <div class="produit-overlay">
-                            <a href="configurateur.html?produit=${encodeURIComponent(produit.fichier)}&genre=${encodeURIComponent(produit.genre || 'homme')}" class="btn btn-produit">
+                            <span class="btn-produit">
                                 <i class="bi bi-sliders me-2"></i>${langue === "ar" ? "تخصيص" : "Personnaliser"}
-                            </a>
+                            </span>
                         </div>
                     </div>
                     <div class="produit-info">
@@ -372,7 +372,7 @@ class PageAccueil {
                             <span class="produit-prix-label">${langue === "ar" ? "يبدأ من" : "À partir de"}</span>
                         </div>
                     </div>
-                </div>
+                </a>
             `;
 
             grid.appendChild(col);
