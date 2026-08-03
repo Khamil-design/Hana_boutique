@@ -16,29 +16,35 @@
       "devise": "DH",
       "images": {
         "parCouleur": {
-          "noir": [
-            "images/pantalon/noir/principale.jpg",
-            "images/pantalon/noir/profil.jpg",
-            "images/pantalon/noir/dos.jpg",
-            "images/pantalon/noir/detail.jpg"
+          "beigeSable": [
+            "images/pantalon/beigeSable/principale.jpg",
+            "images/pantalon/beigeSable/profil.jpg",
+            "images/pantalon/beigeSable/dos.jpg",
+            "images/pantalon/beigeSable/detail.jpg"
           ],
-          "bleu": [
-            "images/pantalon/bleu/principale.jpg",
-            "images/pantalon/bleu/profil.jpg",
-            "images/pantalon/bleu/dos.jpg",
-            "images/pantalon/bleu/detail.jpg"
+          "bleuMarine": [
+            "images/pantalon/bleuMarine/principale.jpg",
+            "images/pantalon/bleuMarine/profil.jpg",
+            "images/pantalon/bleuMarine/dos.jpg",
+            "images/pantalon/bleuMarine/detail.jpg"
           ],
-          "gris": [
-            "images/pantalon/gris/principale.jpg",
-            "images/pantalon/gris/profil.jpg",
-            "images/pantalon/gris/dos.jpg",
-            "images/pantalon/gris/detail.jpg"
+          "bleuPetrole": [
+            "images/pantalon/bleuPetrole/principale.jpg",
+            "images/pantalon/bleuPetrole/profil.jpg",
+            "images/pantalon/bleuPetrole/dos.jpg",
+            "images/pantalon/bleuPetrole/detail.jpg"
           ],
-          "vertPistache": [
-            "images/pantalon/vert/principale.jpg",
-            "images/pantalon/vert/profil.jpg",
-            "images/pantalon/vert/dos.jpg",
-            "images/pantalon/vert/detail.jpg"
+          "grisAnthracite": [
+            "images/pantalon/grisAnthracite/principale.jpg",
+            "images/pantalon/grisAnthracite/profil.jpg",
+            "images/pantalon/grisAnthracite/dos.jpg",
+            "images/pantalon/grisAnthracite/detail.jpg"
+          ],
+          "kakiOlive": [
+            "images/pantalon/kakiOlive/principale.jpg",
+            "images/pantalon/kakiOlive/profil.jpg",
+            "images/pantalon/kakiOlive/dos.jpg",
+            "images/pantalon/kakiOlive/detail.jpg"
           ]
         }
       }

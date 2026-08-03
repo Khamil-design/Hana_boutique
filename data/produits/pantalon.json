@@ -18,29 +18,35 @@
   "images": {
     "dependDe": "couleur",
     "parCouleur": {
-      "noir": [
-        "images/pantalon/noir/principale.jpg",
-        "images/pantalon/noir/profil.jpg",
-        "images/pantalon/noir/dos.jpg",
-        "images/pantalon/noir/detail.jpg"
+      "beigeSable": [
+        "images/pantalon/beigeSable/principale.jpg",
+        "images/pantalon/beigeSable/profil.jpg",
+        "images/pantalon/beigeSable/dos.jpg",
+        "images/pantalon/beigeSable/detail.jpg"
       ],
-      "bleu": [
-        "images/pantalon/bleu/principale.jpg",
-        "images/pantalon/bleu/profil.jpg",
-        "images/pantalon/bleu/dos.jpg",
-        "images/pantalon/bleu/detail.jpg"
+      "bleuMarine": [
+        "images/pantalon/bleuMarine/principale.jpg",
+        "images/pantalon/bleuMarine/profil.jpg",
+        "images/pantalon/bleuMarine/dos.jpg",
+        "images/pantalon/bleuMarine/detail.jpg"
       ],
-      "gris": [
-        "images/pantalon/gris/principale.jpg",
-        "images/pantalon/gris/profil.jpg",
-        "images/pantalon/gris/dos.jpg",
-        "images/pantalon/gris/detail.jpg"
+      "bleuPetrole": [
+        "images/pantalon/bleuPetrole/principale.jpg",
+        "images/pantalon/bleuPetrole/profil.jpg",
+        "images/pantalon/bleuPetrole/dos.jpg",
+        "images/pantalon/bleuPetrole/detail.jpg"
       ],
-      "vertPistache": [
-        "images/pantalon/vert/principale.jpg",
-        "images/pantalon/vert/profil.jpg",
-        "images/pantalon/vert/dos.jpg",
-        "images/pantalon/vert/detail.jpg"
+      "grisAnthracite": [
+        "images/pantalon/grisAnthracite/principale.jpg",
+        "images/pantalon/grisAnthracite/profil.jpg",
+        "images/pantalon/grisAnthracite/dos.jpg",
+        "images/pantalon/grisAnthracite/detail.jpg"
+      ],
+      "kakiOlive": [
+        "images/pantalon/kakiOlive/principale.jpg",
+        "images/pantalon/kakiOlive/profil.jpg",
+        "images/pantalon/kakiOlive/dos.jpg",
+        "images/pantalon/kakiOlive/detail.jpg"
       ]
     }
   },
@@ -99,40 +105,49 @@
       "obligatoire": true,
       "choix": [
         {
-          "id": "noir",
+          "id": "beigeSable",
           "libelle": {
-            "fr": "Noir",
-            "ar": "أسود"
+            "fr": "Beige sable",
+            "ar": "بيج رملي"
           },
           "prix": 0,
-          "codeCouleur": "#000000"
+          "codeCouleur": "#C9A876"
         },
         {
-          "id": "bleu",
+          "id": "bleuMarine",
           "libelle": {
-            "fr": "Bleu",
-            "ar": "أزرق"
+            "fr": "Bleu marine",
+            "ar": "أزرق كحلي"
           },
           "prix": 3,
-          "codeCouleur": "#0d6efd"
+          "codeCouleur": "#1B2A47"
         },
         {
-          "id": "gris",
+          "id": "bleuPetrole",
           "libelle": {
-            "fr": "Gris",
-            "ar": "رمادي"
+            "fr": "Bleu pétrole",
+            "ar": "أزرق بترولي"
+          },
+          "prix": 3,
+          "codeCouleur": "#1B4B4F"
+        },
+        {
+          "id": "grisAnthracite",
+          "libelle": {
+            "fr": "Gris anthracite",
+            "ar": "رمادي غامق"
           },
           "prix": 2,
-          "codeCouleur": "#6c757d"
+          "codeCouleur": "#3B3B3D"
         },
         {
-          "id": "vertPistache",
+          "id": "kakiOlive",
           "libelle": {
-            "fr": "Vert pistache",
-            "ar": "أخضر فستقي"
+            "fr": "Kaki olive",
+            "ar": "أخضر زيتوني"
           },
-          "prix": 5,
-          "codeCouleur": "#A9C299"
+          "prix": 4,
+          "codeCouleur": "#6B6B3A"
         }
       ]
     },
