@@ -16,37 +16,67 @@
   "prixBase": 35,
   "devise": "DH",
   "images": {
-    "dependDe": "couleur",
-    "parCouleur": {
-      "blanche": [
+    "dependDe": ["manches", "couleur"],
+    "parCombinaison": {
+      "longues|blanche": [
         "images/chemise/blanche/principale.jpg",
         "images/chemise/blanche/profil.jpg",
         "images/chemise/blanche/dos.jpg",
         "images/chemise/blanche/detail.jpg"
       ],
-      "beigeSable": [
+      "longues|beigeSable": [
         "images/chemise/beigeSable/principale.jpg",
         "images/chemise/beigeSable/profil.jpg",
         "images/chemise/beigeSable/dos.jpg",
         "images/chemise/beigeSable/detail.jpg"
       ],
-      "bleuMarine": [
+      "longues|bleuMarine": [
         "images/chemise/bleuMarine/principale.jpg",
         "images/chemise/bleuMarine/profil.jpg",
         "images/chemise/bleuMarine/dos.jpg",
         "images/chemise/bleuMarine/detail.jpg"
       ],
-      "grisPerle": [
+      "longues|grisPerle": [
         "images/chemise/grisPerle/principale.jpg",
         "images/chemise/grisPerle/profil.jpg",
         "images/chemise/grisPerle/dos.jpg",
         "images/chemise/grisPerle/detail.jpg"
       ],
-      "kakiOlive": [
+      "longues|kakiOlive": [
         "images/chemise/kakiOlive/principale.jpg",
         "images/chemise/kakiOlive/profil.jpg",
         "images/chemise/kakiOlive/dos.jpg",
         "images/chemise/kakiOlive/detail.jpg"
+      ],
+      "demiManche|beigeSable": [
+        "images/chemise/demiManche/beigeSable/principale.jpg",
+        "images/chemise/demiManche/beigeSable/profil.jpg",
+        "images/chemise/demiManche/beigeSable/dos.jpg",
+        "images/chemise/demiManche/beigeSable/detail.jpg"
+      ],
+      "demiManche|bleuPetrole": [
+        "images/chemise/demiManche/bleuPertrole/principale.jpg",
+        "images/chemise/demiManche/bleuPertrole/profil.jpg",
+        "images/chemise/demiManche/bleuPertrole/dos.jpg",
+        "images/chemise/demiManche/bleuPertrole/detail.jpg"
+      ],
+      "demiManche|bordeaux": [
+        "images/chemise/demiManche/bordeaux/principale.jpg",
+        "images/chemise/demiManche/bordeaux/profil.jpg",
+        "images/chemise/demiManche/bordeaux/dos.jpg",
+        "images/chemise/demiManche/bordeaux/detail.jpg"
+      ],
+      "demiManche|grisPerle": [
+        "images/chemise/demiManche/grisPerle/principale.jpg",
+        "images/chemise/demiManche/grisPerle/profil.jpg",
+        "images/chemise/demiManche/grisPerle/dos.jpg",
+        "images/chemise/demiManche/grisPerle/detail.jpg"
+      ],
+      "demiManche|kakiOlive": [
+        "images/chemise/demiManche/kakiOlive/principale.jpg",
+        "images/chemise/demiManche/kakiOlive/profil.jpg",
+        "images/chemise/demiManche/kakiOlive/dos.jpg",
+        "images/chemise/demiManche/kakiOlive/detail.jpg"
       ]
     }
   },
@@ -148,6 +178,24 @@
           },
           "prix": 3,
           "codeCouleur": "#6B6B3A"
+        },
+        {
+          "id": "bleuPetrole",
+          "libelle": {
+            "fr": "Bleu pétrole",
+            "ar": "أزرق بترولي"
+          },
+          "prix": 3,
+          "codeCouleur": "#1B4B4F"
+        },
+        {
+          "id": "bordeaux",
+          "libelle": {
+            "fr": "Bordeaux",
+            "ar": "خمري"
+          },
+          "prix": 3,
+          "codeCouleur": "#5C2331"
         }
       ]
     },
@@ -197,10 +245,10 @@
       "obligatoire": true,
       "choix": [
         {
-          "id": "courtes",
+          "id": "demiManche",
           "libelle": {
-            "fr": "Courtes",
-            "ar": "قصيرة"
+            "fr": "Demi-manche",
+            "ar": "نصف كم"
           },
           "prix": 0
         },

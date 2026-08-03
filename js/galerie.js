@@ -180,6 +180,32 @@ afficher() {
 }
 
     /**
+     * Affiche le visuel de secours quand aucune photo n'existe
+     * pour la combinaison choisie (ex: une couleur pas encore
+     * disponible pour cette longueur de manches). Vide aussi la
+     * bande de miniatures, puisqu'il n'y a rien à faire défiler.
+     */
+    afficherIndisponible(nomProduit = "") {
+
+        this.images = [];
+        this.index = 0;
+        this.nomProduit = nomProduit;
+
+        this.image.src = this.imageIndisponible();
+        this.image.alt = nomProduit
+            ? `${nomProduit} — photo à venir`
+            : "Photo à venir";
+        this.image.style.opacity = 1;
+
+        if (this.backdrop) {
+            this.backdrop.style.backgroundImage = "none";
+        }
+
+        this.genererMiniatures();
+
+    }
+
+    /**
      * Petit visuel de secours (SVG), affiché quand une photo
      * est introuvable ou pas encore mise en ligne
      */

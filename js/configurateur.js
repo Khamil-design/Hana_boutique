@@ -171,7 +171,15 @@ if (this.produit.images.parCombinaison && Array.isArray(this.produit.images.depe
     if (this.produit.images.parCombinaison[cleCombinaison]) {
 
         this.ui.galerie.initialiser(
-            this.produit.images.parCombinaison[cleCombinaison]
+            this.produit.images.parCombinaison[cleCombinaison],
+            champ(this.produit.nom, getLangue())
+        );
+
+    } else {
+
+        // Cette combinaison n'a pas encore de photo en ligne
+        this.ui.galerie.afficherIndisponible(
+            champ(this.produit.nom, getLangue())
         );
 
     }
@@ -193,6 +201,12 @@ else if (this.produit.images.parCouleur) {
                 couleurChoisie
             ]
 
+        );
+
+    } else {
+
+        this.ui.galerie.afficherIndisponible(
+            champ(this.produit.nom, getLangue())
         );
 
     }

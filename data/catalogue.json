@@ -306,6 +306,55 @@
           ]
         }
       }
+    },
+    {
+      "id": "trenchLeger",
+      "fichier": "trenchLeger.json",
+      "genre": "femme",
+      "nom": {
+        "fr": "Trench léger Femme",
+        "ar": "ترنش خفيف نسائي"
+      },
+      "description": {
+        "fr": "Trench léger et personnalisable, parfait pour la mi-saison. Choisissez la couleur, la matière et la ceinture.",
+        "ar": "ترنش خفيف وقابل للتخصيص، مثالي لفصل الخريف. اختاري اللون، الخامة والحزام."
+      },
+      "prixBase": 130,
+      "devise": "DH",
+      "images": {
+        "parCouleur": {
+          "beigeSable": [
+            "images/femme/trenchLeger/beigeSable/principale.jpg",
+            "images/femme/trenchLeger/beigeSable/profil.jpg",
+            "images/femme/trenchLeger/beigeSable/dos.jpg",
+            "images/femme/trenchLeger/beigeSable/detail.jpg"
+          ],
+          "bleuMarine": [
+            "images/femme/trenchLeger/bleuMarine/principale.jpg",
+            "images/femme/trenchLeger/bleuMarine/profil.jpg",
+            "images/femme/trenchLeger/bleuMarine/dos.jpg",
+            "images/femme/trenchLeger/bleuMarine/detail.jpg"
+          ],
+          "bordeauxProfond": [
+            "images/femme/trenchLeger/bordeauxProfond/principale.jpg",
+            "images/femme/trenchLeger/bordeauxProfond/profil.jpg",
+            "images/femme/trenchLeger/bordeauxProfond/dos.jpg",
+            "images/femme/trenchLeger/bordeauxProfond/detail.jpg"
+          ],
+          "grisPerle": [
+            "images/femme/trenchLeger/grisPerle/principale.jpg",
+            "images/femme/trenchLeger/grisPerle/PROFIL.jpg",
+            "images/femme/trenchLeger/grisPerle/dos.jpg",
+            "images/femme/trenchLeger/grisPerle/detail.jpg"
+          ],
+          "kakiOlive": [
+            "images/femme/trenchLeger/kakiOlive/principale.jpg",
+            "images/femme/trenchLeger/kakiOlive/profil.jpg",
+            "images/femme/trenchLeger/kakiOlive/dos.jpg",
+            "images/femme/trenchLeger/kakiOlive/detail.jpg"
+          ]
+        }
+      }
     }
   ]
 }
