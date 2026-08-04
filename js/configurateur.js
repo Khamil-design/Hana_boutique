@@ -42,6 +42,8 @@ export default class Configurateur {
 
         this.ecouterEvenements();
 
+        this.lireConfiguration();
+
         this.mettreAJour();
 
     }
