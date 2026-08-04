@@ -48,17 +48,35 @@
         "images/chemise/kakiOlive/dos.jpg",
         "images/chemise/kakiOlive/detail.jpg"
       ],
+      "longues|bordeaux": [
+        "images/chemise/bordeaux/principale.jpg",
+        "images/chemise/bordeaux/profil.jpg",
+        "images/chemise/bordeaux/dos.jpg",
+        "images/chemise/bordeaux/detail.jpg"
+      ],
+      "longues|bleuPetrole": [
+        "images/chemise/bleuPetrole/principale.jpg",
+        "images/chemise/bleuPetrole/profil.jpg",
+        "images/chemise/bleuPetrole/dos.jpg",
+        "images/chemise/bleuPetrole/detail.jpg"
+      ],
       "demiManche|beigeSable": [
         "images/chemise/demiManche/beigeSable/principale.jpg",
         "images/chemise/demiManche/beigeSable/profil.jpg",
         "images/chemise/demiManche/beigeSable/dos.jpg",
         "images/chemise/demiManche/beigeSable/detail.jpg"
       ],
+      "demiManche|bleuMarine": [
+        "images/chemise/demiManche/bleuMarine/principale.jpg",
+        "images/chemise/demiManche/bleuMarine/profil.jpg",
+        "images/chemise/demiManche/bleuMarine/dos.jpg",
+        "images/chemise/demiManche/bleuMarine/detail.jpg"
+      ],
       "demiManche|bleuPetrole": [
-        "images/chemise/demiManche/bleuPertrole/principale.jpg",
-        "images/chemise/demiManche/bleuPertrole/profil.jpg",
-        "images/chemise/demiManche/bleuPertrole/dos.jpg",
-        "images/chemise/demiManche/bleuPertrole/detail.jpg"
+        "images/chemise/demiManche/bleuPetrole/principale.jpg",
+        "images/chemise/demiManche/bleuPetrole/profil.jpg",
+        "images/chemise/demiManche/bleuPetrole/dos.jpg",
+        "images/chemise/demiManche/bleuPetrole/detail.jpg"
       ],
       "demiManche|bordeaux": [
         "images/chemise/demiManche/bordeaux/principale.jpg",
