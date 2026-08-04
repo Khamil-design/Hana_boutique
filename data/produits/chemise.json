@@ -66,6 +66,12 @@
         "images/chemise/demiManche/beigeSable/dos.jpg",
         "images/chemise/demiManche/beigeSable/detail.jpg"
       ],
+      "demiManche|blanche": [
+        "images/chemise/demiManche/blanche/principale.jpg",
+        "images/chemise/demiManche/blanche/profil.jpg",
+        "images/chemise/demiManche/blanche/dos.jpg",
+        "images/chemise/demiManche/blanche/detail.jpg"
+      ],
       "demiManche|bleuMarine": [
         "images/chemise/demiManche/bleuMarine/principale.jpg",
         "images/chemise/demiManche/bleuMarine/profil.jpg",
