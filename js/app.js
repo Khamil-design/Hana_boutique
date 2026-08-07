@@ -54,7 +54,7 @@ export default class Application {
             if (produitTrouve) {
                 // Le genre suit celui du produit demandé (source la plus fiable)
                 this.genreActif = produitTrouve.genre || "homme";
-            } else if (genreDemande === "homme" || genreDemande === "femme") {
+            } else if (genreDemande === "homme" || genreDemande === "femme" || genreDemande === "enfant") {
                 this.genreActif = genreDemande;
             }
 
