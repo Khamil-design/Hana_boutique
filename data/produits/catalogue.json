@@ -271,5 +271,48 @@
         }
       }
     }
+    {
+  "id": "blazerFille",
+  "fichier": "blazerFille.json",
+  "genre": "enfant",
+  "nom": {
+    "fr": "Blazer Fille",
+    "ar": "سترة أنيقة للبنات"
+  },
+  "description": {
+    "fr": "Blazer élégant et confortable pour fille, personnalisable selon l'âge, la couleur et la matière.",
+    "ar": "سترة أنيقة ومريحة للبنات، قابلة للتخصيص حسب العمر واللون والخامة."
+  },
+  "prixBase": 200,
+  "devise": "DH",
+  "images": {
+    "parCouleur": {
+      "bleuAcier": [
+        "images/enfants/filles/blazer/bleuAcier/principale.jpg",
+        "images/enfants/filles/blazer/bleuAcier/profil.jpg",
+        "images/enfants/filles/blazer/bleuAcier/dos.jpg",
+        "images/enfants/filles/blazer/bleuAcier/detail.jpg"
+      ],
+      "rose": [
+        "images/enfants/filles/blazer/rose/principale.jpg",
+        "images/enfants/filles/blazer/rose/profil.jpg",
+        "images/enfants/filles/blazer/rose/dos.jpg",
+        "images/enfants/filles/blazer/rose/detail.jpg"
+      ],
+      "taupe": [
+        "images/enfants/filles/blazer/taupe/principale.jpg",
+        "images/enfants/filles/blazer/taupe/profil.jpg",
+        "images/enfants/filles/blazer/taupe/dos.jpg",
+        "images/enfants/filles/blazer/taupe/detail.jpg"
+      ],
+      "vertOlive": [
+        "images/enfants/filles/blazer/vertOlive/principale.jpg",
+        "images/enfants/filles/blazer/vertOlive/profil.jpg",
+        "images/enfants/filles/blazer/vertOlive/dos.jpg",
+        "images/enfants/filles/blazer/vertOlive/detail.jpg"
+      ]
+    }
+  }
+}
   ]
 }
