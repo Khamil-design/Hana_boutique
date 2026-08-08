@@ -412,7 +412,41 @@
     "ar": "فستان قميص أنيق ومريح للبنات، قابل للتخصيص حسب العمر واللون والخامة."
   },
   "prixBase": 189,
-  "devise": "DH"
+  "devise": "DH",
+  "images": {
+    "parCouleur": {
+      "bleuMarine": [
+        "images/enfants/filles/robeChemise/bleuMarine/principale.jpg",
+        "images/enfants/filles/robeChemise/bleuMarine/profil.jpg",
+        "images/enfants/filles/robeChemise/bleuMarine/dos.jpg",
+        "images/enfants/filles/robeChemise/bleuMarine/detail.jpg"
+      ],
+      "crem": [
+        "images/enfants/filles/robeChemise/crem/principale.jpg",
+        "images/enfants/filles/robeChemise/crem/profil.jpg",
+        "images/enfants/filles/robeChemise/crem/dos.jpg",
+        "images/enfants/filles/robeChemise/crem/detail.jpg"
+      ],
+      "ocreDore": [
+        "images/enfants/filles/robeChemise/ocreDore/principale.jpg",
+        "images/enfants/filles/robeChemise/ocreDore/profil.jpg",
+        "images/enfants/filles/robeChemise/ocreDore/dos.jpg",
+        "images/enfants/filles/robeChemise/ocreDore/detail.jpg"
+      ],
+      "taupe": [
+        "images/enfants/filles/robeChemise/taupe/principale.jpg",
+        "images/enfants/filles/robeChemise/taupe/profil.jpg",
+        "images/enfants/filles/robeChemise/taupe/dos.jpg",
+        "images/enfants/filles/robeChemise/taupe/detail.jpg"
+      ],
+      "vertSauge": [
+        "images/enfants/filles/robeChemise/vertSauge/principale.jpg",
+        "images/enfants/filles/robeChemise/vertSauge/profil.jpg",
+        "images/enfants/filles/robeChemise/vertSauge/dos.jpg",
+        "images/enfants/filles/robeChemise/vertSauge/detail.jpg"
+      ]
+    }
+  }
 },
 {
   "id": "costumeJunior",
