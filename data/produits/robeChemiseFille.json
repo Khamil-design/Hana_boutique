@@ -1,0 +1,213 @@
+{
+  "id": "robeChemiseFille",
+  "genre": "enfant",
+  "nom": {
+    "fr": "Robe Chemise Fille",
+    "ar": "فستان قميص للبنات"
+  },
+  "categorie": {
+    "fr": "Vêtements enfants",
+    "ar": "ملابس الأطفال"
+  },
+  "description": {
+    "fr": "Robe chemise élégante et confortable pour fille, personnalisable selon l'âge, la couleur et la matière.",
+    "ar": "فستان قميص أنيق ومريح للبنات، قابل للتخصيص حسب العمر واللون والخامة."
+  },
+  "reference": "RCF-001",
+  "prixBase": 189,
+  "devise": "DH",
+  "images": {
+    "dependDe": "couleur",
+    "parCouleur": {
+      "bleuMarine": [
+        "images/enfants/filles/robeChemise/bleuMarine/principale.jpg",
+        "images/enfants/filles/robeChemise/bleuMarine/profil.jpg",
+        "images/enfants/filles/robeChemise/bleuMarine/dos.jpg",
+        "images/enfants/filles/robeChemise/bleuMarine/detail.jpg"
+      ],
+      "creme": [
+        "images/enfants/filles/robeChemise/creme/principale.jpg",
+        "images/enfants/filles/robeChemise/creme/profil.jpg",
+        "images/enfants/filles/robeChemise/creme/dos.jpg",
+        "images/enfants/filles/robeChemise/creme/detail.jpg"
+      ],
+      "ocreDore": [
+        "images/enfants/filles/robeChemise/ocreDore/principale.jpg",
+        "images/enfants/filles/robeChemise/ocreDore/profil.jpg",
+        "images/enfants/filles/robeChemise/ocreDore/dos.jpg",
+        "images/enfants/filles/robeChemise/ocreDore/detail.jpg"
+      ],
+      "taupe": [
+        "images/enfants/filles/robeChemise/taupe/principale.jpg",
+        "images/enfants/filles/robeChemise/taupe/profil.jpg",
+        "images/enfants/filles/robeChemise/taupe/dos.jpg",
+        "images/enfants/filles/robeChemise/taupe/detail.jpg"
+      ],
+      "vertSauge": [
+        "images/enfants/filles/robeChemise/vertSauge/principale.jpg",
+        "images/enfants/filles/robeChemise/vertSauge/profil.jpg",
+        "images/enfants/filles/robeChemise/vertSauge/dos.jpg",
+        "images/enfants/filles/robeChemise/vertSauge/detail.jpg"
+      ]
+    }
+  },
+  "options": [
+    {
+      "id": "taille",
+      "nom": {
+        "fr": "Âge",
+        "ar": "العمر"
+      },
+      "type": "select",
+      "obligatoire": true,
+      "valeurDefaut": "10",
+      "choix": [
+        {
+          "id": "10",
+          "libelle": {
+            "fr": "10 ans",
+            "ar": "10 سنوات"
+          },
+          "prix": 0
+        },
+        {
+          "id": "12",
+          "libelle": {
+            "fr": "12 ans",
+            "ar": "12 سنة"
+          },
+          "prix": 0
+        },
+        {
+          "id": "14",
+          "libelle": {
+            "fr": "14 ans",
+            "ar": "14 سنة"
+          },
+          "prix": 0
+        },
+        {
+          "id": "16",
+          "libelle": {
+            "fr": "16 ans",
+            "ar": "16 سنة"
+          },
+          "prix": 0
+        }
+      ]
+    },
+    {
+      "id": "couleur",
+      "nom": {
+        "fr": "Couleur",
+        "ar": "اللون"
+      },
+      "type": "radio",
+      "obligatoire": true,
+      "choix": [
+        {
+          "id": "bleuMarine",
+          "libelle": {
+            "fr": "Bleu marine",
+            "ar": "أزرق داكن"
+          },
+          "prix": 0,
+          "codeCouleur": "#1B2A47"
+        },
+        {
+          "id": "creme",
+          "libelle": {
+            "fr": "Crème",
+            "ar": "كريمي"
+          },
+          "prix": 0,
+          "codeCouleur": "#F3E9D2"
+        },
+        {
+          "id": "ocreDore",
+          "libelle": {
+            "fr": "Ocre doré",
+            "ar": "أصفر ذهبي"
+          },
+          "prix": 0,
+          "codeCouleur": "#C89B3C"
+        },
+        {
+          "id": "taupe",
+          "libelle": {
+            "fr": "Taupe",
+            "ar": "تاوب"
+          },
+          "prix": 0,
+          "codeCouleur": "#8A8178"
+        },
+        {
+          "id": "vertSauge",
+          "libelle": {
+            "fr": "Vert sauge",
+            "ar": "أخضر مريمي"
+          },
+          "prix": 0,
+          "codeCouleur": "#A8B5A2"
+        }
+      ]
+    },
+    {
+      "id": "matiere",
+      "nom": {
+        "fr": "Matière",
+        "ar": "الخامة"
+      },
+      "type": "select",
+      "obligatoire": true,
+      "valeurDefaut": "coton_premium",
+      "choix": [
+        {
+          "id": "coton_premium",
+          "libelle": {
+            "fr": "Coton premium",
+            "ar": "قطن فاخر"
+          },
+          "prix": 0
+        },
+        {
+          "id": "popeline_coton",
+          "libelle": {
+            "fr": "Popeline de coton",
+            "ar": "بوبلين قطني"
+          },
+          "prix": 20
+        },
+        {
+          "id": "lin_coton",
+          "libelle": {
+            "fr": "Lin & coton",
+            "ar": "كتان وقطن"
+          },
+          "prix": 30
+        }
+      ]
+    },
+    {
+      "id": "quantite",
+      "nom": {
+        "fr": "Quantité",
+        "ar": "الكمية"
+      },
+      "type": "number",
+      "minimum": 1,
+      "maximum": 20,
+      "valeurDefaut": 1
+    }
+  ],
+  "regles": [],
+  "stock": {
+    "gestion": false,
+    "quantite": 0
+  },
+  "promotion": {
+    "active": false,
+    "type": "pourcentage",
+    "valeur": 0
+  }
+}
