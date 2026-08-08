@@ -15,7 +15,7 @@ export default class Panier {
         this.articles = this.charger();
         this.codePromoActif = this.chargerPromo();
 
-        this.numeroWhatsApp = "212676725257";
+        this.numeroWhatsApp = "212676247857";
         this.devise = "DH";
 
         this.codesPromo = {
