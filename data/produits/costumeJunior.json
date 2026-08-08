@@ -1,0 +1,183 @@
+{
+"id": "costumeJunior",
+"genre": "enfant",
+"nom": {
+"fr": "Costume Junior",
+"ar": "بدلة أنيقة للصبيان"
+},
+"categorie": {
+"fr": "Vêtements enfants",
+"ar": "ملابس الأطفال"
+},
+"description": {
+"fr": "Costume élégant et confortable pour garçon, personnalisable selon la taille, la couleur et la matière.",
+"ar": "بدلة أنيقة ومريحة للصبيان، قابلة للتخصيص حسب المقاس واللون والخامة."
+},
+"reference": "CST-G-001",
+"prixBase": 450,
+"devise": "DH",
+"images": {
+"dependDe": "couleur",
+"parCouleur": {
+"bleuMarine": [
+"images/enfants/garçons/costume/bleuMarine/principale.jpg",
+"images/enfants/garçons/costume/bleuMarine/profil.jpg",
+"images/enfants/garçons/costume/bleuMarine/dos.jpg",
+"images/enfants/garçons/costume/bleuMarine/detail.jpg"
+],
+"grisAnthracite": [
+"images/enfants/garçons/costume/grisAnthracite/principale.jpg",
+"images/enfants/garçons/costume/grisAnthracite/profil.jpg",
+"images/enfants/garçons/costume/grisAnthracite/dos.jpg",
+"images/enfants/garçons/costume/grisAnthracite/detail.jpg"
+],
+"noir": [
+"images/enfants/garçons/costume/noir/principale.jpg",
+"images/enfants/garçons/costume/noir/profil.jpg",
+"images/enfants/garçons/costume/noir/dos.jpg",
+"images/enfants/garçons/costume/noir/detail.jpg"
+]
+}
+},
+"options": [
+{
+"id": "taille",
+"nom": {
+"fr": "Âge",
+"ar": "العمر"
+},
+"type": "select",
+"obligatoire": true,
+"valeurDefaut": "10",
+"choix": [
+{
+"id": "10",
+"libelle": {
+"fr": "10 ans",
+"ar": "10 سنوات"
+},
+"prix": 0
+},
+{
+"id": "12",
+"libelle": {
+"fr": "12 ans",
+"ar": "12 سنة"
+},
+"prix": 0
+},
+{
+"id": "14",
+"libelle": {
+"fr": "14 ans",
+"ar": "14 سنة"
+},
+"prix": 0
+},
+{
+"id": "16",
+"libelle": {
+"fr": "16 ans",
+"ar": "16 سنة"
+},
+"prix": 0
+}
+]
+},
+{
+"id": "couleur",
+"nom": {
+"fr": "Couleur",
+"ar": "اللون"
+},
+"type": "radio",
+"obligatoire": true,
+"choix": [
+{
+"id": "bleuMarine",
+"libelle": {
+"fr": "Bleu marine",
+"ar": "أزرق داكن"
+},
+"prix": 0,
+"codeCouleur": "#1B2A47"
+},
+{
+"id": "grisAnthracite",
+"libelle": {
+"fr": "Gris anthracite",
+"ar": "رمادي فحمي"
+},
+"prix": 0,
+"codeCouleur": "#3D4148"
+},
+{
+"id": "noir",
+"libelle": {
+"fr": "Noir",
+"ar": "أسود"
+},
+"prix": 0,
+"codeCouleur": "#171717"
+}
+]
+},
+{
+"id": "matiere",
+"nom": {
+"fr": "Matière",
+"ar": "الخامة"
+},
+"type": "select",
+"obligatoire": true,
+"valeurDefaut": "coton_premium",
+"choix": [
+{
+"id": "coton_premium",
+"libelle": {
+"fr": "Coton premium",
+"ar": "قطن فاخر"
+},
+"prix": 0
+},
+{
+"id": "laine_legere",
+"libelle": {
+"fr": "Laine légère",
+"ar": "صوف خفيف"
+},
+"prix": 25
+},
+{
+"id": "melange_laine_viscose",
+"libelle": {
+"fr": "Mélange laine & viscose",
+"ar": "مزيج الصوف والفسكوز"
+},
+"prix": 40
+}
+]
+},
+{
+"id": "quantite",
+"nom": {
+"fr": "Quantité",
+"ar": "الكمية"
+},
+"type": "number",
+"minimum": 1,
+"maximum": 20,
+"valeurDefaut": 1
+}
+],
+"regles": [],
+"stock": {
+"gestion": false,
+"quantite": 0
+},
+"promotion": {
+"active": false,
+"type": "pourcentage",
+"valeur": 0
+}
+}
