@@ -415,4 +415,41 @@
   "devise": "DH"
 }
 ]
+},
+{
+  "id": "costumeJunior",
+  "fichier": "costumeJunior.json",
+  "genre": "enfant",
+  "nom": {
+    "fr": "Costume Junior",
+    "ar": "بدلة أنيقة للصبيان"
+  },
+  "description": {
+    "fr": "Costume élégant et confortable pour garçon, personnalisable selon l'âge, la couleur et la matière.",
+    "ar": "بدلة أنيقة ومريحة للصبيان، قابلة للتخصيص حسب العمر واللون والخامة."
+  },
+  "prixBase": 450,
+  "devise": "DH",
+  "images": {
+    "parCouleur": {
+      "bleuMarine": [
+        "images/enfants/garçons/costume/bleuMarine/principale.jpg",
+        "images/enfants/garçons/costume/bleuMarine/profil.jpg",
+        "images/enfants/garçons/costume/bleuMarine/dos.jpg",
+        "images/enfants/garçons/costume/bleuMarine/detail.jpg"
+      ],
+      "grisAnthracite": [
+        "images/enfants/garçons/costume/grisAnthracite/principale.jpg",
+        "images/enfants/garçons/costume/grisAnthracite/profil.jpg",
+        "images/enfants/garçons/costume/grisAnthracite/dos.jpg",
+        "images/enfants/garçons/costume/grisAnthracite/detail.jpg"
+      ],
+      "noir": [
+        "images/enfants/garçons/costume/noir/principale.jpg",
+        "images/enfants/garçons/costume/noir/profil.jpg",
+        "images/enfants/garçons/costume/noir/dos.jpg",
+        "images/enfants/garçons/costume/noir/detail.jpg"
+      ]
+    }
+  }
 }
