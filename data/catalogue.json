@@ -398,6 +398,21 @@
       ]
     }
   }
+},
+    {
+  "id": "robeChemiseFille",
+  "fichier": "robeChemiseFille.json",
+  "genre": "enfant",
+  "nom": {
+    "fr": "Robe Chemise Fille",
+    "ar": "فستان قميص للبنات"
+  },
+  "description": {
+    "fr": "Robe chemise élégante et confortable pour fille, personnalisable selon l'âge, la couleur et la matière.",
+    "ar": "فستان قميص أنيق ومريح للبنات، قابل للتخصيص حسب العمر واللون والخامة."
+  },
+  "prixBase": 189,
+  "devise": "DH"
 }
 ]
 }
