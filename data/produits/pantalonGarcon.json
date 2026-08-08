@@ -1,0 +1,213 @@
+{
+"id": "pantalonGarcon",
+"genre": "enfant",
+"nom": {
+"fr": "Pantalon Habillé Garçon",
+"ar": "بنطلون أنيق للصبيان"
+},
+"categorie": {
+"fr": "Vêtements enfants",
+"ar": "ملابس الأطفال"
+},
+"description": {
+"fr": "Pantalon habillé élégant et confortable pour garçon, personnalisable selon l'âge, la couleur et la matière.",
+"ar": "بنطلون أنيق ومريح للصبيان، قابل للتخصيص حسب العمر واللون والخامة."
+},
+"reference": "PNT-G-001",
+"prixBase": 180,
+"devise": "DH",
+"images": {
+"dependDe": "couleur",
+"parCouleur": {
+"bleuMarine": [
+"images/enfants/garçons/pantalon/bleuMarine/principale.jpg",
+"images/enfants/garçons/pantalon/bleuMarine/profil.jpg",
+"images/enfants/garçons/pantalon/bleuMarine/dos.jpg",
+"images/enfants/garçons/pantalon/bleuMarine/detail.jpg"
+],
+"camel": [
+"images/enfants/garçons/pantalon/camel/principale.jpg",
+"images/enfants/garçons/pantalon/camel/profil.jpg",
+"images/enfants/garçons/pantalon/camel/dos.jpg",
+"images/enfants/garçons/pantalon/camel/detail.jpg"
+],
+"grisAnthracite": [
+"images/enfants/garçons/pantalon/grisAnthracite/principale.jpg",
+"images/enfants/garçons/pantalon/grisAnthracite/profil.jpg",
+"images/enfants/garçons/pantalon/grisAnthracite/dos.jpg",
+"images/enfants/garçons/pantalon/grisAnthracite/detail.jpg"
+],
+"taupe": [
+"images/enfants/garçons/pantalon/taupe/principale.jpg",
+"images/enfants/garçons/pantalon/taupe/profil.jpg",
+"images/enfants/garçons/pantalon/taupe/dos.jpg",
+"images/enfants/garçons/pantalon/taupe/detail.jpg"
+],
+"vertSauge": [
+"images/enfants/garçons/pantalon/vertSauge/principale.jpg",
+"images/enfants/garçons/pantalon/vertSauge/profil.jpg",
+"images/enfants/garçons/pantalon/vertSauge/dos.jpg",
+"images/enfants/garçons/pantalon/vertSauge/detail.jpg"
+]
+}
+},
+"options": [
+{
+"id": "taille",
+"nom": {
+"fr": "Âge",
+"ar": "العمر"
+},
+"type": "select",
+"obligatoire": true,
+"valeurDefaut": "10",
+"choix": [
+{
+"id": "10",
+"libelle": {
+"fr": "10 ans",
+"ar": "10 سنوات"
+},
+"prix": 0
+},
+{
+"id": "12",
+"libelle": {
+"fr": "12 ans",
+"ar": "12 سنة"
+},
+"prix": 0
+},
+{
+"id": "14",
+"libelle": {
+"fr": "14 ans",
+"ar": "14 سنة"
+},
+"prix": 0
+},
+{
+"id": "16",
+"libelle": {
+"fr": "16 ans",
+"ar": "16 سنة"
+},
+"prix": 0
+}
+]
+},
+{
+"id": "couleur",
+"nom": {
+"fr": "Couleur",
+"ar": "اللون"
+},
+"type": "radio",
+"obligatoire": true,
+"choix": [
+{
+"id": "bleuMarine",
+"libelle": {
+"fr": "Bleu marine",
+"ar": "أزرق داكن"
+},
+"prix": 0,
+"codeCouleur": "#1B2A47"
+},
+{
+"id": "camel",
+"libelle": {
+"fr": "Camel",
+"ar": "جملي"
+},
+"prix": 0,
+"codeCouleur": "#B8875B"
+},
+{
+"id": "grisAnthracite",
+"libelle": {
+"fr": "Gris anthracite",
+"ar": "رمادي فحمي"
+},
+"prix": 0,
+"codeCouleur": "#3D4148"
+},
+{
+"id": "taupe",
+"libelle": {
+"fr": "Taupe",
+"ar": "رمادي بني"
+},
+"prix": 0,
+"codeCouleur": "#8B8178"
+},
+{
+"id": "vertSauge",
+"libelle": {
+"fr": "Vert sauge",
+"ar": "أخضر مريمي"
+},
+"prix": 0,
+"codeCouleur": "#A9B8A2"
+}
+]
+},
+{
+"id": "matiere",
+"nom": {
+"fr": "Matière",
+"ar": "الخامة"
+},
+"type": "select",
+"obligatoire": true,
+"valeurDefaut": "coton_premium",
+"choix": [
+{
+"id": "coton_premium",
+"libelle": {
+"fr": "Coton premium",
+"ar": "قطن فاخر"
+},
+"prix": 0
+},
+{
+"id": "laine_legere",
+"libelle": {
+"fr": "Laine légère",
+"ar": "صوف خفيف"
+},
+"prix": 25
+},
+{
+"id": "melange_laine_viscose",
+"libelle": {
+"fr": "Mélange laine & viscose",
+"ar": "مزيج الصوف والفسكوز"
+},
+"prix": 40
+}
+]
+},
+{
+"id": "quantite",
+"nom": {
+"fr": "Quantité",
+"ar": "الكمية"
+},
+"type": "number",
+"minimum": 1,
+"maximum": 20,
+"valeurDefaut": 1
+}
+],
+"regles": [],
+"stock": {
+"gestion": false,
+"quantite": 0
+},
+"promotion": {
+"active": false,
+"type": "pourcentage",
+"valeur": 0
+}
+}
