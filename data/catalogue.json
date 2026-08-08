@@ -450,6 +450,55 @@
       ]
     }
   }
-}
+},
+        {
+      "id": "pantalonGarcon",
+      "fichier": "pantalonGarcon.json",
+      "genre": "enfant",
+      "nom": {
+        "fr": "Pantalon Habillé Garçon",
+        "ar": "بنطلون أنيق للصبيان"
+      },
+      "description": {
+        "fr": "Pantalon habillé élégant et confortable pour garçon, personnalisable selon l'âge, la couleur et la matière.",
+        "ar": "بنطلون أنيق ومريح للصبيان، قابل للتخصيص حسب العمر واللون والخامة."
+      },
+      "prixBase": 180,
+      "devise": "DH",
+      "images": {
+        "parCouleur": {
+          "bleuMarine": [
+            "images/enfants/garçons/pantalon/bleuMarine/principale.jpg",
+            "images/enfants/garçons/pantalon/bleuMarine/profil.jpg",
+            "images/enfants/garçons/pantalon/bleuMarine/dos.jpg",
+            "images/enfants/garçons/pantalon/bleuMarine/detail.jpg"
+          ],
+          "camel": [
+            "images/enfants/garçons/pantalon/camel/principale.jpg",
+            "images/enfants/garçons/pantalon/camel/profil.jpg",
+            "images/enfants/garçons/pantalon/camel/dos.jpg",
+            "images/enfants/garçons/pantalon/camel/detail.jpg"
+          ],
+          "grisAnthracite": [
+            "images/enfants/garçons/pantalon/grisAnthracite/principale.jpg",
+            "images/enfants/garçons/pantalon/grisAnthracite/profil.jpg",
+            "images/enfants/garçons/pantalon/grisAnthracite/dos.jpg",
+            "images/enfants/garçons/pantalon/grisAnthracite/detail.jpg"
+          ],
+          "taupe": [
+            "images/enfants/garçons/pantalon/taupe/principale.jpg",
+            "images/enfants/garçons/pantalon/taupe/profil.jpg",
+            "images/enfants/garçons/pantalon/taupe/dos.jpg",
+            "images/enfants/garçons/pantalon/taupe/detail.jpg"
+          ],
+          "vertSauge": [
+            "images/enfants/garçons/pantalon/vertSauge/principale.jpg",
+            "images/enfants/garçons/pantalon/vertSauge/profil.jpg",
+            "images/enfants/garçons/pantalon/vertSauge/dos.jpg",
+            "images/enfants/garçons/pantalon/vertSauge/detail.jpg"
+          ]
+        }
+      }
+    }
   ]
 }
