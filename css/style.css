@@ -372,11 +372,52 @@ a{
     margin-bottom: 20px;
 }
 
+.favoris-filtre{
+    display: flex;
+    justify-content: center;
+    margin: -28px 0 44px;
+}
+
+.btn-filtre-favoris{
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 8px 22px;
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-filtre-favoris:hover{
+    color: var(--gold);
+    border-color: var(--gold-deep);
+}
+
+.btn-filtre-favoris.active{
+    background: var(--gold);
+    color: #14120F;
+    border-color: var(--gold);
+}
+
+#btnFavoris.filtre-actif{
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(198,161,91,.12);
+}
+
 /* =====================================================
    CARDS PRODUITS (ACCUEIL)
 ===================================================== */
 
 .produit-card{
+    position: relative;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
@@ -479,6 +520,67 @@ a{
     border-color: var(--gold-soft);
     color: #1A1611;
     transform: scale(1.05);
+}
+
+.produit-card-link{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-decoration: none;
+    color: inherit;
+}
+
+.produit-card-link:hover,
+.produit-card-link:focus,
+.produit-card-link:active{
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn-favori{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 5;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(11,10,12,.55);
+    border: 1px solid rgba(198,161,91,.5);
+    color: var(--text);
+    font-size: 17px;
+    line-height: 1;
+    cursor: pointer;
+    transition: var(--transition);
+    backdrop-filter: blur(6px);
+}
+
+[data-theme="light"] .btn-favori{
+    background: rgba(255,255,255,.75);
+}
+
+[dir="rtl"] .btn-favori{
+    right: auto;
+    left: 12px;
+}
+
+.btn-favori:hover{
+    transform: scale(1.12);
+    color: #E0526B;
+    border-color: #E0526B;
+}
+
+.btn-favori.active{
+    background: rgba(224,82,107,.18);
+    border-color: #E0526B;
+    color: #E0526B;
+}
+
+[data-theme="light"] .btn-favori.active{
+    background: rgba(224,82,107,.12);
 }
 
 .produit-info{
@@ -1592,6 +1694,19 @@ select:focus-visible{
 }
 
 #cartBadge.badge-pulse{
+    animation: badgePulse .5s ease;
+}
+
+#favorisBadge{
+    transition: transform .2s ease;
+    display: none;
+}
+
+#favorisBadge:not(:empty){
+    display: block;
+}
+
+#favorisBadge.badge-pulse{
     animation: badgePulse .5s ease;
 }
 

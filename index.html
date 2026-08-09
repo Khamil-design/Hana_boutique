@@ -24,7 +24,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css?v=4">
+    <link rel="stylesheet" href="css/style.css?v=5">
 
     <script type="application/ld+json">
     {
@@ -72,6 +72,10 @@
                 <button id="btnLangue" class="btn btn-outline-gold btn-langue" aria-label="Changer de langue">
                     العربية
                 </button>
+                <button id="btnFavoris" class="btn btn-outline-gold btn-favoris-header position-relative" aria-label="Voir mes favoris">
+                    <i class="bi bi-heart fs-5"></i>
+                    <span id="favorisBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
+                </button>
             </div>
         </div>
     </header>
@@ -114,6 +118,12 @@
                 <button type="button" class="genre-tab active" data-genre="homme" role="tab" aria-selected="true" data-i18n="ongletHomme">Homme</button>
                 <button type="button" class="genre-tab" data-genre="femme" role="tab" aria-selected="false" data-i18n="ongletFemme">Femme</button>
                  <button type="button" class="genre-tab" data-genre="enfant" role="tab" aria-selected="false" data-i18n="ongletEnfant">Enfant</button>
+            </div>
+            <div class="favoris-filtre">
+                <button type="button" id="btnFiltreFavoris" class="btn-filtre-favoris" aria-pressed="false" aria-label="Afficher uniquement mes favoris">
+                    <i class="bi bi-heart me-2"></i>
+                    <span data-i18n="mesFavoris">Mes favoris</span>
+                </button>
             </div>
             <div id="produitsGrid" class="row g-4">
                 <!-- Généré dynamiquement par accueil.js -->
@@ -310,8 +320,10 @@
     </footer>
 
     <!-- ================= SCRIPTS ================= -->
-    <script type="module" src="js/accueil.js?v=4"></script>
+    <script type="module" src="js/accueil.js?v=5"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <div id="toastContainer" class="toast-container" role="status" aria-live="polite"></div>
 <!-- Bouton ScrollToTop -->
 <button class="scroll-to-top" id="scrollTopBtn" aria-label="Remonter en haut">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">

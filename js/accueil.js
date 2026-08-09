@@ -5,6 +5,13 @@
 
 import { t, getLangue, setLangue, champ } from "./i18n.js";
 import { initialiserTheme } from "./theme.js";
+import {
+    obtenirFavoris,
+    estFavori,
+    basculerFavori,
+    mettreAJourBadge,
+    afficherToastFavori
+} from "./favoris.js";
 
 class PageAccueil {
 
@@ -12,6 +19,7 @@ class PageAccueil {
         this.catalogue = null;
         this.genreActif = "homme";
         this.variantesFemme = null;
+        this.filtreFavoris = false;
     }
 
     async demarrer() {
@@ -37,6 +45,13 @@ class PageAccueil {
 
             this.ecouterOngletsGenre();
             this.appliquerOngletGenreActif();
+
+            // Favoris : boutons, filtre et compteur du header
+            this.ecouterFiltreFavoris();
+            this.ecouterBoutonHeaderFavoris();
+            this.mettreAJourLibellesFavoris();
+            this.mettreAJourBadge();
+
             this.afficherProduits();
 
             // Aperçu aléatoire de la collection Femme
@@ -89,6 +104,9 @@ class PageAccueil {
             this.afficherProduits();
         }
 
+        // Libellés des favoris (aria + filtre)
+        this.mettreAJourLibellesFavoris();
+
         // Les libellés de l'aperçu (nom produit, couleur) sont mémorisés
         // dans la langue où ils ont été construits : on invalide le
         // cache pour les reconstruire dans la nouvelle langue.
@@ -126,6 +144,92 @@ class PageAccueil {
             const actif = onglet.dataset.genre === this.genreActif;
             onglet.classList.toggle("active", actif);
             onglet.setAttribute("aria-selected", actif ? "true" : "false");
+        });
+    }
+
+    /**************************************************************
+     * Favoris
+     **************************************************************/
+    ecouterFiltreFavoris() {
+        const btn = document.getElementById("btnFiltreFavoris");
+        if (!btn) return;
+        btn.addEventListener("click", () => {
+            this.filtreFavoris = !this.filtreFavoris;
+            this.mettreAJourEtatFiltre();
+            this.afficherProduits();
+        });
+    }
+
+    ecouterBoutonHeaderFavoris() {
+        const btn = document.getElementById("btnFavoris");
+        if (!btn) return;
+        btn.addEventListener("click", () => {
+            this.filtreFavoris = !this.filtreFavoris;
+            this.mettreAJourEtatFiltre();
+            this.afficherProduits();
+            const grid = document.getElementById("produitsGrid");
+            if (grid) grid.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    }
+
+    mettreAJourEtatFiltre() {
+        const btnFiltre = document.getElementById("btnFiltreFavoris");
+        if (btnFiltre) {
+            btnFiltre.classList.toggle("active", this.filtreFavoris);
+            btnFiltre.setAttribute("aria-pressed", this.filtreFavoris ? "true" : "false");
+        }
+        const btnHeader = document.getElementById("btnFavoris");
+        if (btnHeader) {
+            btnHeader.classList.toggle("filtre-actif", this.filtreFavoris);
+        }
+    }
+
+    mettreAJourLibellesFavoris() {
+        const langue = getLangue();
+        const btnFiltre = document.getElementById("btnFiltreFavoris");
+        if (btnFiltre) {
+            btnFiltre.setAttribute(
+                "aria-label",
+                traductionsAccueil[langue].afficherFavoris
+            );
+        }
+        const btnHeader = document.getElementById("btnFavoris");
+        if (btnHeader) {
+            btnHeader.setAttribute(
+                "aria-label",
+                traductionsAccueil[langue].voirMesFavoris
+            );
+        }
+    }
+
+    /**
+     * Met à jour l'état des boutons cœur après un rendu.
+     */
+    lierBoutonsFavoris(grid) {
+        grid.querySelectorAll(".btn-favori").forEach(btn => {
+            const fichier = btn.dataset.fichier;
+            const actif = estFavori(fichier);
+            btn.classList.toggle("active", actif);
+            btn.setAttribute("aria-pressed", actif ? "true" : "false");
+            btn.querySelector("i").className = actif
+                ? "bi bi-heart-fill"
+                : "bi bi-heart";
+            btn.addEventListener("click", (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                const ajoute = basculerFavori(fichier);
+                btn.classList.toggle("active", ajoute);
+                btn.setAttribute("aria-pressed", ajoute ? "true" : "false");
+                btn.querySelector("i").className = ajoute
+                    ? "bi bi-heart-fill"
+                    : "bi bi-heart";
+                const produit = this.catalogue.produits.find(p => p.fichier === fichier);
+                const nom = produit ? champ(produit.nom, getLangue()) : "";
+                afficherToastFavori(ajoute, nom);
+                if (this.filtreFavoris && !ajoute) {
+                    this.afficherProduits();
+                }
+            });
         });
     }
 
@@ -314,12 +418,23 @@ class PageAccueil {
 
         grid.innerHTML = "";
 
-        const produitsFiltres = this.catalogue.produits.filter(
+        let produitsFiltres = this.catalogue.produits.filter(
             p => (p.genre || "homme") === this.genreActif
         );
 
+        if (this.filtreFavoris) {
+            const favoris = obtenirFavoris();
+            produitsFiltres = produitsFiltres.filter(
+                p => favoris.includes(p.fichier)
+            );
+        }
+
         if (!produitsFiltres.length) {
-            grid.innerHTML = `<p class="text-center produit-desc">${langue === "ar" ? "لا توجد منتجات بعد في هذه الفئة." : "Aucun produit disponible dans cette catégorie pour le moment."}</p>`;
+            if (this.filtreFavoris) {
+                grid.innerHTML = `<p class="text-center produit-desc">${traductionsAccueil[langue].aucunFavori}</p>`;
+            } else {
+                grid.innerHTML = `<p class="text-center produit-desc">${langue === "ar" ? "لا توجد منتجات بعد في هذه الفئة." : "Aucun produit disponible dans cette catégorie pour le moment."}</p>`;
+            }
             return;
         }
 
@@ -348,35 +463,55 @@ class PageAccueil {
                 }
             }
 
+            const lienProduit =
+                `configurateur.html?produit=${encodeURIComponent(produit.fichier)}` +
+                `&genre=${encodeURIComponent(produit.genre || 'homme')}`;
+
+            const libelleFavori = langue === "ar"
+                ? "أضف إلى المفضلة"
+                : "Ajouter aux favoris";
+
             col.innerHTML = `
-                <a href="configurateur.html?produit=${encodeURIComponent(produit.fichier)}&genre=${encodeURIComponent(produit.genre || 'homme')}" class="produit-card">
-                    <div class="produit-image-wrapper">
-                        <div class="produit-image-backdrop" style="background-image:url('${imagePreview}')" aria-hidden="true"></div>
-                        <img
-                            src="${imagePreview}"
-                            alt="${nom}"
-                            class="produit-image"
-                            loading="lazy"
-                            onerror="this.src='images/placeholder.jpg'">
-                        <div class="produit-overlay">
-                            <span class="btn-produit">
-                                <i class="bi bi-sliders me-2"></i>${langue === "ar" ? "تخصيص" : "Personnaliser"}
-                            </span>
+                <div class="produit-card">
+                    <a href="${lienProduit}" class="produit-card-link">
+                        <div class="produit-image-wrapper">
+                            <div class="produit-image-backdrop" style="background-image:url('${imagePreview}')" aria-hidden="true"></div>
+                            <img
+                                src="${imagePreview}"
+                                alt="${nom}"
+                                class="produit-image"
+                                loading="lazy"
+                                onerror="this.src='images/placeholder.jpg'">
+                            <div class="produit-overlay">
+                                <span class="btn-produit">
+                                    <i class="bi bi-sliders me-2"></i>${langue === "ar" ? "تخصيص" : "Personnaliser"}
+                                </span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="produit-info">
-                        <h5 class="produit-nom">${nom}</h5>
-                        <p class="produit-desc">${description}</p>
-                        <div class="produit-prix">
-                            <span class="produit-prix-base">${prixBase} ${devise}</span>
-                            <span class="produit-prix-label">${langue === "ar" ? "يبدأ من" : "À partir de"}</span>
+                        <div class="produit-info">
+                            <h5 class="produit-nom">${nom}</h5>
+                            <p class="produit-desc">${description}</p>
+                            <div class="produit-prix">
+                                <span class="produit-prix-base">${prixBase} ${devise}</span>
+                                <span class="produit-prix-label">${langue === "ar" ? "يبدأ من" : "À partir de"}</span>
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                    <button
+                        type="button"
+                        class="btn-favori"
+                        data-fichier="${produit.fichier}"
+                        aria-label="${libelleFavori}"
+                        aria-pressed="false">
+                        <i class="bi bi-heart"></i>
+                    </button>
+                </div>
             `;
 
             grid.appendChild(col);
         }
+
+        this.lierBoutonsFavoris(grid);
 
     }
 
@@ -432,6 +567,10 @@ const traductionsAccueil = {
         accueil: "Accueil",
         configurateur: "Configurateur",
         contactWhatsApp: "Contact WhatsApp",
+        mesFavoris: "Mes favoris",
+        voirMesFavoris: "Voir mes favoris",
+        afficherFavoris: "Afficher uniquement mes favoris",
+        aucunFavori: "Vous n'avez pas encore d'article en favori dans cette catégorie.",
     },
     ar: {
         slogan: "أناقة حسب الطلب",
@@ -466,6 +605,10 @@ const traductionsAccueil = {
         accueil: "الرئيسية",
         configurateur: "المُهيئ",
         contactWhatsApp: "تواصل عبر واتساب",
+        mesFavoris: "مفضلتي",
+        voirMesFavoris: "عرض المفضلة",
+        afficherFavoris: "عرض المفضلة فقط",
+        aucunFavori: "لا توجد مقالات مفضلة بعد في هذه الفئة.",
     }
 };
 
