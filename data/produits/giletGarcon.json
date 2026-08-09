@@ -1,0 +1,213 @@
+{
+  "id": "giletGarcon",
+  "genre": "enfant",
+  "nom": {
+    "fr": "Gilet Garçon",
+    "ar": "صديري أنيق للصبيان"
+  },
+  "categorie": {
+    "fr": "Vêtements enfants",
+    "ar": "ملابس الأطفال"
+  },
+  "description": {
+    "fr": "Gilet élégant et confortable pour garçon, personnalisable selon l'âge, la couleur et la matière.",
+    "ar": "صديري أنيق ومريح للصبيان، قابل للتخصيص حسب العمر واللون والخامة."
+  },
+  "reference": "GIL-G-001",
+  "prixBase": 150,
+  "devise": "DH",
+  "images": {
+    "dependDe": "couleur",
+    "parCouleur": {
+      "bleuMarine": [
+        "images/enfants/garçons/gilet/bleuMarine/principale.jpg",
+        "images/enfants/garçons/gilet/bleuMarine/profil.jpg",
+        "images/enfants/garçons/gilet/bleuMarine/dos.jpg",
+        "images/enfants/garçons/gilet/bleuMarine/detail.jpg"
+      ],
+      "grisAnthracite": [
+        "images/enfants/garçons/gilet/grisAnthracite/principale.jpg",
+        "images/enfants/garçons/gilet/grisAnthracite/profil.jpg",
+        "images/enfants/garçons/gilet/grisAnthracite/dos.jpg",
+        "images/enfants/garçons/gilet/grisAnthracite/detail.jpg"
+      ],
+      "grisClair": [
+        "images/enfants/garçons/gilet/grisClair/principale.jpg",
+        "images/enfants/garçons/gilet/grisClair/profil.jpg",
+        "images/enfants/garçons/gilet/grisClair/dos.jpg",
+        "images/enfants/garçons/gilet/grisClair/detail.jpg"
+      ],
+      "noir": [
+        "images/enfants/garçons/gilet/noir/principale.jpg",
+        "images/enfants/garçons/gilet/noir/profil.jpg",
+        "images/enfants/garçons/gilet/noir/dos.jpg",
+        "images/enfants/garçons/gilet/noir/detail.jpg"
+      ],
+      "taupe": [
+        "images/enfants/garçons/gilet/taupe/principale.jpg",
+        "images/enfants/garçons/gilet/taupe/profil.jpg",
+        "images/enfants/garçons/gilet/taupe/dos.jpg",
+        "images/enfants/garçons/gilet/taupe/detail.jpg"
+      ]
+    }
+  },
+  "options": [
+    {
+      "id": "taille",
+      "nom": {
+        "fr": "Âge",
+        "ar": "العمر"
+      },
+      "type": "select",
+      "obligatoire": true,
+      "valeurDefaut": "10",
+      "choix": [
+        {
+          "id": "10",
+          "libelle": {
+            "fr": "10 ans",
+            "ar": "10 سنوات"
+          },
+          "prix": 0
+        },
+        {
+          "id": "12",
+          "libelle": {
+            "fr": "12 ans",
+            "ar": "12 سنة"
+          },
+          "prix": 0
+        },
+        {
+          "id": "14",
+          "libelle": {
+            "fr": "14 ans",
+            "ar": "14 سنة"
+          },
+          "prix": 0
+        },
+        {
+          "id": "16",
+          "libelle": {
+            "fr": "16 ans",
+            "ar": "16 سنة"
+          },
+          "prix": 0
+        }
+      ]
+    },
+    {
+      "id": "couleur",
+      "nom": {
+        "fr": "Couleur",
+        "ar": "اللون"
+      },
+      "type": "radio",
+      "obligatoire": true,
+      "choix": [
+        {
+          "id": "bleuMarine",
+          "libelle": {
+            "fr": "Bleu marine",
+            "ar": "أزرق داكن"
+          },
+          "prix": 0,
+          "codeCouleur": "#1B2A47"
+        },
+        {
+          "id": "grisAnthracite",
+          "libelle": {
+            "fr": "Gris anthracite",
+            "ar": "رمادي فحمي"
+          },
+          "prix": 0,
+          "codeCouleur": "#3D4148"
+        },
+        {
+          "id": "grisClair",
+          "libelle": {
+            "fr": "Gris clair",
+            "ar": "رمادي فاتح"
+          },
+          "prix": 0,
+          "codeCouleur": "#B8B8B2"
+        },
+        {
+          "id": "noir",
+          "libelle": {
+            "fr": "Noir",
+            "ar": "أسود"
+          },
+          "prix": 0,
+          "codeCouleur": "#171717"
+        },
+        {
+          "id": "taupe",
+          "libelle": {
+            "fr": "Taupe",
+            "ar": "رمادي بني"
+          },
+          "prix": 0,
+          "codeCouleur": "#8B8178"
+        }
+      ]
+    },
+    {
+      "id": "matiere",
+      "nom": {
+        "fr": "Matière",
+        "ar": "الخامة"
+      },
+      "type": "select",
+      "obligatoire": true,
+      "valeurDefaut": "coton_premium",
+      "choix": [
+        {
+          "id": "coton_premium",
+          "libelle": {
+            "fr": "Coton premium",
+            "ar": "قطن فاخر"
+          },
+          "prix": 0
+        },
+        {
+          "id": "laine_legere",
+          "libelle": {
+            "fr": "Laine légère",
+            "ar": "صوف خفيف"
+          },
+          "prix": 25
+        },
+        {
+          "id": "melange_laine_viscose",
+          "libelle": {
+            "fr": "Mélange laine & viscose",
+            "ar": "مزيج الصوف والفسكوز"
+          },
+          "prix": 40
+        }
+      ]
+    },
+    {
+      "id": "quantite",
+      "nom": {
+        "fr": "Quantité",
+        "ar": "الكمية"
+      },
+      "type": "number",
+      "minimum": 1,
+      "maximum": 20,
+      "valeurDefaut": 1
+    }
+  ],
+  "regles": [],
+  "stock": {
+    "gestion": false,
+    "quantite": 0
+  },
+  "promotion": {
+    "active": false,
+    "type": "pourcentage",
+    "valeur": 0
+  }
+}
