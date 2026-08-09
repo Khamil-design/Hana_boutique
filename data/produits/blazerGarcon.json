@@ -1,0 +1,198 @@
+{
+  "id": "blazerGarcon",
+  "genre": "enfant",
+  "nom": {
+    "fr": "Blazer Garçon",
+    "ar": "سترة أنيقة للصبيان"
+  },
+  "categorie": {
+    "fr": "Vêtements enfants",
+    "ar": "ملابس الأطفال"
+  },
+  "description": {
+    "fr": "Blazer élégant et confortable pour garçon, personnalisable selon l'âge, la couleur et la matière.",
+    "ar": "سترة أنيقة ومريحة للصبيان، قابلة للتخصيص حسب العمر واللون والخامة."
+  },
+  "reference": "BLZ-G-001",
+  "prixBase": 220,
+  "devise": "DH",
+  "images": {
+    "dependDe": "couleur",
+    "parCouleur": {
+      "bleuMarine": [
+        "images/enfants/garçons/blazer/bleuMarine/principale.jpg",
+        "images/enfants/garçons/blazer/bleuMarine/profil.jpg",
+        "images/enfants/garçons/blazer/bleuMarine/dos.jpg",
+        "images/enfants/garçons/blazer/bleuMarine/detail.jpg"
+      ],
+      "grisClair": [
+        "images/enfants/garçons/blazer/grisClair/principale.jpg",
+        "images/enfants/garçons/blazer/grisClair/profil.jpg",
+        "images/enfants/garçons/blazer/grisClair/dos.jpg",
+        "images/enfants/garçons/blazer/grisClair/detail.jpg"
+      ],
+      "noir": [
+        "images/enfants/garçons/blazer/noir/principale.jpg",
+        "images/enfants/garçons/blazer/noir/profil.jpg",
+        "images/enfants/garçons/blazer/noir/dos.jpg",
+        "images/enfants/garçons/blazer/noir/detail.jpg"
+      ],
+      "taupe": [
+        "images/enfants/garçons/blazer/taupe/principale.jpg",
+        "images/enfants/garçons/blazer/taupe/profil.jpg",
+        "images/enfants/garçons/blazer/taupe/dos.jpg",
+        "images/enfants/garçons/blazer/taupe/detail.jpg"
+      ]
+    }
+  },
+  "options": [
+    {
+      "id": "taille",
+      "nom": {
+        "fr": "Âge",
+        "ar": "العمر"
+      },
+      "type": "select",
+      "obligatoire": true,
+      "valeurDefaut": "10",
+      "choix": [
+        {
+          "id": "10",
+          "libelle": {
+            "fr": "10 ans",
+            "ar": "10 سنوات"
+          },
+          "prix": 0
+        },
+        {
+          "id": "12",
+          "libelle": {
+            "fr": "12 ans",
+            "ar": "12 سنة"
+          },
+          "prix": 0
+        },
+        {
+          "id": "14",
+          "libelle": {
+            "fr": "14 ans",
+            "ar": "14 سنة"
+          },
+          "prix": 0
+        },
+        {
+          "id": "16",
+          "libelle": {
+            "fr": "16 ans",
+            "ar": "16 سنة"
+          },
+          "prix": 0
+        }
+      ]
+    },
+    {
+      "id": "couleur",
+      "nom": {
+        "fr": "Couleur",
+        "ar": "اللون"
+      },
+      "type": "radio",
+      "obligatoire": true,
+      "choix": [
+        {
+          "id": "bleuMarine",
+          "libelle": {
+            "fr": "Bleu marine",
+            "ar": "أزرق داكن"
+          },
+          "prix": 0,
+          "codeCouleur": "#1B2A47"
+        },
+        {
+          "id": "grisClair",
+          "libelle": {
+            "fr": "Gris clair",
+            "ar": "رمادي فاتح"
+          },
+          "prix": 0,
+          "codeCouleur": "#B8B8B2"
+        },
+        {
+          "id": "noir",
+          "libelle": {
+            "fr": "Noir",
+            "ar": "أسود"
+          },
+          "prix": 0,
+          "codeCouleur": "#171717"
+        },
+        {
+          "id": "taupe",
+          "libelle": {
+            "fr": "Taupe",
+            "ar": "رمادي بني"
+          },
+          "prix": 0,
+          "codeCouleur": "#8B8178"
+        }
+      ]
+    },
+    {
+      "id": "matiere",
+      "nom": {
+        "fr": "Matière",
+        "ar": "الخامة"
+      },
+      "type": "select",
+      "obligatoire": true,
+      "valeurDefaut": "coton_premium",
+      "choix": [
+        {
+          "id": "coton_premium",
+          "libelle": {
+            "fr": "Coton premium",
+            "ar": "قطن فاخر"
+          },
+          "prix": 0
+        },
+        {
+          "id": "laine_legere",
+          "libelle": {
+            "fr": "Laine légère",
+            "ar": "صوف خفيف"
+          },
+          "prix": 25
+        },
+        {
+          "id": "melange_laine_viscose",
+          "libelle": {
+            "fr": "Mélange laine & viscose",
+            "ar": "مزيج الصوف والفسكوز"
+          },
+          "prix": 40
+        }
+      ]
+    },
+    {
+      "id": "quantite",
+      "nom": {
+        "fr": "Quantité",
+        "ar": "الكمية"
+      },
+      "type": "number",
+      "minimum": 1,
+      "maximum": 20,
+      "valeurDefaut": 1
+    }
+  ],
+  "regles": [],
+  "stock": {
+    "gestion": false,
+    "quantite": 0
+  },
+  "promotion": {
+    "active": false,
+    "type": "pourcentage",
+    "valeur": 0
+  }
+}
