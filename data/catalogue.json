@@ -354,138 +354,138 @@
             "images/femme/trenchLeger/kakiOlive/detail.jpg"
           ]
         }
-        }
-      },
-      {
-  "id": "blazerFille",
-  "fichier": "blazerFille.json",
-  "genre": "enfant",
-  "nom": {
-    "fr": "Blazer Fille",
-    "ar": "سترة أنيقة للبنات"
-  },
-  "description": {
-    "fr": "Blazer élégant et confortable pour fille, personnalisable selon l'âge, la couleur et la matière.",
-    "ar": "سترة أنيقة ومريحة للبنات، قابلة للتخصيص حسب العمر واللون والخامة."
-  },
-  "prixBase": 200,
-  "devise": "DH",
-  "images": {
-    "parCouleur": {
-      "bleuAcier": [
-        "images/enfants/filles/blazer/bleuAcier/principale.jpg",
-        "images/enfants/filles/blazer/bleuAcier/profil.jpg",
-        "images/enfants/filles/blazer/bleuAcier/dos.jpg",
-        "images/enfants/filles/blazer/bleuAcier/detail.jpg"
-      ],
-      "rose": [
-        "images/enfants/filles/blazer/rose/principale.jpg",
-        "images/enfants/filles/blazer/rose/profil.jpg",
-        "images/enfants/filles/blazer/rose/dos.jpg",
-        "images/enfants/filles/blazer/rose/detail.jpg"
-      ],
-      "taupe": [
-        "images/enfants/filles/blazer/taupe/principale.jpg",
-        "images/enfants/filles/blazer/taupe/profil.jpg",
-        "images/enfants/filles/blazer/taupe/dos.jpg",
-        "images/enfants/filles/blazer/taupe/detail.jpg"
-      ],
-      "vertOlive": [
-        "images/enfants/filles/blazer/vertOlive/principale.jpg",
-        "images/enfants/filles/blazer/vertOlive/profil.jpg",
-        "images/enfants/filles/blazer/vertOlive/dos.jpg",
-        "images/enfants/filles/blazer/vertOlive/detail.jpg"
-      ]
-    }
-  }
-},
+      }
+    },
     {
-  "id": "robeChemiseFille",
-  "fichier": "robeChemiseFille.json",
-  "genre": "enfant",
-  "nom": {
-    "fr": "Robe Chemise Fille",
-    "ar": "فستان قميص للبنات"
-  },
-  "description": {
-    "fr": "Robe chemise élégante et confortable pour fille, personnalisable selon l'âge, la couleur et la matière.",
-    "ar": "فستان قميص أنيق ومريح للبنات، قابل للتخصيص حسب العمر واللون والخامة."
-  },
-  "prixBase": 189,
-  "devise": "DH",
-  "images": {
-    "parCouleur": {
-      "bleuMarine": [
-        "images/enfants/filles/robeChemise/bleuMarine/principale.jpg",
-        "images/enfants/filles/robeChemise/bleuMarine/profil.jpg",
-        "images/enfants/filles/robeChemise/bleuMarine/dos.jpg",
-        "images/enfants/filles/robeChemise/bleuMarine/detail.jpg"
-      ],
-      "crem": [
-        "images/enfants/filles/robeChemise/crem/principale.jpg",
-        "images/enfants/filles/robeChemise/crem/profil.jpg",
-        "images/enfants/filles/robeChemise/crem/dos.jpg",
-        "images/enfants/filles/robeChemise/crem/detail.jpg"
-      ],
-      "ocreDore": [
-        "images/enfants/filles/robeChemise/ocreDore/principale.jpg",
-        "images/enfants/filles/robeChemise/ocreDore/profil.jpg",
-        "images/enfants/filles/robeChemise/ocreDore/dos.jpg",
-        "images/enfants/filles/robeChemise/ocreDore/detail.jpg"
-      ],
-      "taupe": [
-        "images/enfants/filles/robeChemise/taupe/principale.jpg",
-        "images/enfants/filles/robeChemise/taupe/profil.jpg",
-        "images/enfants/filles/robeChemise/taupe/dos.jpg",
-        "images/enfants/filles/robeChemise/taupe/detail.jpg"
-      ],
-      "vertSauge": [
-        "images/enfants/filles/robeChemise/vertSauge/principale.jpg",
-        "images/enfants/filles/robeChemise/vertSauge/profil.jpg",
-        "images/enfants/filles/robeChemise/vertSauge/dos.jpg",
-        "images/enfants/filles/robeChemise/vertSauge/detail.jpg"
-      ]
-    }
-  }
-},
-{
-  "id": "costumeJunior",
-  "fichier": "costumeJunior.json",
-  "genre": "enfant",
-  "nom": {
-    "fr": "Costume Junior",
-    "ar": "بدلة أنيقة للصبيان"
-  },
-  "description": {
-    "fr": "Costume élégant et confortable pour garçon, personnalisable selon l'âge, la couleur et la matière.",
-    "ar": "بدلة أنيقة ومريحة للصبيان، قابلة للتخصيص حسب العمر واللون والخامة."
-  },
-  "prixBase": 450,
-  "devise": "DH",
-  "images": {
-    "parCouleur": {
-      "bleuMarine": [
-        "images/enfants/garçons/costume/bleuMarine/principale.jpg",
-        "images/enfants/garçons/costume/bleuMarine/profil.jpg",
-        "images/enfants/garçons/costume/bleuMarine/dos.jpg",
-        "images/enfants/garçons/costume/bleuMarine/detail.jpg"
-      ],
-      "grisAnthracite": [
-        "images/enfants/garçons/costume/grisAnthracite/principale.jpg",
-        "images/enfants/garçons/costume/grisAnthracite/profil.jpg",
-        "images/enfants/garçons/costume/grisAnthracite/dos.jpg",
-        "images/enfants/garçons/costume/grisAnthracite/detail.jpg"
-      ],
-      "noir": [
-        "images/enfants/garçons/costume/noir/principale.jpg",
-        "images/enfants/garçons/costume/noir/profil.jpg",
-        "images/enfants/garçons/costume/noir/dos.jpg",
-        "images/enfants/garçons/costume/noir/detail.jpg"
-      ]
-    }
-  }
-},
-        {
+      "id": "blazerFille",
+      "fichier": "blazerFille.json",
+      "genre": "enfant",
+      "nom": {
+        "fr": "Blazer Fille",
+        "ar": "سترة أنيقة للبنات"
+      },
+      "description": {
+        "fr": "Blazer élégant et confortable pour fille, personnalisable selon l'âge, la couleur et la matière.",
+        "ar": "سترة أنيقة ومريحة للبنات، قابلة للتخصيص حسب العمر واللون والخامة."
+      },
+      "prixBase": 200,
+      "devise": "DH",
+      "images": {
+        "parCouleur": {
+          "bleuAcier": [
+            "images/enfants/filles/blazer/bleuAcier/principale.jpg",
+            "images/enfants/filles/blazer/bleuAcier/profil.jpg",
+            "images/enfants/filles/blazer/bleuAcier/dos.jpg",
+            "images/enfants/filles/blazer/bleuAcier/detail.jpg"
+          ],
+          "rose": [
+            "images/enfants/filles/blazer/rose/principale.jpg",
+            "images/enfants/filles/blazer/rose/profil.jpg",
+            "images/enfants/filles/blazer/rose/dos.jpg",
+            "images/enfants/filles/blazer/rose/detail.jpg"
+          ],
+          "taupe": [
+            "images/enfants/filles/blazer/taupe/principale.jpg",
+            "images/enfants/filles/blazer/taupe/profil.jpg",
+            "images/enfants/filles/blazer/taupe/dos.jpg",
+            "images/enfants/filles/blazer/taupe/detail.jpg"
+          ],
+          "vertOlive": [
+            "images/enfants/filles/blazer/vertOlive/principale.jpg",
+            "images/enfants/filles/blazer/vertOlive/profil.jpg",
+            "images/enfants/filles/blazer/vertOlive/dos.jpg",
+            "images/enfants/filles/blazer/vertOlive/detail.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "id": "robeChemiseFille",
+      "fichier": "robeChemiseFille.json",
+      "genre": "enfant",
+      "nom": {
+        "fr": "Robe Chemise Fille",
+        "ar": "فستان قميص للبنات"
+      },
+      "description": {
+        "fr": "Robe chemise élégante et confortable pour fille, personnalisable selon l'âge, la couleur et la matière.",
+        "ar": "فستان قميص أنيق ومريح للبنات، قابل للتخصيص حسب العمر واللون والخامة."
+      },
+      "prixBase": 189,
+      "devise": "DH",
+      "images": {
+        "parCouleur": {
+          "bleuMarine": [
+            "images/enfants/filles/robeChemise/bleuMarine/principale.jpg",
+            "images/enfants/filles/robeChemise/bleuMarine/profil.jpg",
+            "images/enfants/filles/robeChemise/bleuMarine/dos.jpg",
+            "images/enfants/filles/robeChemise/bleuMarine/detail.jpg"
+          ],
+          "crem": [
+            "images/enfants/filles/robeChemise/crem/principale.jpg",
+            "images/enfants/filles/robeChemise/crem/profil.jpg",
+            "images/enfants/filles/robeChemise/crem/dos.jpg",
+            "images/enfants/filles/robeChemise/crem/detail.jpg"
+          ],
+          "ocreDore": [
+            "images/enfants/filles/robeChemise/ocreDore/principale.jpg",
+            "images/enfants/filles/robeChemise/ocreDore/profil.jpg",
+            "images/enfants/filles/robeChemise/ocreDore/dos.jpg",
+            "images/enfants/filles/robeChemise/ocreDore/detail.jpg"
+          ],
+          "taupe": [
+            "images/enfants/filles/robeChemise/taupe/principale.jpg",
+            "images/enfants/filles/robeChemise/taupe/profil.jpg",
+            "images/enfants/filles/robeChemise/taupe/dos.jpg",
+            "images/enfants/filles/robeChemise/taupe/detail.jpg"
+          ],
+          "vertSauge": [
+            "images/enfants/filles/robeChemise/vertSauge/principale.jpg",
+            "images/enfants/filles/robeChemise/vertSauge/profil.jpg",
+            "images/enfants/filles/robeChemise/vertSauge/dos.jpg",
+            "images/enfants/filles/robeChemise/vertSauge/detail.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "id": "costumeJunior",
+      "fichier": "costumeJunior.json",
+      "genre": "enfant",
+      "nom": {
+        "fr": "Costume Junior",
+        "ar": "بدلة أنيقة للصبيان"
+      },
+      "description": {
+        "fr": "Costume élégant et confortable pour garçon, personnalisable selon l'âge, la couleur et la matière.",
+        "ar": "بدلة أنيقة ومريحة للصبيان، قابلة للتخصيص حسب العمر واللون والخامة."
+      },
+      "prixBase": 450,
+      "devise": "DH",
+      "images": {
+        "parCouleur": {
+          "bleuMarine": [
+            "images/enfants/garçons/costume/bleuMarine/principale.jpg",
+            "images/enfants/garçons/costume/bleuMarine/profil.jpg",
+            "images/enfants/garçons/costume/bleuMarine/dos.jpg",
+            "images/enfants/garçons/costume/bleuMarine/detail.jpg"
+          ],
+          "grisAnthracite": [
+            "images/enfants/garçons/costume/grisAnthracite/principale.jpg",
+            "images/enfants/garçons/costume/grisAnthracite/profil.jpg",
+            "images/enfants/garçons/costume/grisAnthracite/dos.jpg",
+            "images/enfants/garçons/costume/grisAnthracite/detail.jpg"
+          ],
+          "noir": [
+            "images/enfants/garçons/costume/noir/principale.jpg",
+            "images/enfants/garçons/costume/noir/profil.jpg",
+            "images/enfants/garçons/costume/noir/dos.jpg",
+            "images/enfants/garçons/costume/noir/detail.jpg"
+          ]
+        }
+      }
+    },
+    {
       "id": "pantalonGarcon",
       "fichier": "pantalonGarcon.json",
       "genre": "enfant",
@@ -530,6 +530,98 @@
             "images/enfants/garçons/pantalon/vertSauge/profil.jpg",
             "images/enfants/garçons/pantalon/vertSauge/dos.jpg",
             "images/enfants/garçons/pantalon/vertSauge/detail.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "id": "blazerGarcon",
+      "fichier": "blazerGarcon.json",
+      "genre": "enfant",
+      "nom": {
+        "fr": "Blazer Garçon",
+        "ar": "سترة أنيقة للصبيان"
+      },
+      "description": {
+        "fr": "Blazer élégant et confortable pour garçon, personnalisable selon l'âge, la couleur et la matière.",
+        "ar": "سترة أنيقة ومريحة للصبيان، قابلة للتخصيص حسب العمر واللون والخامة."
+      },
+      "prixBase": 220,
+      "devise": "DH",
+      "images": {
+        "parCouleur": {
+          "bleuMarine": [
+            "images/enfants/garçons/blazer/bleuMarine/principale.jpg",
+            "images/enfants/garçons/blazer/bleuMarine/profil.jpg",
+            "images/enfants/garçons/blazer/bleuMarine/dos.jpg",
+            "images/enfants/garçons/blazer/bleuMarine/detail.jpg"
+          ],
+          "grisClair": [
+            "images/enfants/garçons/blazer/grisClair/principale.jpg",
+            "images/enfants/garçons/blazer/grisClair/profil.jpg",
+            "images/enfants/garçons/blazer/grisClair/dos.jpg",
+            "images/enfants/garçons/blazer/grisClair/detail.jpg"
+          ],
+          "noir": [
+            "images/enfants/garçons/blazer/noir/principale.jpg",
+            "images/enfants/garçons/blazer/noir/profil.jpg",
+            "images/enfants/garçons/blazer/noir/dos.jpg",
+            "images/enfants/garçons/blazer/noir/detail.jpg"
+          ],
+          "taupe": [
+            "images/enfants/garçons/blazer/taupe/principale.jpg",
+            "images/enfants/garçons/blazer/taupe/profil.jpg",
+            "images/enfants/garçons/blazer/taupe/dos.jpg",
+            "images/enfants/garçons/blazer/taupe/detail.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "id": "giletGarcon",
+      "fichier": "giletGarcon.json",
+      "genre": "enfant",
+      "nom": {
+        "fr": "Gilet Garçon",
+        "ar": "صديري أنيق للصبيان"
+      },
+      "description": {
+        "fr": "Gilet élégant et confortable pour garçon, personnalisable selon l'âge, la couleur et la matière.",
+        "ar": "صديري أنيق ومريح للصبيان، قابل للتخصيص حسب العمر واللون والخامة."
+      },
+      "prixBase": 150,
+      "devise": "DH",
+      "images": {
+        "parCouleur": {
+          "bleuMarine": [
+            "images/enfants/garçons/gilet/bleuMarine/principale.jpg",
+            "images/enfants/garçons/gilet/bleuMarine/profil.jpg",
+            "images/enfants/garçons/gilet/bleuMarine/dos.jpg",
+            "images/enfants/garçons/gilet/bleuMarine/detail.jpg"
+          ],
+          "grisAnthracite": [
+            "images/enfants/garçons/gilet/grisAnthracite/principale.jpg",
+            "images/enfants/garçons/gilet/grisAnthracite/profil.jpg",
+            "images/enfants/garçons/gilet/grisAnthracite/dos.jpg",
+            "images/enfants/garçons/gilet/grisAnthracite/detail.jpg"
+          ],
+          "grisClair": [
+            "images/enfants/garçons/gilet/grisClair/principale.jpg",
+            "images/enfants/garçons/gilet/grisClair/profil.jpg",
+            "images/enfants/garçons/gilet/grisClair/dos.jpg",
+            "images/enfants/garçons/gilet/grisClair/detail.jpg"
+          ],
+          "noir": [
+            "images/enfants/garçons/gilet/noir/principale.jpg",
+            "images/enfants/garçons/gilet/noir/profil.jpg",
+            "images/enfants/garçons/gilet/noir/dos.jpg",
+            "images/enfants/garçons/gilet/noir/detail.jpg"
+          ],
+          "taupe": [
+            "images/enfants/garçons/gilet/taupe/principale.jpg",
+            "images/enfants/garçons/gilet/taupe/profil.jpg",
+            "images/enfants/garçons/gilet/taupe/dos.jpg",
+            "images/enfants/garçons/gilet/taupe/detail.jpg"
           ]
         }
       }
